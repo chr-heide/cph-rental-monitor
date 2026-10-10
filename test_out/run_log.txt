@@ -1,3 +1,21 @@
-Error in str_split(str_remove(grep("^--only=", args, value = TRUE), "^--only="),  : 
-  subscript out of bounds
-Execution halted
+heimstaden           ok   248  
+balder               ok  1000  
+kereby               ok    10  
+taurus               ok    37  
+norse                ok   106  
+jeudan               ok     3  
+danica               ok     5  
+juli_living          ok   213  
+findbolig            ok    72  
+kab                  ok     7  
+hea                  ok    18  
+ejendomskontoret     ok     1  
+kanalhuset           ok   109  
+capital_investment   ok    10  
+gobolig              ok     1  
+home_connector       ok    19  
+express_housing      ok     9  
+grenes_rental        ok    31  
+housing_denmark      ERR    -  HTTP 404 Not Found.
+lejemaegleren        ok    32  
+1931 listings on 19/20 sites, 1931 new, 40 details fetched, 0 alerts sent, 53 matches queued
