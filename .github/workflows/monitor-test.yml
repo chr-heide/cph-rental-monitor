@@ -19,7 +19,7 @@ jobs:
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
           packages: any::httr2, any::rvest, any::xml2, any::jsonlite, any::dplyr, any::stringr, any::purrr, any::readr, any::tibble, any::yaml
-      - run: Rscript R/monitor.R --no-alerts 2>&1 | tee run_log.txt
+      - run: EDC_DEBUG=1 Rscript R/monitor.R --dry-run --only=edc 2>&1 | tee run_log.txt
       - name: Commit results
         if: always()
         run: |

@@ -253,6 +253,7 @@ scrape_edc <- function(url, param = NA) {
     pg <- get_html(paste0(url, if (str_detect(url, "\\?")) "&" else "?", "side=", k))
     cards <- html_elements(pg, "article")
     href <- map_chr(cards, ~ att(.x, "a[href*='/leje/']", "href"))
+    if (nzchar(Sys.getenv("EDC_DEBUG"))) message("edc page ", k, ": ", length(cards), " articles, first ", href[!is.na(href)][1])
     keep <- !is.na(href)
     if (!any(keep)) break
     cards <- cards[keep]; href <- href[keep]
