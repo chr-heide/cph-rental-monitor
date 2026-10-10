@@ -5,6 +5,7 @@ from playwright.sync_api import sync_playwright
 
 OUT = pathlib.Path("probe_out")
 KW = re.compile(r"ledig|lejebolig|leje-bolig|find-?bolig|boliger|udlejning|lejlighed|lejemaal|lejemål|til-leje|rent", re.I)
+NOFOLLOW = True
 UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0 Safari/537.36"
 
 sites = [l.split("|", 1) for l in pathlib.Path(sys.argv[1]).read_text().splitlines()
@@ -28,7 +29,10 @@ def visit(page, url, d, tag):
         ct = r.headers.get("content-type", "")
         if "json" in ct and len(jsons) < 40:
             try:
-                jsons.append({"url": r.url, "status": r.status, "body": r.text()[:200000]})
+                rq = r.request
+                jsons.append({"url": r.url, "status": r.status, "method": rq.method,
+                              "req_headers": {k: v for k, v in rq.headers.items() if k.lower() not in ("cookie",)},
+                              "post": (rq.post_data or "")[:5000], "body": r.text()[:300000]})
             except Exception:
                 pass
     page.on("response", on_resp)
@@ -82,7 +86,7 @@ with sync_playwright() as p:
         summary.append([name, url, final, st, n, nj, len(links), err])
         # follow up to 3 listing-looking links on same site one level deep
         host = urllib.parse.urlparse(final).netloc.replace("www.", "")
-        cand = [u for u, t in links if re.search(r"ledig|find-?bolig|lejeboliger|ledige|bolig/?$|boliger/?$", u, re.I)
+        cand = [] if NOFOLLOW else [u for u, t in links if re.search(r"ledig|find-?bolig|lejeboliger|ledige|bolig/?$|boliger/?$", u, re.I)
                 and u.rstrip("/") != final.rstrip("/")][:2]
         for i, u in enumerate(cand, 1):
             st2, f2, n2, nj2, l2, e2 = visit(page, u, d, f"p{i}")
