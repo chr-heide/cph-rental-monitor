@@ -11,11 +11,11 @@ kab                  ok     7
 hea                  ok    18  
 ejendomskontoret     ok     1  
 kanalhuset           ok   109  
-capital_investment   ERR    -  0 listings parsed
+capital_investment   ok    10  
 gobolig              ok     1  
 home_connector       ok    19  
 express_housing      ok     9  
 grenes_rental        ok    31  
 housing_denmark      ok    12  
 lejemaegleren        ok    32  
-994 listings on 19/20 sites, 994 new, 60 details fetched, 0 alerts sent, 13 matches queued
+1004 listings on 20/20 sites, 1004 new, 60 details fetched, 0 alerts sent, 6 matches queued
