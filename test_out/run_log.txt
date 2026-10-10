@@ -18,4 +18,10 @@ express_housing      ok     9
 grenes_rental        ok    31  
 housing_denmark      ok    12  
 lejemaegleren        ok    32  
-1004 listings on 20/20 sites, 1004 new, 60 details fetched, 0 alerts sent, 6 matches queued
+dab_lejerbo          ERR    -  HTTP 404 Not Found.
+vibo                 ok     1  
+norhjem              ok    32  
+edc                  ok    48  
+home                 ok   251  
+nybolig              ok   100  
+1436 listings on 25/26 sites, 1436 new, 60 details fetched, 0 alerts sent, 9 matches queued
