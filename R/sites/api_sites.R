@@ -123,7 +123,9 @@ scrape_dab_lejerbo <- function(url, param = NA) {
                selectedMainRegion = "", selectedRegion = "", fallbackDescriptionToDepartmentDescription = FALSE,
                pageNumber = 1, pageSize = 1000, shuffleSeed = "a", sortBy = "moveInDate")
   d <- request("https://dab-lejerbo.dk/api/memberportal/availabletenancies/getAllAvailableTenancies") |>
-    req_user_agent(UA) |> req_body_json(body) |> req_timeout(60) |> req_perform() |>
+    req_user_agent(UA) |> req_body_json(body) |> req_timeout(60) |>
+    req_headers(`module-enum` = "3505", Accept = "application/json, text/plain, */*", Referer = "https://dab-lejerbo.dk/") |>
+    req_perform() |>
     resp_body_json(simplifyVector = FALSE)
   map_dfr(d$data$data$availableTenancies, function(t) tibble(
     id = paste(t$companyId, t$departmentId, t$tenancyId, sep = "-"),
@@ -189,3 +191,49 @@ findbolig_rows <- function(res) {
            lat = x$latitude %||% NA, lon = x$longitude %||% NA)
   })
 }
+
+# ---- Nybolig (estate agent; rental cases via its search API; ~100 rentals nationwide) -------
+scrape_nybolig <- function(url, param = NA) {
+  out <- list(); token <- ""
+  for (k in 1:15) {
+    body <- list(siteName = "nybolig", isRental = TRUE, isSold = FALSE, isSaleInProgress = FALSE,
+                 postalCodeRanges = list(),
+                 municipalityCodes = list(), municipalityNames = list(), cityNames = list(),
+                 supplementaryCityNames = list(), postalCodes = list(), streetNames = list(),
+                 streetNumbers = list(), propertyCategories = list(), businessPropertyCategories = list(),
+                 polygon = list(), freeText = "", sort = 0, scrollToken = token, top = 100)
+    d <- request("https://www.nybolig.dk/api/search/cases/find") |> req_user_agent(UA) |>
+      req_body_json(body) |> req_timeout(40) |> req_perform() |> resp_body_json(simplifyVector = FALSE)
+    out <- c(out, d$cases)
+    token <- d$scrollToken %||% ""
+    if (!length(d$cases) || !nzchar(token) || length(out) >= (d$total %||% 0)) break
+    Sys.sleep(0.5)
+  }
+  map_dfr(out, function(c) {
+    if (!isTRUE(c$isRental)) return(NULL)
+    tibble(id = c$caseNumber %||% c$id, url = paste0("https://www.nybolig.dk", c$url %||% ""),
+           title = c$imageAlt %||% NA, address = c$addressDisplayName %||% NA,
+           postcode = str_extract(c$addressSecondLine %||% "", "^\\d{4}"), city = c$addressCity %||% NA,
+           rooms = c$totalNumberOfRooms %||% NA, m2 = c$livingSpace %||% NA,
+           rent = { r <- c$rent %||% 0; if (r > 0) r else dk_num(c$rentMonthly) },
+           status = if (isTRUE(c$projectCaseReserved)) "Reserveret" else "Ledig",
+           lat = c$addressLatitude %||% NA, lon = c$addressLongitude %||% NA)
+  })
+}
+detail_nybolig <- function(url) detail_generic(url)
+
+# ---- Norhjem (norhjem.dk/api/searchrental, form-encoded POST) ---------------------------
+scrape_norhjem <- function(url, param = NA) {
+  d <- request("https://norhjem.dk/api/searchrental") |> req_user_agent(UA) |>
+    req_body_form(availableFrom = "", availableTo = "", propertyId = "", rentalType = "", maxPrice = "",
+                  minRooms = "", maxRooms = "", area = "", sort = "") |>
+    req_timeout(40) |> req_perform() |> resp_body_json(simplifyVector = FALSE)
+  map_dfr(d, function(x) {
+    if (isTRUE(x$isParking)) return(NULL)
+    tibble(id = x$url, url = paste0("https://norhjem.dk", x$url), title = x$type %||% NA,
+           address = x$address %||% NA, postcode = as.character(x$zipCode %||% NA), city = x$city %||% NA,
+           rooms = x$rooms %||% NA, m2 = dk_num(x$area), rent = x$price %||% NA,
+           status = x$status %||% NA, available_from = str_sub(x$moveInDate %||% NA, 1, 10))
+  })
+}
+detail_norhjem <- function(url) detail_generic(url)
