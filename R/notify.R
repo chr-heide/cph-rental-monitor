@@ -3,13 +3,15 @@
 # NTFY_TOPIC env var overrides it, e.g. for testing.
 ntfy_post <- function(body) {
   topic <- Sys.getenv("NTFY_TOPIC", if (file.exists("config/ntfy_topic.txt")) str_trim(readLines("config/ntfy_topic.txt", 1)) else "")
-  if (!nzchar(topic)) { message("NTFY_TOPIC not set; would send: ", body$title); return(invisible()) }
+  if (!nzchar(topic)) { message("NTFY_TOPIC not set; would send: ", body$title); return(FALSE) }
   body$topic <- topic
-  tryCatch(
-    request(Sys.getenv("NTFY_SERVER", "https://ntfy.sh")) |>
-      req_body_json(body, auto_unbox = TRUE) |> req_timeout(20) |> req_perform(),
-    error = function(e) message("ntfy failed: ", conditionMessage(e)))
-  invisible()
+  # TRUE only when ntfy accepted the message (returns its id); failed pushes are retried next run
+  ok <- tryCatch({
+    r <- request(Sys.getenv("NTFY_SERVER", "https://ntfy.sh")) |>
+      req_body_json(body, auto_unbox = TRUE) |> req_timeout(20) |> req_retry(max_tries = 2) |> req_perform()
+    !is.null(resp_body_json(r)$id)
+  }, error = function(e) { message("ntfy failed: ", conditionMessage(e)); FALSE })
+  invisible(ok)
 }
 
 fmt_kr <- function(x) ifelse(is.na(x), "?", format(round(x), big.mark = ".", decimal.mark = ","))
