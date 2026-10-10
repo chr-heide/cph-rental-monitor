@@ -1,8 +1,5 @@
-# round 7
-danbolig_search|https://danbolig.dk/boligsoegning/?isRental=true
-danbolig_leje|https://danbolig.dk/lejeboliger/
-edc_sort1|https://www.edc.dk/lejebolig/koebenhavn/?sortering=salesPeriodAscending
-edc_sort2|https://www.edc.dk/leje/soeg/?kommune=k%c3%b8benhavn&sortby=salesPeriodAscending
-bdk_ledige|https://www.bdk.dk/boligsoegende/ledige-boliger/
-dab_ledige|https://dab-lejerbo.dk/boligsoegende/ledige-boliger
-nybolig_rent|https://www.nybolig.dk/soegeresultat-boliger?isRental=true
+# round 8: almene administrators
+almenbo|https://www.almenbo.dk/
+domibus|https://www.domibus.dk/
+fa09|https://fa09.dk/
+domea|https://domea.dk/

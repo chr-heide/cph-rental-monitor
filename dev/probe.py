@@ -5,7 +5,7 @@ from playwright.sync_api import sync_playwright
 
 OUT = pathlib.Path("probe_out")
 KW = re.compile(r"ledig|lejebolig|leje-bolig|find-?bolig|boliger|udlejning|lejlighed|lejemaal|lejemål|til-leje|rent", re.I)
-NOFOLLOW = True
+NOFOLLOW = False
 UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0 Safari/537.36"
 
 sites = [l.split("|", 1) for l in pathlib.Path(sys.argv[1]).read_text().splitlines()
@@ -38,7 +38,7 @@ def visit(page, url, d, tag):
     page.on("response", on_resp)
     status, err = None, ""
     try:
-        resp = page.goto(url, wait_until="domcontentloaded", timeout=45000)
+        resp = page.goto(url, wait_until="domcontentloaded", timeout=90000)
         status = resp.status if resp else None
         try:
             page.wait_for_load_state("networkidle", timeout=8000)
