@@ -3,6 +3,7 @@ on:
   push:
     branches: [probe]
     paths: ["R/**", "config/**", ".github/workflows/monitor-test.yml"]
+  workflow_dispatch:
 permissions:
   contents: write
 concurrency: { group: monitor-test }
@@ -25,4 +26,4 @@ jobs:
           git config user.name "probe-bot"; git config user.email "probe-bot@users.noreply.github.com"
           mkdir -p test_out; cp -r data run_log.txt test_out/ 2>/dev/null || true
           git add -f test_out; git commit -qm "test results $(date -u +%FT%TZ)" || exit 0
-          git pull --rebase -q origin probe && git push -q origin HEAD:probe
+          for i in 1 2 3; do git pull --rebase -X theirs -q origin probe && git push -q origin HEAD:probe && exit 0; git rebase --abort 2>/dev/null; sleep 5; done; exit 1
