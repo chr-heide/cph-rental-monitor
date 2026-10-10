@@ -31,3 +31,5 @@ exclude_keywords:
   - "delebolig|bofællesskab"
   - "ungdomsbolig|studiebolig|kollegie"
   - "seniorbolig|ældrebolig|\\b(50|55|60|65)\\+"
+  # Uncomment to also skip time-limited / short-term lets (common with furnished flats):
+  # - "tidsbegrænset|udlejes i \\d+ måneder|korttidsleje"

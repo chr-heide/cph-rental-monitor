@@ -139,7 +139,7 @@ detail_express_housing <- function(url) detail_generic(url)
 # same line after the label or else on the next line. Works across most landlord sites.
 page_lines <- function(page) {
   # drop scripts and page chrome: search forms, menus, header and footer (agency addresses live there)
-  for (n in html_elements(page, "script, style, noscript, svg, select, nav, [role=search], form[class*=search], form[id*=search], form[action*=search], [class*=prop_search], [class*=search-form]")) xml2::xml_remove(n)
+  for (n in html_elements(page, "script, style, noscript, svg, select, nav, form[role=search], form[class*=search], form[id*=search], form[action*=search], div[class*=prop_search]")) xml2::xml_remove(n)
   chrome <- "//footer[not(ancestor::main) and not(ancestor::article)] | //header[not(ancestor::main) and not(ancestor::article) and not(ancestor::section)]"
   for (n in xml2::xml_find_all(page, chrome)) xml2::xml_remove(n)
   t <- html_text2(html_element(page, "body"))
@@ -179,6 +179,10 @@ detail_generic <- function(url, page = get_html(url)) {
   if (is.na(rooms)) rooms <- dk_num(str_match(paste(title, paste(head(L, 60), collapse = " ")), "(\\d)[ -]*værelses")[, 2])
   rent <- num_by_label(L, "^(månedlig\\s*)?husleje\\b[^0-9]*|^leje\\s*pr\\.?\\s*(måned|md)[^0-9]*|^(månedlig\\s*)?leje\\b[^0-9]*",
                        exclude = "første|forudbetal|depositum|indflytning|pr\\.? år|årlig|inkl")
+  if (is.na(rent)) {   # unlabelled price like "22.000kr. /måned" or "22.900 DKK / md." (first one = the listing's own)
+    p <- str_subset(L, "(?i)\\d[\\d.]*\\s*(kr\\.?|dkk|,-)\\s*/?\\s*(pr\\.?\\s*)?(md|måned|mdr|month)")
+    if (length(p)) rent <- dk_num(p[1])
+  }
   # address/postcode from the title or heading ("Street 1, 2. th, 2100 København Ø"), not the footer
   pc <- str_match(title, ",\\s*(\\d{4})\\s+[A-ZÆØÅ]")[, 2]
   h1 <- str_squish(html_text2(html_element(page, "h1")))
