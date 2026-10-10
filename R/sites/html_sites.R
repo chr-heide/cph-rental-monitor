@@ -215,10 +215,12 @@ scrape_links <- function(url, param = NA, page = get_html(url)) {
     more <- grab(pk, url); if (!nrow(more)) break
     out <- bind_rows(out, more); Sys.sleep(0.5)
   }
-  out <- out |> group_by(href) |> summarise(text = paste(unique(text[nzchar(text)]), collapse = " | "), .groups = "drop")
-  slug <- str_replace_all(basename(str_remove(out$href, "/$")), "[-_]", " ")
+  generic <- "(?i)^(se|læs|vis|klik)\\b.{0,25}$|^(læs mere|se mere|mere info)$"
+  out <- out |> mutate(text = if_else(str_detect(str_squish(str_remove_all(text, "[\u200b]")), generic), "", text)) |>
+    group_by(href) |> summarise(text = paste(unique(text[nzchar(text)]), collapse = " | "), .groups = "drop")
+  slug <- str_replace_all(str_remove(basename(str_remove(out$href, "/$")), "\\.(aspx?|html?|php)$"), "[-_]", " ")
   t <- paste(out$text, slug)
-  tibble(id = out$href, url = out$href, title = str_trunc(coalesce(na_if(out$text, ""), slug), 120),
+  tibble(id = out$href, url = out$href, title = str_trunc(coalesce(na_if(out$text, ""), str_to_sentence(slug)), 120),
          m2 = dk_num(str_match(t, "(\\d{2,3})\\s*(m²|m2|kvm)")[, 2]),
          rooms = dk_num(str_match(t, "(\\d)[ -]*(vær|værelses|rum)")[, 2]),
          postcode = coalesce(postcode_of(t), city_postcode(str_extract(t, "(?i)k(ø|o)benhavn (k|v|n|nv|ø|oe|s|sv)\\b|nordhavn|frederiksberg|valby"))),
