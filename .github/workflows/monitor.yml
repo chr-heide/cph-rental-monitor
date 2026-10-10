@@ -18,16 +18,24 @@ jobs:
     env: { LANG: C.UTF-8, LC_ALL: C.UTF-8 }
     steps:
       - uses: actions/checkout@v4
+        with: { ref: main }   # latest main (incl. the previous run's data), not the commit that triggered the run
       - uses: r-lib/actions/setup-r@v2
         with: { use-public-rspm: true }
       - uses: r-lib/actions/setup-r-dependencies@v2
         with:
           packages: any::httr2, any::rvest, any::jsonlite, any::dplyr, any::stringr, any::purrr, any::readr, any::tibble, any::yaml, any::xml2
       - name: Scrape and alert
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
         run: Rscript R/monitor.R
       - name: Save log
         run: |
           git config user.name "rental-monitor"; git config user.email "rental-monitor@users.noreply.github.com"
           git add data
           git commit -qm "data $(date -u +%FT%TZ)" || exit 0
-          git pull --rebase -q && git push -q
+          # if data/ changed upstream meanwhile, this run's data is the newest: keep it on conflicts
+          for i in 1 2 3; do
+            git pull --rebase -X theirs -q origin main && git push -q origin HEAD:main && exit 0
+            git rebase --abort 2>/dev/null; sleep 5
+          done
+          exit 1

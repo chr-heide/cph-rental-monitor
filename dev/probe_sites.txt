@@ -1,23 +1,8 @@
-# round 6: more coverage
-edc|https://www.edc.dk/lejebolig/koebenhavn/
-home|https://home.dk/til-leje/lejlighed/region-hovedstaden/koebenhavn-kommune/
-nybolig|https://www.nybolig.dk/lejebolig/koebenhavn
-nybolig_root|https://www.nybolig.dk/
-danbolig|https://danbolig.dk/lejebolig/
-danbolig_root|https://danbolig.dk/
-copenhagenquarters|https://www.copenhagenquarters.dk/lejligheder-til-leje-kobenhavn
-limeadmin|https://limeadmin.dk/lejemaal
-norhjem|https://norhjem.dk/
-lppension|https://lppension.dk/boliger/lej-en-bolig
-sampension|https://www.sampension.dk/kunde/fortrinsret-til-boliger
-bdk_root|https://www.bdk.dk/alle-ledige-boliger
-domea|https://www.domea.dk/find-bolig
-vibo|https://www.vibo.dk/
-realdania|https://realdania.dk/viden-og-laering/vidensbibliotek/tema/ejendomme-til-salg-og-leje
-boligskift|https://boligskift.dk/lejebolig/koebenhavn
-crescendo|https://www.crescendo.dk/boliger
-fokus|https://www.fokus-am.dk/
-hestia|https://hestia.dk/
-lejeboliger_dk|https://www.lejeboliger.dk/
-akelius_cph|https://www.akelius.com/da/search/apartments
-boligfonden_kuben|https://www.kubenbolig.dk/
+# round 7
+danbolig_search|https://danbolig.dk/boligsoegning/?isRental=true
+danbolig_leje|https://danbolig.dk/lejeboliger/
+edc_sort1|https://www.edc.dk/lejebolig/koebenhavn/?sortering=salesPeriodAscending
+edc_sort2|https://www.edc.dk/leje/soeg/?kommune=k%c3%b8benhavn&sortby=salesPeriodAscending
+bdk_ledige|https://www.bdk.dk/boligsoegende/ledige-boliger/
+dab_ledige|https://dab-lejerbo.dk/boligsoegende/ledige-boliger
+nybolig_rent|https://www.nybolig.dk/soegeresultat-boliger?isRental=true

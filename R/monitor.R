@@ -132,10 +132,11 @@ scored <- score(cur)
 to_alert <- scored |> filter(match, is.na(alerted)) |> arrange(rent_check)
 pushed <- head(to_alert, MAX_PUSH)
 if (!no_alerts && nrow(pushed)) {
-  for (i in seq_len(nrow(pushed))) notify_listing(pushed[i, ])
+  delivered <- map_lgl(seq_len(nrow(pushed)), ~ isTRUE(notify_listing(pushed[.x, ])))
   if (nrow(to_alert) > MAX_PUSH)
     notify_text(sprintf("%d more matches queued for the next run(s).", nrow(to_alert) - MAX_PUSH), title = "More matches")
-  scored$alerted[scored$id %in% pushed$id] <- now
+  scored$alerted[scored$id %in% pushed$id[delivered]] <- now
+  pushed <- pushed[delivered, ]
 }
 
 # ---- site health: one alert when a site has failed 6 runs in a row (~2 h) ----------

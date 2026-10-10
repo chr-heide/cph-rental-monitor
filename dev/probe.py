@@ -5,7 +5,7 @@ from playwright.sync_api import sync_playwright
 
 OUT = pathlib.Path("probe_out")
 KW = re.compile(r"ledig|lejebolig|leje-bolig|find-?bolig|boliger|udlejning|lejlighed|lejemaal|lejemål|til-leje|rent", re.I)
-NOFOLLOW = False
+NOFOLLOW = True
 UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0 Safari/537.36"
 
 sites = [l.split("|", 1) for l in pathlib.Path(sys.argv[1]).read_text().splitlines()
