@@ -5,18 +5,23 @@ OUT = pathlib.Path("probe_out/bapi"); OUT.mkdir(parents=True, exist_ok=True)
 UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/129.0 Safari/537.36"
 JS = """async ([url, body]) => { const o = body ? {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(body)} : {};
   try { const r = await fetch(url, o); return {status: r.status, text: (await r.text()).slice(0, 300000)}; } catch (e) { return {status: -1, text: String(e)}; } }"""
+NYB = json.loads('{"siteName":"nybolig","municipalityCodes":[],"municipalityNames":[],"cityNames":[],"supplementaryCityNames":[],"postalCodes":[],"postalCodeRanges":[],"streetNames":[],"streetNumbers":[],"propertyCategories":[],"businessPropertyCategories":[],"isRental":true,"isSold":false,"isSaleInProgress":false,"polygon":[],"freeText":"","sort":0,"scrollToken":"","top":20}')
+def nyb(**kw):
+    d = dict(NYB); d.update(kw); return d
+DAB = {"selectedNumberOfRooms":0,"selectedMinimumSize":0,"selectedMaxRent":0,"selectedMainRegion":"","selectedRegion":"","fallbackDescriptionToDepartmentDescription":False,"pageNumber":1,"pageSize":10,"shuffleSeed":"b5m3d1c","sortBy":"moveInDate"}
 tests = {
- "https://findbolig.nu/da-dk": [
-   ("fb_robots", "https://findbolig.nu/robots.txt", None),
-   ("fb_none", "https://findbolig.nu/api/search", {"pageSize":100,"page":0,"orderBy":"Created","orderDirection":"DESC","mixedResults":False,"filters":{}}),
-   ("fb_mixed", "https://findbolig.nu/api/search", {"pageSize":100,"page":0,"orderBy":"Created","orderDirection":"DESC","mixedResults":True,"filters":{}}),
-   ("fb_commune", "https://findbolig.nu/api/search", {"pageSize":20,"page":0,"orderBy":"Created","orderDirection":"DESC","mixedResults":True,"filters":{"Commune":["København"]}}),
-   ("fb_postal", "https://findbolig.nu/api/search", {"pageSize":20,"page":0,"orderBy":"Created","orderDirection":"DESC","mixedResults":True,"filters":{"PostalCode":["2200"]}}),
-   ("fb_rentmodel", "https://findbolig.nu/api/search", {"pageSize":20,"page":0,"orderBy":"Created","orderDirection":"DESC","mixedResults":True,"filters":{"RentModel":["Advert"]}}),
-   ("fb_apptype", "https://findbolig.nu/api/search", {"pageSize":20,"page":0,"orderBy":"Created","orderDirection":"DESC","mixedResults":True,"filters":{"ApplicationType":["Regular"]}}),
-   ("fb_area", "https://findbolig.nu/api/search", {"pageSize":20,"page":0,"orderBy":"Created","orderDirection":"DESC","mixedResults":True,"filters":{"Area":[50,500],"Rooms":[2,10],"Rent":[0,16000]}}),
+ "https://www.nybolig.dk/soegeresultat-boliger?isRental=true": [
+   ("nyb_plain", "https://www.nybolig.dk/api/search/cases/find", nyb()),
+   ("nyb_muni", "https://www.nybolig.dk/api/search/cases/find", nyb(municipalityNames=["København"])),
+   ("nyb_muni_code", "https://www.nybolig.dk/api/search/cases/find", nyb(municipalityCodes=[101])),
+   ("nyb_pc", "https://www.nybolig.dk/api/search/cases/find", nyb(postalCodes=[2200, 2100])),
+   ("nyb_pcr", "https://www.nybolig.dk/api/search/cases/find", nyb(postalCodeRanges=["1000-2450"])),
+   ("nyb_pcr2", "https://www.nybolig.dk/api/search/cases/find", nyb(postalCodeRanges=[{"from":1000,"to":2450}])),
+   ("nyb_pcr3", "https://www.nybolig.dk/api/search/cases/find", nyb(postalCodeRanges=[{"min":1000,"max":2450}])),
  ],
- "https://www.balder.dk/lejeboliger": [("balder_api_robots", "https://api.balder.dk/robots.txt", None)],
+ "https://dab-lejerbo.dk/": [
+   ("dab_browser", "https://dab-lejerbo.dk/api/memberportal/availabletenancies/getAllAvailableTenancies", DAB),
+ ],
 }
 with sync_playwright() as p:
     b = p.chromium.launch(); ctx = b.new_context(user_agent=UA, locale="da-DK")
@@ -29,14 +34,4 @@ with sync_playwright() as p:
             (OUT / f"{name}.txt").write_text(f"STATUS {r['status']}\nURL {url}\nBODY {json.dumps(body)}\n\n{r['text']}")
             print(name, r["status"], len(r["text"]), flush=True)
         pg.close()
-    # Go'Bolig: record every request to its API gateway, whatever the content type
-    pg = ctx.new_page(); seen = []
-    pg.on("response", lambda r: seen.append(r) if "gobolig-api" in r.url and "/images/" not in r.url else None)
-    pg.goto("https://gobolig.dk/soeg-lejebolig/", wait_until="networkidle", timeout=60000)
-    pg.mouse.wheel(0, 30000); pg.wait_for_timeout(4000)
-    out = []
-    for r in seen:
-        try: out.append({"url": r.url, "method": r.request.method, "post": r.request.post_data, "status": r.status, "body": r.text()[:200000]})
-        except Exception as e: out.append({"url": r.url, "err": str(e)})
-    (OUT / "gobolig_api.json").write_text(json.dumps(out, ensure_ascii=False, indent=1)); print("gobolig", len(out))
     b.close()
