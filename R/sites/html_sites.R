@@ -13,6 +13,7 @@ scrape_kereby <- function(url, param = NA, page = get_html(url)) {
          address = map_chr(cards, txt, ".jorato-case-card__location-text"),
          postcode = html_attr(cards, "data-zip"), rooms = html_attr(cards, "data-rooms"),
          m2 = html_attr(cards, "data-size"), rent = html_attr(cards, "data-rent"),
+         lat = html_attr(cards, "data-lat"), lon = html_attr(cards, "data-lng"),
          status = coalesce(html_attr(cards, "data-state"), "available"))
 }
 detail_kereby <- function(url) detail_generic(url)

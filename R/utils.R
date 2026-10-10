@@ -7,7 +7,7 @@ UA <- "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Ch
 
 # Columns every parser returns (missing ones are filled with NA).
 LISTING_COLS <- c("source", "id", "url", "title", "address", "postcode", "city",
-                  "rooms", "m2", "rent", "aconto", "status", "available_from")
+                  "rooms", "m2", "rent", "aconto", "status", "available_from", "lat", "lon")
 
 req_get <- function(url, ...) {
   request(url) |>
@@ -60,7 +60,7 @@ as_listings <- function(df, site) {
            id = paste0(site, ":", id),
            postcode = coalesce(as.character(postcode), postcode_of(address), postcode_of(title),
                                city_postcode(city), city_postcode(address)),
-           across(c(rooms, m2, rent, aconto), ~ suppressWarnings(as.numeric(.x))),
+           across(c(rooms, m2, rent, aconto, lat, lon), ~ suppressWarnings(as.numeric(.x))),
            across(c(title, address, city, status, url, available_from), ~ str_squish(as.character(.x)))) |>
     select(all_of(LISTING_COLS)) |>
     distinct(id, .keep_all = TRUE)

@@ -40,13 +40,14 @@ scrape_jorato <- function(url, param = NA) {
            postcode = it$address$zipCode %||% NA, city = it$address$city %||% NA,
            rooms = it$rooms %||% NA, m2 = it$size$value %||% NA,
            rent = it$monthlyRent$value %||% NA, aconto = exp,
-           status = it$state %||% NA, available_from = it$availableFrom %||% NA)
+           status = it$state %||% NA, available_from = it$availableFrom %||% NA,
+           lat = it$address$coordinates$latitude %||% NA, lon = it$address$coordinates$longitude %||% NA)
   })
 }
 
 # ---- Balder (Meilisearch at api.balder.dk) ---------------------------------------
 scrape_balder <- function(url, param = NA) {
-  q <- list(queries = list(list(indexUid = "leases", limit = 1000, offset = 0)))
+  q <- list(queries = list(list(indexUid = "leases", filter = list("status = 'Ledig'"), limit = 3000, offset = 0)))
   call <- function(key) request("https://api.balder.dk/multi-search") |>
     req_user_agent(UA) |> req_auth_bearer_token(key) |> req_body_json(q) |>
     req_timeout(40) |> req_perform() |> resp_body_json(simplifyVector = FALSE)
@@ -58,7 +59,8 @@ scrape_balder <- function(url, param = NA) {
     postcode = as.character(h$postal_code %||% NA), city = h$city %||% NA,
     rooms = h$number_of_rooms %||% NA, m2 = h$gross_area %||% NA, rent = h$rent %||% NA,
     aconto = (h$payment_water %||% 0) + (h$payment_heating %||% 0),
-    status = h$status %||% NA, available_from = h$acquisition_date %||% NA))
+    status = h$status %||% NA, available_from = h$acquisition_date %||% NA,
+    lat = h$`_geo`$lat %||% NA, lon = h$`_geo`$lng %||% NA))
 }
 
 # ---- Jeudan (nova-api.jeudan.dk) --------------------------------------------------
@@ -72,7 +74,8 @@ scrape_jeudan <- function(url, param = NA) {
            rooms = dk_num(str_match(txt, "(\\d+)\\s*(?:v&aelig;relser|værelser|vær\\.)")[, 2]),
            m2 = x$lease_type_square_meters %||% NA,
            rent = x$total_monthly_rent_incl %||% x$lease_type_monthly_rent %||% NA,
-           status = if (isTRUE(x$is_rented_out)) "Udlejet" else "Ledig")
+           status = if (isTRUE(x$is_rented_out)) "Udlejet" else "Ledig",
+           lat = x$latitude %||% NA, lon = x$longitude %||% NA)
   })
 }
 
@@ -94,7 +97,9 @@ scrape_danica <- function(url, param = NA) {
            rooms = x$RoomCount %||% NA, m2 = x$Area %||% NA,
            rent = x$MonthlyRent %||% NA, aconto = if (acon > 0) acon else NA,
            status = if (isTRUE(x$Reserved)) "Reserveret" else x$Status %||% NA,
-           available_from = x$AvailableDate %||% NA)
+           available_from = x$AvailableDate %||% NA,
+           lat = as.numeric(str_split(x$GpsCoordinates %||% "NA NA", " ")[[1]][1]),
+           lon = as.numeric(str_split(x$GpsCoordinates %||% "NA NA", " ")[[1]][2]))
   })
 }
 
@@ -180,6 +185,7 @@ findbolig_rows <- function(res) {
            rooms = x$rooms %||% NA, m2 = x$area %||% NA, rent = x$rent %||% NA,
            aconto = if (is.null(x$aconto) || x$aconto == 0) NA_real_ else x$aconto,
            status = if (!is.null(x$activeOfferId)) "Tilbudt" else "Ledig",
-           available_from = str_sub(x$availableFrom %||% NA, 1, 10))
+           available_from = str_sub(x$availableFrom %||% NA, 1, 10),
+           lat = x$latitude %||% NA, lon = x$longitude %||% NA)
   })
 }

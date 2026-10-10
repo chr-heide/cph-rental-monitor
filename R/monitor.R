@@ -6,6 +6,7 @@
 source("R/utils.R")
 for (f in list.files("R/sites", full.names = TRUE, pattern = "\\.R$")) source(f)
 source("R/notify.R")
+source("R/geocode.R")
 library(yaml)
 if (nzchar(Sys.getenv("MONITOR_MOCK"))) source(Sys.getenv("MONITOR_MOCK"))  # tests: serve saved pages
 
@@ -15,7 +16,7 @@ no_alerts <- dry_run || "--no-alerts" %in% args
 only_arg <- grep("^--only=", args, value = TRUE)
 only    <- if (length(only_arg)) str_split(str_remove(only_arg[1], "^--only="), ",")[[1]] else character(0)
 now     <- format(Sys.time(), "%Y-%m-%dT%H:%M:%S", tz = "Europe/Copenhagen")
-MAX_DETAIL <- 40   # detail pages fetched per run (all sites together)
+MAX_DETAIL <- 60   # detail pages fetched per run (all sites together)
 MAX_PUSH   <- 25   # phone alerts per run; the rest go out next run
 
 sites <- read_csv("config/sites.csv", show_col_types = FALSE, comment = "#",
@@ -50,10 +51,13 @@ for (c in c("source", "rooms", "m2", "rent", "aconto", "postcode", "available_fr
             "first_seen", "alerted", "detail_done", "gone_at"))
   if (!c %in% names(old)) old[[c]] <- NA_character_
 num_cols <- c("rooms", "m2", "rent", "aconto")
+for (c in c("lat", "lon")) if (!c %in% names(old)) old[[c]] <- NA_character_
+num_cols <- c(num_cols, "lat", "lon")
 prev <- old |> select(id, all_of(num_cols), postcode, available_from, first_seen, alerted, detail_done) |>
   mutate(across(all_of(num_cols), as.numeric)) |> rename_with(~ paste0(.x, "_old"), -id)
 cur <- cur |> left_join(prev, by = "id") |>
   mutate(rooms = coalesce(rooms, rooms_old), m2 = coalesce(m2, m2_old), rent = coalesce(rent, rent_old),
+         lat = coalesce(lat, lat_old), lon = coalesce(lon, lon_old),
          aconto = coalesce(aconto, aconto_old), postcode = coalesce(postcode, postcode_old),
          available_from = coalesce(available_from, available_from_old),
          first_seen = coalesce(first_seen_old, now), alerted = alerted_old, detail_done = detail_done_old) |>
@@ -70,19 +74,29 @@ in_ranges <- function(pc, specs) {
 }
 excl_re <- if (length(filt$exclude_keywords)) paste0("(", paste(filt$exclude_keywords, collapse = ")|("), ")") else "$^"
 unavailable_re <- "udlejet|reserveret|reserved|lukket|optaget|rented|solgt|venteliste"
+in_box <- function(pc, lat, lon) {   # TRUE unless the postcode has a box and the point is outside it
+  out <- rep(TRUE, length(pc))
+  for (p in names(filt$area_boxes)) {
+    b <- filt$area_boxes[[p]]; sel <- !is.na(pc) & pc == p
+    inside <- !is.na(lat) & lat >= b$lat[1] & lat <= b$lat[2] & lon >= b$lon[1] & lon <= b$lon[2]
+    out[sel] <- inside[sel] | (is.na(lat[sel]) & isTRUE(filt$alert_on_unknown))
+  }
+  out
+}
 score <- function(df) {
   unk <- isTRUE(filt$alert_on_unknown)
   df |> mutate(
     aconto_assumed = is.na(aconto) & !is.na(rent),
     rent_total     = rent + coalesce(aconto, 0),
     rent_check     = if_else(aconto_assumed, rent + filt$assumed_aconto_if_missing, rent_total),
-    ok_area  = in_ranges(postcode, filt$postcodes),
+    ok_area  = in_ranges(postcode, filt$postcodes) & in_box(postcode, lat, lon),
     ok_m2    = if_else(is.na(m2), unk, m2 >= filt$min_m2),
     ok_rooms = if_else(is.na(rooms), unk, rooms >= filt$min_rooms),
     ok_rent  = if_else(is.na(rent_check), unk, rent_check <= filt$max_rent_total),
     ok_avail = !str_detect(coalesce(str_to_lower(status), ""), unavailable_re),
     ok_kw    = !str_detect(str_to_lower(paste(title, address)), excl_re),
-    match    = ok_area & ok_m2 & ok_rooms & ok_rent & ok_avail & ok_kw)
+    ok_info  = !is.na(rent) | !is.na(m2),   # never alert on a listing we know nothing about
+    match    = ok_area & ok_m2 & ok_rooms & ok_rent & ok_avail & ok_kw & ok_info)
 }
 
 # ---- detail pages: fill aconto / m2 / postcode for listings that could match --------
@@ -103,6 +117,13 @@ for (i in seq_len(nrow(cand))) {
   }
   cur$detail_done[j] <- now
   Sys.sleep(0.5)
+}
+
+# ---- coordinates for possible matches in box-restricted postcodes (e.g. 2300 -> Amagerbro) --
+geo_need <- score(cur) |> filter(postcode %in% names(filt$area_boxes), is.na(lat), ok_m2, ok_rooms, ok_rent, ok_avail, ok_kw)
+if (nrow(geo_need)) {
+  geo <- geocode_missing(select(geo_need, id, address, postcode, lat, lon))
+  i <- match(geo$id, cur$id); cur$lat[i] <- geo$lat; cur$lon[i] <- geo$lon
 }
 
 scored <- score(cur)
@@ -131,7 +152,7 @@ if (!no_alerts) for (s in status$site[!status$ok]) {
 
 # ---- write the log --------------------------------------------------------------------
 cur_out <- scored |>
-  transmute(id, source, url, title, address, postcode, city, rooms, m2, rent, aconto, rent_total,
+  transmute(id, source, url, title, address, postcode, city, lat, lon, rooms, m2, rent, aconto, rent_total,
             aconto_assumed, status, available_from, match, first_seen, last_seen = now, alerted,
             detail_done, gone_at = NA_character_) |>
   mutate(across(everything(), as.character))

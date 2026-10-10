@@ -12,7 +12,14 @@ postcodes:
   - "2400"        # København NV
   - "2100"        # København Ø
   - "2150"        # Nordhavn (Østerbro, own postcode)
-  - "2300"        # København S - Amagerbro (covers all of 2300 incl. Islands Brygge/Ørestad; alert shows the street)
+  - "2300"        # København S - only the Amagerbro part, see area_boxes below
+# Postcodes that are only wanted inside a box (lat/lon). 2300 also covers Islands Brygge,
+# Ørestad and Sundby; this box is Amagerbro: Amager Fælledvej (west) to the coast (east),
+# Amagerbro Torv (north) to Øresundsvej (south). Widen it if you want more of Amager.
+area_boxes:
+  "2300":
+    lat: [55.6545, 55.6735]
+    lon: [12.5880, 12.6330]
 # Alert even when a field is unknown (e.g. no m2 on the list page) rather than miss it.
 alert_on_unknown: true
 # Listings whose title or address matches any of these (case-insensitive regex) never alert:
