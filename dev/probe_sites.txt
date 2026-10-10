@@ -1,17 +1,6 @@
-# round 3
-cej|https://udlejning.cej.dk/find-bolig
-capitalbolig|https://capitalbolig.dk/ledige-lejemaal/
-home_connector|https://homeconnector.dk/boliger-til-leje/
-housing_denmark|https://housingdenmark.com/
-lejemaegleren|https://lejemaegleren.dk/
-lejeboligmaegleren|https://lejeboligmaegleren.dk/
-bdk|https://www.bdk.dk/boligsoegende/
-kromagrafen|https://kromagrafen.dk/boligerne/
-taurus_detail|https://www.taurus.dk/boligudlejning/lejebolig?id=28407
-heimstaden_detail|https://www.heimstaden.dk/lejebolig/hoerparken-7-st-18-6000-kolding/
-kereby_detail|https://kereby.dk/bolig/strandboulevarden-61-5-th-2100-kobenhavn/
-hea_detail|https://hea.dk/lejebolig/charmerende-herskabslejlighed-paa-141-m%c2%b2-med-helt-nyt-koekken/
-gobolig_detail|https://gobolig.dk/midtjylland/aarhus-c/peter-sabroes-gade-14-8000-aarhus-c/peter-sabroes-gade-14b-kl
-express_detail|https://www.expresshousing.dk/lejligheder/holsteinsgade-66.aspx
-jeudan_detail|https://www.jeudan.dk/udlejning/bolig/koebenhavn-k/magstraede-6-2-sal-1204-koebenhavn-k-9350
-grenes|https://grenesrental.com/lejeboliger/
+# round 4
+housing_denmark_prop|https://housingdenmark.com/property/
+housing_denmark_leje|https://housingdenmark.com/lejeboliger/
+lejemaegleren|https://lejemaegleren.dk/til-leje/
+lejeboligmaegleren|https://lejeboligmaegleren.dk/til-leje/
+findbolig_res|https://findbolig.nu/da-dk/residence/42751
