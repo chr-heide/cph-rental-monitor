@@ -138,7 +138,10 @@ detail_express_housing <- function(url) detail_generic(url)
 # Splits the page into text lines and reads values by label, taking the number on the
 # same line after the label or else on the next line. Works across most landlord sites.
 page_lines <- function(page) {
-  for (n in html_elements(page, "script, style, noscript, svg")) xml2::xml_remove(n)
+  # drop scripts and page chrome: search forms, menus, header and footer (agency addresses live there)
+  for (n in html_elements(page, "script, style, noscript, svg, select, nav, [role=search], form[class*=search], form[id*=search], form[action*=search], [class*=prop_search], [class*=search-form]")) xml2::xml_remove(n)
+  chrome <- "//footer[not(ancestor::main) and not(ancestor::article)] | //header[not(ancestor::main) and not(ancestor::article) and not(ancestor::section)]"
+  for (n in xml2::xml_find_all(page, chrome)) xml2::xml_remove(n)
   t <- html_text2(html_element(page, "body"))
   l <- str_squish(str_split(str_replace_all(t, "[ ​]", " "), "\n")[[1]])
   l <- str_squish(str_remove_all(l, "\\((m2|m²|mdl\\.?|pr\\.? md\\.?)\\)"))

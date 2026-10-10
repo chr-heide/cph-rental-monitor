@@ -13,7 +13,7 @@ geocode_missing <- function(df, max_lookups = 25) {
   cache <- if (file.exists(geo_cache_path)) read_csv(geo_cache_path, col_types = "cdd") else
     tibble(key = character(), lat = double(), lon = double())
   need <- df |> filter(is.na(lat), !is.na(address)) |> mutate(key = geo_key(address, postcode)) |>
-    distinct(key, address, postcode) |> filter(!key %in% cache$key) |> head(max_lookups)
+    distinct(key, .keep_all = TRUE) |> filter(!key %in% cache$key) |> head(max_lookups)
   for (i in seq_len(nrow(need))) {
     street <- str_squish(str_remove(need$address[i], ",.*$"))
     q <- paste0(street, ", ", coalesce(need$postcode[i], ""), " København, Denmark")
@@ -30,7 +30,7 @@ geocode_missing <- function(df, max_lookups = 25) {
   }
   if (nrow(need)) { dir.create("data", showWarnings = FALSE); write_csv(cache, geo_cache_path, na = "") }
   df |> mutate(key = geo_key(address, postcode)) |>
-    left_join(rename(cache, lat_g = lat, lon_g = lon), by = "key") |>
+    left_join(rename(distinct(cache, key, .keep_all = TRUE), lat_g = lat, lon_g = lon), by = "key") |>
     mutate(lat = coalesce(lat, lat_g), lon = coalesce(lon, lon_g)) |>
     select(-key, -lat_g, -lon_g)
 }

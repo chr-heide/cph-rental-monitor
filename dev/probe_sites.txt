@@ -1,6 +1,3 @@
-# round 4
-housing_denmark_prop|https://housingdenmark.com/property/
-housing_denmark_leje|https://housingdenmark.com/lejeboliger/
-lejemaegleren|https://lejemaegleren.dk/til-leje/
-lejeboligmaegleren|https://lejeboligmaegleren.dk/til-leje/
-findbolig_res|https://findbolig.nu/da-dk/residence/42751
+# round 5
+hd_detail|https://housingdenmark.com/property/122-m2-apartment-kobenhavn-sv-2026003138/
+lm_detail|https://lejemaegleren.dk/property/charmerende-lejlighed-med-smukke-detaljer-og-attraktiv-beliggenhed-i-hjertet-af-koebenhavn-udlejes-i-4-maaneder-koebenhavn-k/

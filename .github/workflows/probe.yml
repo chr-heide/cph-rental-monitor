@@ -17,7 +17,7 @@ jobs:
       - run: pip install playwright && python -m playwright install --with-deps chromium
       - run: |
           rm -rf probe_out probe_out.tgz; for k in 0 1 2 3; do timeout 22m python dev/probe.py dev/probe_sites.txt $k/4 $(cat dev/probe_only.txt 2>/dev/null) > probe_log_$k.txt 2>&1 & done; wait
-          python dev/probe_browser_api.py > probe_api_log.txt 2>&1 || true
+          true
           mkdir -p probe_out; cat probe_log_*.txt probe_api_log.txt > probe_out/log.txt
         continue-on-error: true
       - name: Commit results

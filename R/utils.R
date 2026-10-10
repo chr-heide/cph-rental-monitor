@@ -22,14 +22,12 @@ get_json <- function(url, simplifyVector = TRUE, ...)
   resp_body_json(req_get(url, Accept = "application/json", ...), simplifyVector = simplifyVector)
 
 # "12.837 kr." -> 12837 ; "12.837,50" -> 12837.5 ; "79 m²" -> 79 ; "3½" -> 3.5
+# Takes the first number only; never glues separate numbers together ("1 2 3" -> 1).
 dk_num <- function(x) {
-  x <- as.character(x)
-  x <- str_replace_all(x, "½", ".5")
-  x <- str_extract(x, "\\d[\\d.\\s]*(,\\d+)?(\\.5)?")
-  x <- str_replace_all(x, "\\s", "")
-  half <- str_detect(x, "\\.5$") & !str_detect(x, "\\.\\d{3}")
-  x <- ifelse(half, x, str_replace_all(x, "\\.(?=\\d{3}(\\D|$))", ""))
-  suppressWarnings(as.numeric(str_replace(x, ",", ".")))
+  x <- str_replace_all(as.character(x), "\u00bd", ".5")
+  m <- str_extract(x, "\\d+\\.5(?![\\d.])|\\d{1,3}(?:\\.\\d{3})+(?:,\\d+)?|\\d+(?:,\\d+)?")
+  m <- ifelse(str_detect(m, "^\\d+\\.5$"), m, str_replace(str_remove_all(m, "\\."), ",", "."))
+  suppressWarnings(as.numeric(m))
 }
 postcode_of <- function(x) str_extract(as.character(x), "\\b[1-9]\\d{3}(?=\\s+[A-ZÆØÅa-zæøå])")
 
