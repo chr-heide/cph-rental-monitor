@@ -1,5 +1,5 @@
 heimstaden           ok   248  
-balder               ok  1000  
+balder               ok    61  
 kereby               ok    10  
 taurus               ok    37  
 norse                ok   106  
@@ -16,6 +16,13 @@ gobolig              ok     1
 home_connector       ok    19  
 express_housing      ok     9  
 grenes_rental        ok    31  
-housing_denmark      ERR    -  HTTP 404 Not Found.
+housing_denmark      ok    12  
 lejemaegleren        ok    32  
-1931 listings on 19/20 sites, 1931 new, 40 details fetched, 0 alerts sent, 53 matches queued
+Warning message:
+In left_join(mutate(df, key = geo_key(address, postcode)), rename(cache,  :
+  Detected an unexpected many-to-many relationship between `x` and `y`.
+ℹ Row 3 of `x` matches multiple rows in `y`.
+ℹ Row 3 of `y` matches multiple rows in `x`.
+ℹ If a many-to-many relationship is expected, set `relationship =
+  "many-to-many"` to silence this warning.
+1004 listings on 20/20 sites, 1004 new, 60 details fetched, 0 alerts sent, 25 matches queued
