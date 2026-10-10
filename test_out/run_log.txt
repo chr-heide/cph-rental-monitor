@@ -24,4 +24,4 @@ norhjem              ok    32
 edc                  ok    72  
 home                 ok   251  
 nybolig              ok   100  
-1787 listings on 26/26 sites, 1787 new, 60 details fetched, 0 alerts sent, 9 matches queued
+1787 listings on 26/26 sites, 1787 new, 60 details fetched, 0 alerts sent, 6 matches queued
