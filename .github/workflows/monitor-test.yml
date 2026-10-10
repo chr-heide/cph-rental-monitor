@@ -1,0 +1,28 @@
+name: monitor-test
+on:
+  push:
+    branches: [probe]
+    paths: ["R/**", "config/**", ".github/workflows/monitor-test.yml"]
+permissions:
+  contents: write
+concurrency: { group: monitor-test }
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env: { LANG: C.UTF-8, LC_ALL: C.UTF-8 }
+    steps:
+      - uses: actions/checkout@v4
+      - uses: r-lib/actions/setup-r@v2
+        with: { use-public-rspm: true }
+      - uses: r-lib/actions/setup-r-dependencies@v2
+        with:
+          packages: any::httr2, any::rvest, any::xml2, any::jsonlite, any::dplyr, any::stringr, any::purrr, any::readr, any::tibble, any::yaml
+      - run: Rscript R/monitor.R --no-alerts 2>&1 | tee run_log.txt
+      - name: Commit results
+        if: always()
+        run: |
+          git config user.name "probe-bot"; git config user.email "probe-bot@users.noreply.github.com"
+          mkdir -p test_out; cp -r data run_log.txt test_out/ 2>/dev/null || true
+          git add -f test_out; git commit -qm "test results $(date -u +%FT%TZ)" || exit 0
+          git pull --rebase -q origin probe && git push -q origin HEAD:probe

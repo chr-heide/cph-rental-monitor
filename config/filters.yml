@@ -1,0 +1,17 @@
+# What triggers a phone alert. Every listing is still logged to data/listings.csv.
+min_m2: 50
+min_rooms: 2
+max_rent_total: 16000      # monthly rent incl. aconto (heat/water/etc.)
+# When a site shows only base rent and the detail page has no aconto, assume this
+# much aconto when checking the max. Alert text marks the figure as estimated.
+assumed_aconto_if_missing: 1000
+postcodes:
+  - "1050-1473"   # København K
+  - "1500-1799"   # København V
+  - "2200"        # København N
+  - "2400"        # København NV
+  - "2100"        # København Ø
+  - "2150"        # Nordhavn (Østerbro, own postcode)
+  - "2300"        # København S - Amagerbro (covers all of 2300 incl. Islands Brygge/Ørestad; alert shows the street)
+# Alert even when a field is unknown (e.g. no m2 on the list page) rather than miss it.
+alert_on_unknown: true
