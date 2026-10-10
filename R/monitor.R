@@ -29,12 +29,14 @@ filt <- read_yaml("config/filters.yml")
 results <- list(); status <- list()
 for (i in seq_len(nrow(sites))) {
   s <- sites[i, ]; t0 <- Sys.time()
-  res <- tryCatch(as_listings(get(paste0("scrape_", s$parser))(s$url, s$param), s$name),
-                  error = function(e) e)
+  raw <- tryCatch(get(paste0("scrape_", s$parser))(s$url, s$param), error = function(e) e)
+  # parsers that only read the newest pages set attr(x, "partial"): listings missing from them aren't "gone"
+  partial <- !inherits(raw, "error") && isTRUE(attr(raw, "partial"))
+  res <- if (inherits(raw, "error")) raw else tryCatch(as_listings(raw, s$name), error = function(e) e)
   ok <- !inherits(res, "error") && nrow(res) > 0
   if (ok) results[[s$name]] <- res
   err <- if (inherits(res, "error")) conditionMessage(res) else if (!ok) "0 listings parsed" else NA_character_
-  status[[s$name]] <- tibble(site = s$name, run_at = now, ok = ok, n = if (ok) nrow(res) else 0L,
+  status[[s$name]] <- tibble(site = s$name, run_at = now, ok = ok, partial = partial, n = if (ok) nrow(res) else 0L,
                              error = str_trunc(str_squish(err), 200),
                              secs = round(as.numeric(difftime(Sys.time(), t0, units = "secs")), 1))
   message(sprintf("%-20s %s %4s  %s", s$name, if (ok) "ok " else "ERR", if (ok) nrow(res) else "-", coalesce(err, "")))
@@ -160,7 +162,7 @@ cur_out <- scored |>
 kept <- old |> filter(!id %in% cur_out$id) |> mutate(across(everything(), as.character))
 if (nrow(kept)) {
   # gone = its site was scraped fine this run but the listing wasn't there
-  gone_now <- kept$source %in% status$site[status$ok] & is.na(kept$gone_at)
+  gone_now <- kept$source %in% status$site[status$ok & !status$partial] & is.na(kept$gone_at)
   kept$gone_at[gone_now] <- now
 }
 merged <- bind_rows(cur_out, kept) |> arrange(desc(first_seen), source)

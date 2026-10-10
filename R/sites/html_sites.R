@@ -244,3 +244,71 @@ scrape_textblocks <- function(url, param = NA, page = get_html(url)) {
            status = if_else(str_detect(str_to_lower(nxt), "udlejet|reserveret"), "Udlejet", "Ledig"))
   })
 }
+
+# ---- EDC (estate agent; SSR cards, newest first). param = pages to read per run ----------
+scrape_edc <- function(url, param = NA) {
+  pages <- as.integer(coalesce(param, "4"))
+  out <- list()
+  for (k in seq_len(pages)) {
+    pg <- get_html(paste0(url, if (str_detect(url, "\\?")) "&" else "?", "side=", k))
+    cards <- html_elements(pg, "article")
+    href <- map_chr(cards, ~ att(.x, "a[href*='/leje/']", "href"))
+    keep <- !is.na(href)
+    if (!any(keep)) break
+    cards <- cards[keep]; href <- href[keep]
+    facts <- map_chr(cards, ~ paste(html_text2(html_elements(.x, "address ~ span, address + span")), collapse = " "))
+    out[[k]] <- tibble(id = str_extract(href, "\\d+/?$") |> str_remove("/"), url = url_absolute(href, url),
+                       address = map_chr(cards, txt, "address h2"),
+                       postcode = str_extract(map_chr(cards, txt, "address span"), "\\d{4}"),
+                       city = str_remove(map_chr(cards, txt, "address span"), "^\\d{4}\\s*"),
+                       rooms = dk_num(str_match(facts, "(\\d+)\\s*rum")[, 2]),
+                       m2 = dk_num(str_match(facts, "(\\d+)\\s*m²")[, 2]),
+                       rent = dk_num(str_match(facts, "([\\d.]+)\\s*kr")[, 2]),
+                       title = map_chr(cards, txt, "a[href*='/leje/'].text-xs"), status = "Ledig")
+    Sys.sleep(0.7)
+  }
+  structure(bind_rows(out), partial = TRUE)
+}
+detail_edc <- function(url) detail_generic(url)
+
+# ---- home (estate agent; SSR cards, all pages for Copenhagen) ---------------------------
+scrape_home <- function(url, param = NA) {
+  pages <- as.integer(coalesce(param, "30")); out <- list()
+  for (k in seq_len(pages)) {
+    pg <- get_html(paste0(url, "?page=", k))
+    det <- html_elements(pg, ".property-card-details")
+    if (!length(det)) break
+    card <- map(det, ~ xml2::xml_parent(xml2::xml_parent(.x)))
+    href <- map_chr(card, ~ { a <- html_elements(.x, "a[href*='/til-leje/']") |> html_attr("href"); if (length(a)) a[1] else NA_character_ })
+    if (all(is.na(href))) href <- map_chr(det, ~ { a <- html_elements(xml2::xml_parent(xml2::xml_parent(xml2::xml_parent(.x))), "a[href]") |> html_attr("href"); a <- a[!str_detect(a, "^#|javascript")]; if (length(a)) a[1] else NA_character_ })
+    bits <- map(det, ~ html_elements(.x, ".property-card-details__description p") |> html_text2() |> str_squish())
+    pick <- function(b, re) { v <- str_subset(b, re); if (length(v)) v[1] else NA_character_ }
+    addr <- map_chr(det, txt, ".property-card-details__address")
+    out[[k]] <- tibble(id = coalesce(href, addr), url = url_absolute(coalesce(href, url), url), address = addr,
+                       title = map_chr(bits, ~ .x[1] %||% NA_character_),
+                       m2 = dk_num(map_chr(bits, pick, "m2|m²")), rent = dk_num(map_chr(bits, pick, "kr")),
+                       status = "Ledig")
+    Sys.sleep(0.7)
+  }
+  bind_rows(out)
+}
+detail_home <- function(url) detail_generic(url)
+
+# ---- VIBO (almen; "ledige boliger" page is free text per flat) ---------------------------
+scrape_vibo <- function(url, param = NA, page = get_html(url)) {
+  L <- page_lines(page)
+  i <- which(str_detect(L, "(?i)bolig på .+\\b\\d{4}\\s+[A-ZÆØÅ]") & nchar(L) < 160)
+  i <- i[!duplicated(L[i])]
+  map_dfr(i, function(k) {
+    blk <- paste(L[k:min(length(L), k + 8)], collapse = " ¦ ")
+    nxt <- str_split(paste(L[(k + 1):min(length(L), k + 8)], collapse = " ¦ "), "(?i)bolig på ")[[1]][1]
+    tibble(id = L[k], url = url, title = L[k],
+           address = str_squish(str_match(L[k], "(?i)bolig på (.+?\\b\\d{4}\\s+[A-ZÆØÅ][a-zæøå]+(?:\\s[A-ZÆØÅ]{1,2}\\b)?)")[, 2]),
+           rooms = dk_num(str_match(L[k], "(\\d)[ -]*(værelses|rums)")[, 2]),
+           m2 = dk_num(str_match(nxt, "(\\d+[,.]?\\d*)\\s*(m²|m2|kvm)")[, 2]),
+           rent = dk_num(str_match(nxt, "(?i)husleje[^0-9]{0,15}([\\d.,]+)")[, 2]),
+           aconto = { a <- dk_num(str_match_all(nxt, "(?i)aconto[^0-9]{0,20}([\\d.,]+)")[[1]][, 2]); if (length(a)) sum(a) else NA_real_ },
+           available_from = str_match(L[k], "(?i)ledig pr\\.?\\s*(.+)$")[, 2],
+           status = "Ledig")
+  }) |> arrange(is.na(rent)) |> distinct(address, .keep_all = TRUE) |> mutate(id = address)
+}

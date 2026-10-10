@@ -19,3 +19,9 @@ express_housing,TRUE,links,https://www.expresshousing.dk/lejligheder.aspx,/lejli
 grenes_rental,TRUE,links,https://grenesrental.com/lejeboliger/,/bolig/[^/]+/?$|3,Letting agent (furnished)
 housing_denmark,TRUE,links,https://housingdenmark.com/listing/kobenhavn/,"/property/[^/]+-\d{8,}/?$|5",Letting agent
 lejemaegleren,TRUE,links,https://lejemaegleren.dk/til-leje/,/property/[^/]+/?$|5,Letting agent (mostly furnished)
+dab_lejerbo,TRUE,dab_lejerbo,https://dab-lejerbo.dk/,,Almen (direct letting)
+vibo,TRUE,vibo,https://vibo.dk/boligsoegende/ledige-boliger/,,Almen (direct letting)
+norhjem,TRUE,norhjem,https://norhjem.dk/for-boligsoegende/ledige-boliger/,,Big private
+edc,TRUE,edc,https://www.edc.dk/lejebolig/koebenhavn/,4,Estate agent
+home,TRUE,home,https://home.dk/til-leje/lejlighed/region-hovedstaden/koebenhavn-kommune/,30,Estate agent
+nybolig,TRUE,nybolig,https://www.nybolig.dk/soegeresultat-boliger?isRental=true,1000-2450,Estate agent
