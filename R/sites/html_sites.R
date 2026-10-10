@@ -205,7 +205,8 @@ scrape_links <- function(url, param = NA, page = get_html(url)) {
   pr <- str_split(param, "\\|")[[1]]; pat <- pr[1]; pages <- if (length(pr) > 1) as.integer(pr[2]) else 1
   grab <- function(pg, base) {
     a <- html_elements(pg, "a[href]")
-    tibble(href = url_absolute(html_attr(a, "href"), base), text = str_squish(html_text2(a))) |>
+    tibble(href = url_absolute(html_attr(a, "href"), base),
+           text = str_squish(str_remove_all(html_text2(a), "\\.[A-Za-z0-9_-]+\\{[^}]*\\}"))) |>   # drop inline-SVG CSS
       filter(str_detect(href, pat))
   }
   out <- grab(page, url)
