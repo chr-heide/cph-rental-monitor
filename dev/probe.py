@@ -9,7 +9,10 @@ UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chr
 
 sites = [l.split("|", 1) for l in pathlib.Path(sys.argv[1]).read_text().splitlines()
          if l.strip() and not l.startswith("#")]
-only = sys.argv[2:]  # optional subset of names
+shard = [a for a in sys.argv[2:] if "/" in a]
+only = [a for a in sys.argv[2:] if "/" not in a]  # optional subset of names
+if shard:
+    k, n = map(int, shard[0].split("/")); sites = sites[k::n]
 
 def robots(url):
     p = urllib.parse.urlparse(url)
@@ -34,7 +37,7 @@ def visit(page, url, d, tag):
         resp = page.goto(url, wait_until="domcontentloaded", timeout=45000)
         status = resp.status if resp else None
         try:
-            page.wait_for_load_state("networkidle", timeout=15000)
+            page.wait_for_load_state("networkidle", timeout=8000)
         except Exception:
             pass
         # dismiss cookie banners best-effort, scroll to trigger lazy loads
@@ -80,14 +83,15 @@ with sync_playwright() as p:
         # follow up to 3 listing-looking links on same site one level deep
         host = urllib.parse.urlparse(final).netloc.replace("www.", "")
         cand = [u for u, t in links if re.search(r"ledig|find-?bolig|lejeboliger|ledige|bolig/?$|boliger/?$", u, re.I)
-                and u.rstrip("/") != final.rstrip("/")][:3]
+                and u.rstrip("/") != final.rstrip("/")][:2]
         for i, u in enumerate(cand, 1):
             st2, f2, n2, nj2, l2, e2 = visit(page, u, d, f"p{i}")
             summary.append([f"{name}#{i}", u, f2, st2, n2, nj2, len(l2), e2])
         page.close()
         print(name, st, final, n, nj, len(links), err, flush=True)
+        (d / "done").write_text("1")
     b.close()
-with open(OUT / "summary.tsv", "w") as f:
+with open(OUT / f"summary_{shard[0].replace('/','of') if shard else 'all'}.tsv", "w") as f:
     f.write("name\turl\tfinal\tstatus\thtml_bytes\tn_json\tn_links\terr\n")
     for r in summary:
         f.write("\t".join(str(x) for x in r) + "\n")
