@@ -265,7 +265,7 @@ scrape_edc <- function(url, param = NA) {
                        m2 = dk_num(str_match(facts, "(\\d+)\\s*m²")[, 2]),
                        rent = dk_num(str_match(facts, "([\\d.]+)\\s*kr")[, 2]),
                        title = map_chr(cards, txt, "a[href*='/leje/'].text-xs"), status = "Ledig")
-    Sys.sleep(0.7)
+    Sys.sleep(2)
   }
   structure(bind_rows(out), partial = TRUE)
 }

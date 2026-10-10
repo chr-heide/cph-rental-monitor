@@ -123,7 +123,9 @@ scrape_dab_lejerbo <- function(url, param = NA) {
                selectedMainRegion = "", selectedRegion = "", fallbackDescriptionToDepartmentDescription = FALSE,
                pageNumber = 1, pageSize = 1000, shuffleSeed = "a", sortBy = "moveInDate")
   d <- request("https://dab-lejerbo.dk/api/memberportal/availabletenancies/getAllAvailableTenancies") |>
-    req_user_agent(UA) |> req_body_json(body) |> req_timeout(60) |> req_perform() |>
+    req_user_agent(UA) |> req_body_json(body) |> req_timeout(60) |>
+    req_headers(`module-enum` = "3505", Accept = "application/json, text/plain, */*", Referer = "https://dab-lejerbo.dk/") |>
+    req_perform() |>
     resp_body_json(simplifyVector = FALSE)
   map_dfr(d$data$data$availableTenancies, function(t) tibble(
     id = paste(t$companyId, t$departmentId, t$tenancyId, sep = "-"),
@@ -190,14 +192,12 @@ findbolig_rows <- function(res) {
   })
 }
 
-# ---- Nybolig (estate agent; rental cases via its search API) -----------------------------
-# param = postal-code ranges to ask for, e.g. "1000-2450" (keeps the request to Copenhagen)
+# ---- Nybolig (estate agent; rental cases via its search API; ~100 rentals nationwide) -------
 scrape_nybolig <- function(url, param = NA) {
-  rng <- as.integer(str_split(coalesce(param, "1000-2450"), "-")[[1]])
   out <- list(); token <- ""
   for (k in 1:15) {
     body <- list(siteName = "nybolig", isRental = TRUE, isSold = FALSE, isSaleInProgress = FALSE,
-                 postalCodeRanges = list(list(from = rng[1], to = rng[2])),
+                 postalCodeRanges = list(),
                  municipalityCodes = list(), municipalityNames = list(), cityNames = list(),
                  supplementaryCityNames = list(), postalCodes = list(), streetNames = list(),
                  streetNumbers = list(), propertyCategories = list(), businessPropertyCategories = list(),
