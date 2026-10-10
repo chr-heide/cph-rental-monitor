@@ -131,7 +131,9 @@ if (nrow(geo_need)) {
 scored <- score(cur)
 
 # ---- alerts -------------------------------------------------------------------------
-to_alert <- scored |> filter(match, is.na(alerted)) |> arrange(rent_check)
+# wait for the detail page (aconto, rooms, exact postcode) when the site has one and it hasn't been read yet
+detail_pending <- map_lgl(scored$source, has_detail) & is.na(scored$detail_done)
+to_alert <- scored |> filter(match, is.na(alerted), !detail_pending) |> arrange(rent_check)
 pushed <- head(to_alert, MAX_PUSH)
 if (!no_alerts && nrow(pushed)) {
   delivered <- map_lgl(seq_len(nrow(pushed)), ~ isTRUE(notify_listing(pushed[.x, ])))
