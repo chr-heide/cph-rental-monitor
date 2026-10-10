@@ -2,7 +2,7 @@
 
 Watches Copenhagen landlords' own websites for vacant rental flats and pushes new matches to your phone via [ntfy](https://ntfy.sh). Runs on GitHub Actions every 20 minutes; no aggregators (Boligportal etc.).
 
-**Phone:** in the ntfy app, subscribe to your topic (server ntfy.sh). The topic is read from the `NTFY_TOPIC` repository secret (Settings → Secrets and variables → Actions); `config/ntfy_topic.txt` is only a fallback. Anyone who knows the topic can read or post to it, so keep it in the secret.
+**Phone:** in the ntfy app, subscribe to your topic (server ntfy.sh). The topic is read from the `NTFY_TOPIC` repository secret (Settings → Secrets and variables → Actions). Anyone who knows the topic can read or post to it, so keep it in the secret.
 
 **What counts as a match:** `config/filters.yml` — size, rooms, max rent incl. aconto, postcodes (2300 is limited to an Amagerbro box), and keywords that never alert (rooms in shared flats, student/youth/senior housing). Edit it on GitHub; the next run uses it.
 
