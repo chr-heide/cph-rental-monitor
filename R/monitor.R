@@ -7,11 +7,13 @@ source("R/utils.R")
 for (f in list.files("R/sites", full.names = TRUE, pattern = "\\.R$")) source(f)
 source("R/notify.R")
 library(yaml)
+if (nzchar(Sys.getenv("MONITOR_MOCK"))) source(Sys.getenv("MONITOR_MOCK"))  # tests: serve saved pages
 
 args    <- commandArgs(trailingOnly = TRUE)
 dry_run <- "--dry-run" %in% args
 no_alerts <- dry_run || "--no-alerts" %in% args
-only    <- str_split(str_remove(grep("^--only=", args, value = TRUE), "^--only="), ",")[[1]]
+only_arg <- grep("^--only=", args, value = TRUE)
+only    <- if (length(only_arg)) str_split(str_remove(only_arg[1], "^--only="), ",")[[1]] else character(0)
 now     <- format(Sys.time(), "%Y-%m-%dT%H:%M:%S", tz = "Europe/Copenhagen")
 MAX_DETAIL <- 40   # detail pages fetched per run (all sites together)
 MAX_PUSH   <- 25   # phone alerts per run; the rest go out next run
@@ -66,6 +68,7 @@ in_ranges <- function(pc, specs) {
   }
   hit
 }
+excl_re <- if (length(filt$exclude_keywords)) paste0("(", paste(filt$exclude_keywords, collapse = ")|("), ")") else "$^"
 unavailable_re <- "udlejet|reserveret|reserved|lukket|optaget|rented|solgt|venteliste"
 score <- function(df) {
   unk <- isTRUE(filt$alert_on_unknown)
@@ -78,7 +81,8 @@ score <- function(df) {
     ok_rooms = if_else(is.na(rooms), unk, rooms >= filt$min_rooms),
     ok_rent  = if_else(is.na(rent_check), unk, rent_check <= filt$max_rent_total),
     ok_avail = !str_detect(coalesce(str_to_lower(status), ""), unavailable_re),
-    match    = ok_area & ok_m2 & ok_rooms & ok_rent & ok_avail)
+    ok_kw    = !str_detect(str_to_lower(paste(title, address)), excl_re),
+    match    = ok_area & ok_m2 & ok_rooms & ok_rent & ok_avail & ok_kw)
 }
 
 # ---- detail pages: fill aconto / m2 / postcode for listings that could match --------

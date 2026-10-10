@@ -52,12 +52,12 @@ city_postcode <- function(city) {
     TRUE ~ NA_character_)
 }
 
-as_listings <- function(df, source) {
+as_listings <- function(df, site) {
   df <- as_tibble(df)
   for (c in setdiff(LISTING_COLS, names(df))) df[[c]] <- NA
   df |>
-    mutate(source = source,
-           id = paste0(source, ":", id),
+    mutate(source = site,
+           id = paste0(site, ":", id),
            postcode = coalesce(as.character(postcode), postcode_of(address), postcode_of(title),
                                city_postcode(city), city_postcode(address)),
            across(c(rooms, m2, rent, aconto), ~ suppressWarnings(as.numeric(.x))),

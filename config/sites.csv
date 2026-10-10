@@ -14,8 +14,8 @@ ejendomskontoret,TRUE,ejendomskontoret,https://www.ejendomskontoret.dk/propertie
 kanalhuset,TRUE,kanalhuset,https://kanalhusetcph.dk/boligerne/,,Smaller private
 capital_investment,TRUE,textblocks,https://capitalbolig.dk/ledige-lejemaal/,,Smaller private
 gobolig,TRUE,gobolig,https://gobolig.dk/soeg-lejebolig/,,Smaller private
-home_connector,TRUE,links,https://homeconnector.dk/boliger-til-leje/,/boliger-til-leje/[0-9a-f]{12,}/?$,Letting agent
+home_connector,TRUE,links,https://homeconnector.dk/boliger-til-leje/,"/boliger-til-leje/[0-9a-f]{12,}/?$",Letting agent
 express_housing,TRUE,links,https://www.expresshousing.dk/lejligheder.aspx,/lejligheder/[^/]+\.aspx$,Letting agent
 grenes_rental,TRUE,links,https://grenesrental.com/lejeboliger/,/bolig/[^/]+/?$|3,Letting agent (furnished)
-housing_denmark,TRUE,links,https://housingdenmark.com/en/lejeboliger/,/property/[^/]+-\d{8,}/?$|5,Letting agent
+housing_denmark,TRUE,links,https://housingdenmark.com/en/lejeboliger/,"/property/[^/]+-\d{8,}/?$|5",Letting agent
 lejemaegleren,TRUE,links,https://lejemaegleren.dk/til-leje/,/property/[^/]+/?$|5,Letting agent (mostly furnished)

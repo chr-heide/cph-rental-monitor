@@ -15,7 +15,7 @@ ntfy_post <- function(body) {
 fmt_kr <- function(x) ifelse(is.na(x), "?", format(round(x), big.mark = ".", decimal.mark = ","))
 
 notify_listing <- function(r) {
-  rent_txt <- if (isTRUE(r$aconto_assumed))
+  rent_txt <- if (is.na(r$rent)) "leje ikke oplyst" else if (isTRUE(r$aconto_assumed))
     paste0(fmt_kr(r$rent), " kr + aconto ukendt") else
     paste0(fmt_kr(r$rent_total), " kr inkl. aconto")
   ntfy_post(list(

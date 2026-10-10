@@ -15,3 +15,11 @@ postcodes:
   - "2300"        # København S - Amagerbro (covers all of 2300 incl. Islands Brygge/Ørestad; alert shows the street)
 # Alert even when a field is unknown (e.g. no m2 on the list page) rather than miss it.
 alert_on_unknown: true
+# Listings whose title or address matches any of these (case-insensitive regex) never alert:
+# room rentals in shared flats, and housing that requires student/youth/senior status.
+exclude_keywords:
+  - "værelse \\d"
+  - "værelse i "
+  - "delebolig|bofællesskab"
+  - "ungdomsbolig|studiebolig|kollegie"
+  - "seniorbolig|ældrebolig|\\b(50|55|60|65)\\+"
