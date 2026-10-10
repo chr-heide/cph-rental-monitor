@@ -24,6 +24,8 @@ jobs:
         with:
           packages: any::httr2, any::rvest, any::jsonlite, any::dplyr, any::stringr, any::purrr, any::readr, any::tibble, any::yaml, any::xml2
       - name: Scrape and alert
+        env:
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
         run: Rscript R/monitor.R
       - name: Save log
         run: |

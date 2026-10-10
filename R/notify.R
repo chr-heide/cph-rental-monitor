@@ -1,8 +1,9 @@
-# Push notifications via ntfy (https://ntfy.sh). Topic is in config/ntfy_topic.txt
-# (repo is private; anyone who knows the topic can subscribe, so keep it random).
-# NTFY_TOPIC env var overrides it, e.g. for testing.
+# Push notifications via ntfy (https://ntfy.sh). Anyone who knows the topic can read or post
+# to it, so it should come from the NTFY_TOPIC repository secret; config/ntfy_topic.txt is
+# only a fallback for when no secret is set.
 ntfy_post <- function(body) {
-  topic <- Sys.getenv("NTFY_TOPIC", if (file.exists("config/ntfy_topic.txt")) str_trim(readLines("config/ntfy_topic.txt", 1)) else "")
+  topic <- Sys.getenv("NTFY_TOPIC")
+  if (!nzchar(topic) && file.exists("config/ntfy_topic.txt")) topic <- str_trim(readLines("config/ntfy_topic.txt", 1))
   if (!nzchar(topic)) { message("NTFY_TOPIC not set; would send: ", body$title); return(FALSE) }
   body$topic <- topic
   # TRUE only when ntfy accepted the message (returns its id); failed pushes are retried next run
