@@ -23,7 +23,7 @@ jobs:
         run: |
           echo "::notice::files=$(find probe_out -type f | wc -l) log=$(tail -c 600 probe_out/log.txt | tr '\n' ' ')"
           git config user.name "probe-bot"; git config user.email "probe-bot@users.noreply.github.com"
-          git add -f probe_out
+          tar czf probe_out.tgz probe_out && git add -f probe_out.tgz
           git commit -qm "probe results $(date -u +%FT%TZ)" || exit 0
           for i in 1 2 3; do
             git pull --rebase -q origin probe 2>err.txt && git push -q origin HEAD:probe 2>>err.txt && exit 0
