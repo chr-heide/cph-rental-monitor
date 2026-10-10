@@ -1,0 +1,35 @@
+# What triggers a phone alert. Every listing is still logged to data/listings.csv.
+min_m2: 50
+min_rooms: 2
+max_rent_total: 16000      # monthly rent incl. aconto (heat/water/etc.)
+# When a site shows only base rent and the detail page has no aconto, assume this
+# much aconto when checking the max. Alert text marks the figure as estimated.
+assumed_aconto_if_missing: 1000
+postcodes:
+  - "1050-1473"   # København K
+  - "1500-1799"   # København V
+  - "2200"        # København N
+  - "2400"        # København NV
+  - "2100"        # København Ø
+  - "2150"        # Nordhavn (Østerbro, own postcode)
+  - "2300"        # København S - only the Amagerbro part, see area_boxes below
+# Postcodes that are only wanted inside a box (lat/lon). 2300 also covers Islands Brygge,
+# Ørestad and Sundby; this box is Amagerbro: east of Amager Fælledvej (so not Islands Brygge
+# or the university area), north of roughly Lergravsparken, up to Christianshavn's moat.
+# Widen it if you want more of Amager.
+area_boxes:
+  "2300":
+    lat: [55.6545, 55.6735]
+    lon: [12.5965, 12.6400]
+# Alert even when a field is unknown (e.g. no m2 on the list page) rather than miss it.
+alert_on_unknown: true
+# Listings whose title or address matches any of these (case-insensitive regex) never alert:
+# room rentals in shared flats, and housing that requires student/youth/senior status.
+exclude_keywords:
+  - "værelse \\d"
+  - "værelse i "
+  - "delebolig|bofællesskab"
+  - "ungdomsbolig|studiebolig|kollegie"
+  - "seniorbolig|ældrebolig|\\b(50|55|60|65)\\+"
+  # Uncomment to also skip time-limited / short-term lets (common with furnished flats):
+  # - "tidsbegrænset|udlejes i \\d+ måneder|korttidsleje"

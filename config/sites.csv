@@ -1,0 +1,21 @@
+name,enabled,parser,url,param,category
+heimstaden,TRUE,heimstaden,https://www.heimstaden.dk/ledige-lejeboliger/,,Big private
+balder,TRUE,balder,https://www.balder.dk/lejeboliger,,Big private
+kereby,TRUE,kereby,https://kereby.dk/bolig/,,Big private
+taurus,TRUE,taurus,https://www.taurus.dk/boligudlejning/ledige-lejemal/,,Big private
+norse,TRUE,jorato,https://norsepm.dk/boliger,zZC85PlJEgkTIKstMOS3H0oRgOoUjsMF,Big private
+jeudan,TRUE,jeudan,https://www.jeudan.dk/udlejning/bolig,,Big private
+danica,TRUE,danica,https://bolig.danicaejendomme.dk/hjem/findbolig,,Pension fund
+juli_living,TRUE,juli,https://juliliving.dk/find-lejebolig/,,Big private
+findbolig,TRUE,findbolig,https://findbolig.nu/da-dk/find,,Administrator (DEAS: PFA/Velliv/ATP/PensionDanmark)
+kab,TRUE,kab,https://www.kab-bolig.dk/ledige-boliger,,Almen (direct letting)
+hea,TRUE,hea,https://hea.dk/lejebolig/,,Smaller private
+ejendomskontoret,TRUE,ejendomskontoret,https://www.ejendomskontoret.dk/properties,,Smaller private
+kanalhuset,TRUE,kanalhuset,https://kanalhusetcph.dk/boligerne/,,Smaller private
+capital_investment,TRUE,textblocks,https://capitalbolig.dk/ledige-lejemaal/,,Smaller private
+gobolig,TRUE,gobolig,https://gobolig.dk/soeg-lejebolig/,,Smaller private
+home_connector,TRUE,links,https://homeconnector.dk/boliger-til-leje/,"/boliger-til-leje/[0-9a-f]{12,}/?$",Letting agent
+express_housing,TRUE,links,https://www.expresshousing.dk/lejligheder.aspx,/lejligheder/[^/]+\.aspx$,Letting agent
+grenes_rental,TRUE,links,https://grenesrental.com/lejeboliger/,/bolig/[^/]+/?$|3,Letting agent (furnished)
+housing_denmark,TRUE,links,https://housingdenmark.com/listing/kobenhavn/,"/property/[^/]+-\d{8,}/?$|5",Letting agent
+lejemaegleren,TRUE,links,https://lejemaegleren.dk/til-leje/,/property/[^/]+/?$|5,Letting agent (mostly furnished)
