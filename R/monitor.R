@@ -158,7 +158,7 @@ if (!no_alerts) for (s in status$site[!status$ok]) {
 # ---- write the log --------------------------------------------------------------------
 cur_out <- scored |>
   transmute(id, source, url, title, address, postcode, city, lat, lon, rooms, m2, rent, aconto, rent_total,
-            aconto_assumed, status, available_from, match, first_seen, last_seen = now, alerted,
+            aconto_assumed, status, available_from, match, first_seen, alerted,
             detail_done, gone_at = NA_character_) |>
   mutate(across(everything(), as.character))
 kept <- old |> filter(!id %in% cur_out$id) |> mutate(across(everything(), as.character))
@@ -167,7 +167,7 @@ if (nrow(kept)) {
   gone_now <- kept$source %in% status$site[status$ok & !status$partial] & is.na(kept$gone_at)
   kept$gone_at[gone_now] <- now
 }
-merged <- bind_rows(cur_out, kept) |> arrange(desc(first_seen), source)
+merged <- bind_rows(cur_out, kept) |> select(-any_of("last_seen")) |> arrange(desc(first_seen), source, id)
 
 if (!dry_run) {
   dir.create("data", showWarnings = FALSE)
