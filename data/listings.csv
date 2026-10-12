@@ -1,4 +1,5 @@
 id,source,url,title,address,postcode,city,lat,lon,rooms,m2,rent,aconto,rent_total,aconto_assumed,status,available_from,match,first_seen,alerted,detail_done,gone_at
+heimstaden:9-611-17,heimstaden,https://www.heimstaden.dk/lejebolig/mandelhaven-205-7080-boerkop/,,Mandelhaven 205 7080 Børkop,7080,,,,4,112.8,11199,,11199,TRUE,Ledig,11.199 kr./md.,FALSE,2026-10-12T23:02:06,,,
 heimstaden:9-650-84,heimstaden,https://www.heimstaden.dk/lejebolig/arne-poulsens-vej-24-1-th-7100-vejle/,,"Arne Poulsens Vej 24, 1. th. 7100 Vejle",7100,,,,3,90,8195,,8195,TRUE,Ledig,Ledig nu,FALSE,2026-10-12T20:32:05,,,
 "ejendomskontoret:Madvigs Alle 2 8,2,th, 1829 Frederiksberg",ejendomskontoret,https://www.ejendomskontoret.dk/properties,,"Madvigs Alle 2 8,2,th, 1829 Frederiksberg",1829,,,,5,163,26900,,26900,TRUE,Ledig,,FALSE,2026-10-12T18:41:35,,,
 "ejendomskontoret:Madvigs All 2 8,2,th, 1829 Frederiksberg",ejendomskontoret,https://www.ejendomskontoret.dk/properties,,"Madvigs All 2 8,2,th, 1829 Frederiksberg",1829,,,,5,163,26900,,26900,TRUE,Ledig,,FALSE,2026-10-12T18:02:14,,,2026-10-12T18:41:35
