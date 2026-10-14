@@ -300,6 +300,11 @@ scrape_vibo <- function(url, param = NA, page = get_html(url)) {
   L <- page_lines(page)
   i <- which(str_detect(L, "(?i)bolig på .+\\b\\d{4}\\s+[A-ZÆØÅ]") & nchar(L) < 160)
   i <- i[!duplicated(L[i])]
+  if (!length(i)) {
+    # No vacancies right now. Only accept that if the page really is VIBO's vacancy page.
+    if (!any(str_detect(L, "(?i)ledige boliger"))) stop("VIBO page did not load as expected")
+    return(structure(tibble(id = character(), url = character(), address = character()), empty_ok = TRUE))
+  }
   map_dfr(i, function(k) {
     blk <- paste(L[k:min(length(L), k + 8)], collapse = " ¦ ")
     nxt <- str_split(paste(L[(k + 1):min(length(L), k + 8)], collapse = " ¦ "), "(?i)bolig på ")[[1]][1]

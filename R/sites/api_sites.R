@@ -22,6 +22,15 @@ find_bundle_key <- function(page_url, pattern, near = NULL) {
   stop("could not find key in bundles of ", page_url)
 }
 
+# Map API items to rows. A missing list means the API changed (error); an empty list is a
+# genuine "no vacancies right now", which the monitor accepts (attr empty_ok).
+api_rows <- function(items, f) {
+  if (is.null(items)) stop("unexpected API response: listing array missing")
+  out <- map_dfr(items, f)
+  if (!length(items) || !nrow(out)) attr(out, "empty_ok") <- TRUE
+  out
+}
+
 # ---- Jorato (api.jorato.com) — used by e.g. Norse Property Management ----------
 # param = landlord's public Jorato key (fallback: discovered from the site's JS bundle)
 scrape_jorato <- function(url, param = NA) {
@@ -30,7 +39,7 @@ scrape_jorato <- function(url, param = NA) {
   d <- tryCatch(fetch(key), error = function(e) {
     key <<- find_bundle_key(url, "[A-Za-z0-9]{32}", near = "jorato"); fetch(key) })
   site <- str_extract(url, "^https?://[^/]+")
-  map_dfr(d$items, function(it) {
+  api_rows(d$items, function(it) {
     if (!identical(it$classification, "Residential")) return(NULL)
     exp <- sum(map_dbl(it$expenses %||% list(), ~ .x$amount$value %||% 0))
     street <- it$address$street %||% NA
@@ -53,7 +62,7 @@ scrape_balder <- function(url, param = NA) {
     req_timeout(40) |> req_perform() |> resp_body_json(simplifyVector = FALSE)
   key <- if (!is.na(param) && nzchar(param)) param else find_bundle_key(url, "\\b[0-9a-f]{64}\\b", near = "multi-search|meili|api\\.balder")
   d <- tryCatch(call(key), error = function(e) call(find_bundle_key(url, "\\b[0-9a-f]{64}\\b")))
-  map_dfr(d$results[[1]]$hits, function(h) tibble(
+  api_rows(d$results[[1]]$hits, function(h) tibble(
     id = h$id, url = paste0("https://www.balder.dk/lejeboliger/", h$slug %||% ""),
     title = h$headline_da %||% h$headline %||% NA, address = h$street %||% NA,
     postcode = as.character(h$postal_code %||% NA), city = h$city %||% NA,
@@ -66,7 +75,7 @@ scrape_balder <- function(url, param = NA) {
 # ---- Jeudan (nova-api.jeudan.dk) --------------------------------------------------
 scrape_jeudan <- function(url, param = NA) {
   d <- get_json("https://nova-api.jeudan.dk/api/leases/search?lease_type=bolig&per_page=200", simplifyVector = FALSE)
-  map_dfr(d$data, function(x) {
+  api_rows(d$data, function(x) {
     txt <- paste(x$heading, x$summary, x$description)
     tibble(id = as.character(x$id), url = paste0("https://www.jeudan.dk", x$statamic_url %||% ""),
            title = x$heading %||% NA, address = x$title %||% NA,
@@ -87,7 +96,7 @@ scrape_danica <- function(url, param = NA) {
                pStatus = "Til leje", pType = "", pArea = "")
   d <- request("https://bolig.danicaejendomme.dk/api/admin/Property/list/") |> req_user_agent(UA) |>
     req_body_json(body) |> req_timeout(40) |> req_perform() |> resp_body_json(simplifyVector = FALSE)
-  map_dfr(d$Data$List, function(x) {
+  api_rows(d$Data$List, function(x) {
     if (isTRUE(x$IsWaitingList) || isTRUE(x$IsBusinessProperty)) return(NULL)
     acon <- sum(c(x$AccountHeat, x$AccountWater) %||% 0, na.rm = TRUE)
     tibble(id = x$CaseNo, url = x$PresentationUrl %||% paste0("https://bolig.danicaejendomme.dk/hjem/findbolig?search=", x$CaseNo),
@@ -110,7 +119,7 @@ scrape_juli <- function(url, param = NA) {
   if (is.na(eid)) stop("no data-e-id on page")
   d <- get_json(paste0("https://juliliving.dk/wp-admin/admin-ajax.php?action=jlet_units&locale=da&e_id=",
                        URLencode(eid, reserved = TRUE)), simplifyVector = FALSE)
-  map_dfr(d$data$units, function(u) tibble(
+  api_rows(d$data$units, function(u) tibble(
     id = as.character(u$id), url = u$url %||% NA, title = u$Headline %||% NA,
     address = str_squish(paste(u$address %||% "")), postcode = as.character(u$postcode %||% NA),
     city = u$ZipCity %||% NA, rooms = u$rooms %||% NA, m2 = u$area %||% NA,
@@ -127,7 +136,7 @@ scrape_dab_lejerbo <- function(url, param = NA) {
     req_headers(`module-enum` = "3505", Accept = "application/json, text/plain, */*", Referer = "https://dab-lejerbo.dk/") |>
     req_perform() |>
     resp_body_json(simplifyVector = FALSE)
-  map_dfr(d$data$data$availableTenancies, function(t) tibble(
+  api_rows(d$data$data$availableTenancies, function(t) tibble(
     id = paste(t$companyId, t$departmentId, t$tenancyId, sep = "-"),
     url = if (nzchar(t$departmentUrl %||% "")) t$departmentUrl else url,
     title = t$description %||% NA,
@@ -176,7 +185,7 @@ scrape_findbolig <- function(url, param = NA) {
   findbolig_rows(res)
 }
 findbolig_rows <- function(res) {
-  map_dfr(res, function(x) {
+  api_rows(res, function(x) {
     if (!identical(x[["$type"]], "Residence") || !identical(x$rentModel, "Advert")) return(NULL)
     door <- paste(c(x$floor, x$door)[!map_lgl(list(x$floor, x$door), is.null)], collapse = " ")
     tibble(id = as.character(x$shortId), url = paste0("https://findbolig.nu/da-dk/residence/", x$shortId),
@@ -204,12 +213,13 @@ scrape_nybolig <- function(url, param = NA) {
                  polygon = list(), freeText = "", sort = 0, scrollToken = token, top = 100)
     d <- request("https://www.nybolig.dk/api/search/cases/find") |> req_user_agent(UA) |>
       req_body_json(body) |> req_timeout(40) |> req_perform() |> resp_body_json(simplifyVector = FALSE)
+    if (is.null(d$cases)) stop("unexpected API response: cases missing")
     out <- c(out, d$cases)
     token <- d$scrollToken %||% ""
     if (!length(d$cases) || !nzchar(token) || length(out) >= (d$total %||% 0)) break
     Sys.sleep(0.5)
   }
-  map_dfr(out, function(c) {
+  api_rows(out, function(c) {
     if (!isTRUE(c$isRental)) return(NULL)
     tibble(id = c$caseNumber %||% c$id, url = paste0("https://www.nybolig.dk", c$url %||% ""),
            title = c$imageAlt %||% NA, address = c$addressDisplayName %||% NA,
@@ -228,7 +238,7 @@ scrape_norhjem <- function(url, param = NA) {
     req_body_form(availableFrom = "", availableTo = "", propertyId = "", rentalType = "", maxPrice = "",
                   minRooms = "", maxRooms = "", area = "", sort = "") |>
     req_timeout(40) |> req_perform() |> resp_body_json(simplifyVector = FALSE)
-  map_dfr(d, function(x) {
+  api_rows(d, function(x) {
     if (isTRUE(x$isParking)) return(NULL)
     tibble(id = x$url, url = paste0("https://norhjem.dk", x$url), title = x$type %||% NA,
            address = x$address %||% NA, postcode = as.character(x$zipCode %||% NA), city = x$city %||% NA,

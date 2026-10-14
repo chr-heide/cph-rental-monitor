@@ -33,7 +33,10 @@ for (i in seq_len(nrow(sites))) {
   # parsers that only read the newest pages set attr(x, "partial"): listings missing from them aren't "gone"
   partial <- !inherits(raw, "error") && isTRUE(attr(raw, "partial"))
   res <- if (inherits(raw, "error")) raw else tryCatch(as_listings(raw, s$name), error = function(e) e)
-  ok <- !inherits(res, "error") && nrow(res) > 0
+  # 0 listings normally means a broken parser; parsers that verified the page is a real
+  # "no vacancies right now" page say so with attr(x, "empty_ok")
+  empty_ok <- !inherits(raw, "error") && isTRUE(attr(raw, "empty_ok"))
+  ok <- !inherits(res, "error") && (nrow(res) > 0 || empty_ok)
   if (ok) results[[s$name]] <- res
   err <- if (inherits(res, "error")) conditionMessage(res) else if (!ok) "0 listings parsed" else NA_character_
   status[[s$name]] <- tibble(site = s$name, run_at = now, ok = ok, partial = partial, n = if (ok) nrow(res) else 0L,
