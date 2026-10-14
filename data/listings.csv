@@ -1,4 +1,5 @@
 id,source,url,title,address,postcode,city,lat,lon,rooms,m2,rent,aconto,rent_total,aconto_assumed,status,available_from,match,first_seen,alerted,detail_done,gone_at
+taurus:27932,taurus,https://www.taurus.dk/boligudlejning/lejebolig?id=27932,FØRSTE MÅNED GRATIS - Nyt og lækkert nær metro,"Viola Nørløvs Gade, København SV",2450,koebenhavn sv,,,3,85,17922,,17922,TRUE,Ledig,,FALSE,2026-10-14T10:02:10,,,
 heimstaden:9-309-128,heimstaden,https://www.heimstaden.dk/lejebolig/tagensvej-135-1-9-2200-koebenhavn-n/,,"Tagensvej 135, 1. 9 2200 København N",2200,,,,2,63,14650,690,15340,FALSE,Ledig,14.650 kr./md.,TRUE,2026-10-14T09:31:50,2026-10-14T09:31:50,2026-10-14T09:31:50,
 heimstaden:9-309-151,heimstaden,https://www.heimstaden.dk/lejebolig/tagensvej-135-2-10-2200-koebenhavn-n/,,"Tagensvej 135, 2. 10 2200 København N",2200,,,,2,62,14650,878.33,15528.33,FALSE,Ledig,14.650 kr./md.,TRUE,2026-10-14T09:31:50,2026-10-14T09:31:50,2026-10-14T09:31:50,
 heimstaden:9-318-34,heimstaden,https://www.heimstaden.dk/lejebolig/lyngbyvej-172-1-11-2100-koebenhavn-oe/,,"Lyngbyvej 172, 1. 11. 2100 København Ø",2100,,,,1,45,9650,,9650,TRUE,Ledig,01-11-2026,FALSE,2026-10-14T09:31:50,,,
