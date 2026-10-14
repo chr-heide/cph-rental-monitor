@@ -1,4 +1,5 @@
 id,source,url,title,address,postcode,city,lat,lon,rooms,m2,rent,aconto,rent_total,aconto_assumed,status,available_from,match,first_seen,alerted,detail_done,gone_at
+edc:11809879,edc,https://www.edc.dk/leje/lejlighed/2150-nordhavn/helsinkigade-7-3-5/11809879/,Lejlighed fra EDC,"Helsinkigade 7, 3. 5.",2150,Nordhavn,,,5,140,32950,,32950,TRUE,Ledig,,FALSE,2026-10-14T14:21:49,,,
 home:/rovsingsgade-63/leje/condo/rovsingsgade-63c-mf-2200-koebenhavn-n/sag-177P010751,home,https://home.dk/rovsingsgade-63/leje/condo/rovsingsgade-63c-mf-2200-koebenhavn-n/sag-177P010751,Lejlighed,"Rovsingsgade 63C, 1. mf., 2200 København N",2200,,,,,49,13600,,13600,TRUE,Ledig,,FALSE,2026-10-14T13:42:07,,,
 norhjem:/ejendomme/strynoegade/strynoegade-5-2-18/,norhjem,https://norhjem.dk/ejendomme/strynoegade/strynoegade-5-2-18/,Lejlighed,"Strynøgade 5, 2. 18",2100,København Ø,,,1,35,9600,,9600,TRUE,Ledig,2026-11-15,FALSE,2026-10-14T13:42:07,,,
 taurus:28505,taurus,https://www.taurus.dk/boligudlejning/lejebolig?id=28505,Hyggeligt og centralt område,"Valby Maskinfabriksvej, Valby",2500,valby,,,3,84,17033,,17033,TRUE,Ledig,,FALSE,2026-10-14T13:42:07,,,
