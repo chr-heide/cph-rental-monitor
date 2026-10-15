@@ -1,4 +1,5 @@
 id,source,url,title,address,postcode,city,lat,lon,rooms,m2,rent,aconto,rent_total,aconto_assumed,status,available_from,match,first_seen,alerted,detail_done,gone_at
+edc:11810208,edc,https://www.edc.dk/leje/lejlighed/2450-koebenhavn-sv/stoeberigade-17-2-tv/11810208/,Lejlighed fra EDC,"Støberigade 17, 2. tv",2450,København SV,,,3,83,17450,,17450,TRUE,Ledig,,FALSE,2026-10-15T10:21:40,,,
 edc:11810207,edc,https://www.edc.dk/leje/lejlighed/2450-koebenhavn-sv/dieselvej-14-2-tv/11810207/,Lejlighed fra EDC,"Dieselvej 14, 2. tv",2450,København SV,,,4,91,19400,,19400,TRUE,Ledig,,FALSE,2026-10-15T10:11:30,,,
 kereby:28203,kereby,https://kereby.dk/bolig/jagtvej-183-1-tv-2100-kobenhavn/,5-værelses lejlighed på Østerbro,"Jagtvej 183, 1. tv, 2100 København Ø",2100,,55.70721976,12.5661535,5,160,26227,,26227,TRUE,available,,FALSE,2026-10-15T09:21:43,,,
 heimstaden:9-453-22,heimstaden,https://www.heimstaden.dk/lejebolig/store-grundet-alle-20-7100-vejle/,,Store Grundet Alle 20 7100 Vejle,7100,,,,4,124,9795,,9795,TRUE,Ledig,01-12-2026,FALSE,2026-10-14T20:33:04,,,
