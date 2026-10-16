@@ -1,4 +1,5 @@
 id,source,url,title,address,postcode,city,lat,lon,rooms,m2,rent,aconto,rent_total,aconto_assumed,status,available_from,match,first_seen,alerted,detail_done,gone_at
+norhjem:/ejendomme/teglhuset/teglholmsgade-36-5-doer5/,norhjem,https://norhjem.dk/ejendomme/teglhuset/teglholmsgade-36-5-doer5/,Lejlighed,"Teglholmsgade 36, 5. Dør5",2450,København SV,,,1,35,8850,,8850,TRUE,Ledig,2026-12-01,FALSE,2026-10-16T06:11:48,,,
 heimstaden:9-256-110,heimstaden,https://www.heimstaden.dk/lejebolig/hoerparken-190-tv-6000-kolding/,,Hørparken 190 tv. 6000 Kolding,6000,,,,5,128,9895,,9895,TRUE,Ledig,01-12-2026,FALSE,2026-10-16T03:02:17,,,
 heimstaden:9-578-5,heimstaden,https://www.heimstaden.dk/lejebolig/cortex-park-24f-5230-odense-m/,,Cortex Park 24F 5230 Odense M,5230,,,,4,104,11795,,11795,TRUE,Ledig,11.795 kr./md.,FALSE,2026-10-16T03:02:17,,,
 taurus:28509,taurus,https://www.taurus.dk/boligudlejning/lejebolig?id=28509,Med både lukket og åben altan,"Blegkilde Allé , Aalborg",,aalborg,,,3,79,8085,700,8785,FALSE,Ledig,,FALSE,2026-10-15T14:21:28,,2026-10-15T14:21:28,
