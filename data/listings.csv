@@ -1,4 +1,5 @@
 id,source,url,title,address,postcode,city,lat,lon,rooms,m2,rent,aconto,rent_total,aconto_assumed,status,available_from,match,first_seen,alerted,detail_done,gone_at
+"capital_investment:Farumgade 6, 2 mf. tv., 2200 København N",capital_investment,https://capitalbolig.dk/ledige-lejemaal/,,"Farumgade 6, 2 mf. tv., 2200 København N",2200,,,,2,93,,,,FALSE,Ledig,,TRUE,2026-10-17T15:56:57,2026-10-17T15:56:57,,
 "capital_investment:Niels Brocks Gade 5, 4 tv., 1574 København V",capital_investment,https://capitalbolig.dk/ledige-lejemaal/,,"Niels Brocks Gade 5, 4 tv., 1574 København V",1574,,,,4,139,,,,FALSE,Ledig,,TRUE,2026-10-17T15:51:54,2026-10-17T15:51:54,,
 norse:01d16800-99c4-4663-98f4-3e78fb4e01c0,norse,"https://norsepm.dk/bolig/GøteborgAllé7H,5.tv.+01d1680099c4466398f43e78fb4e01c0",Delevenlig penthouse - to altaner,"Gøteborg Allé 7 H, 5. tv.",8200,Aarhus,56.18213699,10.19275742,3,72,11400,800,12200,FALSE,Available,2026-12-01,FALSE,2026-10-17T13:21:30,,,
 dab_lejerbo:615-3-7,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,"Houmannsgade 46C, 1. tv.",8700,Horsens,,,3,82.4,7590,,7590,TRUE,Ledig,2026-11-15T00:00:00,FALSE,2026-10-16T15:41:47,,,
