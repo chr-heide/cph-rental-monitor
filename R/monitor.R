@@ -146,16 +146,34 @@ if (!no_alerts && nrow(pushed)) {
   pushed <- pushed[delivered, ]
 }
 
-# ---- site health: one alert when a site has failed 6 runs in a row (~2 h) ----------
+# ---- site health: alert once when a site has failed for 2 hours straight ----------------
+# (time-based, so short outages on a landlord's server don't alert at any run frequency;
+#  a "working again" note follows if that site later recovers)
+FAIL_ALERT_HOURS <- 2
 stat_path <- "data/site_status.csv"
 stat_old <- if (file.exists(stat_path)) read_csv(stat_path, col_types = cols(.default = "c")) else tibble()
 stat_new <- bind_rows(stat_old, mutate(status, across(everything(), as.character))) |>
-  group_by(site) |> slice_tail(n = 30) |> ungroup()
-if (!no_alerts) for (s in status$site[!status$ok]) {
+  group_by(site) |> slice_tail(n = 60) |> ungroup()
+hours_between <- function(a, b) as.numeric(difftime(as.POSIXct(b, format = "%Y-%m-%dT%H:%M:%S"),
+                                                     as.POSIXct(a, format = "%Y-%m-%dT%H:%M:%S"), units = "hours"))
+if (!no_alerts) for (s in status$site) {
   h <- stat_new |> filter(site == s)
-  streak <- rle(rev(h$ok))
-  if (streak$values[1] == "FALSE" && streak$lengths[1] == 6)
-    notify_text(paste0("'", s, "' has failed 6 runs in a row: ", tail(h$error, 1)), title = "Monitor: a site needs fixing")
+  n <- nrow(h); if (n < 2) next
+  ok <- h$ok == "TRUE"
+  # start of the current failure streak (or of the streak that just ended)
+  streak_start <- function(upto) { k <- upto; while (k > 1 && !ok[k - 1]) k <- k - 1; k }
+  if (!ok[n]) {
+    k <- streak_start(n)
+    now_h  <- hours_between(h$run_at[k], h$run_at[n])
+    prev_h <- if (n - 1 >= k) hours_between(h$run_at[k], h$run_at[n - 1]) else 0
+    if (now_h >= FAIL_ALERT_HOURS && prev_h < FAIL_ALERT_HOURS)
+      notify_text(sprintf("'%s' has failed for %.0f hours (%d runs): %s", s, now_h, n - k + 1, h$error[n]),
+                  title = "Monitor: a site needs fixing")
+  } else if (!ok[n - 1]) {
+    k <- streak_start(n - 1)
+    if (hours_between(h$run_at[k], h$run_at[n - 1]) >= FAIL_ALERT_HOURS)
+      notify_text(sprintf("'%s' is working again (%d listings).", s, as.integer(h$n[n])), title = "Monitor: site recovered")
+  }
 }
 
 # ---- write the log --------------------------------------------------------------------

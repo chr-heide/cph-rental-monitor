@@ -1,6 +1,6 @@
 # cph-rental-monitor
 
-Watches Copenhagen landlords' own websites for vacant rental flats and pushes new matches to your phone via [ntfy](https://ntfy.sh). Runs on GitHub Actions every 20 minutes; no aggregators (Boligportal etc.).
+Watches Copenhagen landlords' own websites for vacant rental flats and pushes new matches to your phone via [ntfy](https://ntfy.sh). Runs on GitHub Actions every 10 minutes (started by cron-job.org); no aggregators (Boligportal etc.).
 
 **Phone:** in the ntfy app, subscribe to your topic (server ntfy.sh). The topic is read from the `NTFY_TOPIC` repository secret (Settings → Secrets and variables → Actions). Anyone who knows the topic can read or post to it, so keep it in the secret.
 
@@ -8,7 +8,7 @@ Watches Copenhagen landlords' own websites for vacant rental flats and pushes ne
 
 **Which sites:** `config/sites.csv` — one row per site; set `enabled` to `FALSE` to switch one off. Parsers live in `R/sites/` (`api_sites.R` for JSON APIs, `html_sites.R` for HTML pages, incl. the generic `links` and `textblocks` parsers that most small sites can reuse with just a URL and a link pattern).
 
-**Overview:** `data/listings.csv` is every listing seen (open it on GitHub or in Excel): `match` = passes your filters, `alerted` = when it was pushed, `gone_at` = when it disappeared. `data/site_status.csv` shows each site's last runs; if a site fails 6 runs in a row (~2 h) you get a "site needs fixing" push.
+**Overview:** `data/listings.csv` is every listing seen (open it on GitHub or in Excel): `match` = passes your filters, `alerted` = when it was pushed, `gone_at` = when it disappeared. `data/site_status.csv` shows each site's last runs; if a site has failed for 2 hours straight you get a "site needs fixing" push, and a "working again" push if it recovers.
 
 **How a run works:** scrape all sites → carry over what earlier runs learned → read detail pages for possible matches (aconto, m², postcode; max 60 per run) → geocode 2300 addresses not given coordinates (OpenStreetMap Nominatim, cached in `data/geocode.csv`) → push matches not alerted before (max 25 per run) → commit the CSVs.
 
