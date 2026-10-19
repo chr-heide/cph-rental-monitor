@@ -1,4 +1,7 @@
 id,source,url,title,address,postcode,city,lat,lon,rooms,m2,rent,aconto,rent_total,aconto_assumed,status,available_from,match,first_seen,alerted,detail_done,gone_at
+heimstaden:9-634-238,heimstaden,https://www.heimstaden.dk/lejebolig/frydenlund-5m-7120-vejle-oest/,,Frydenlund 5M 7120 Vejle Øst,7120,,,,4,100,12995,,12995,TRUE,Ledig,12.995 kr./md.,FALSE,2026-10-19T22:32:02,,,
+heimstaden:9-634-77,heimstaden,https://www.heimstaden.dk/lejebolig/frydenlund-191-7120-vejle-oest/,,Frydenlund 191 7120 Vejle Øst,7120,,,,3,97,12795,,12795,TRUE,Ledig,12.795 kr./md.,FALSE,2026-10-19T22:32:02,,,
+heimstaden:9-634-98,heimstaden,https://www.heimstaden.dk/lejebolig/frydenlund-235-7120-vejle-oest/,,Frydenlund 235 7120 Vejle Øst,7120,,,,3,87,11495,,11495,TRUE,Ledig,11.495 kr./md.,FALSE,2026-10-19T22:32:02,,,
 edc:11810216,edc,https://www.edc.dk/leje/lejlighed/2450-koebenhavn-sv/ved-stigbordene-43-2-tv/11810216/,Lejlighed fra EDC,"Ved Stigbordene 43, 2. tv",2450,København SV,,,3,122,21200,,21200,TRUE,Ledig,,FALSE,2026-10-19T21:32:09,,,
 edc:11810215,edc,https://www.edc.dk/leje/lejlighed/2200-koebenhavn-n/borgmestervangen-31-21-1/11810215/,Lejlighed fra EDC,"Borgmestervangen 31, 21. 1",2200,København N,,,3,97,18500,,18500,TRUE,Ledig,,FALSE,2026-10-19T20:51:37,,,
 edc:11809874,edc,https://www.edc.dk/leje/lejlighed/2500-valby/gammel-koege-landevej-40-5-525/11809874/,Lejlighed fra EDC,"Gammel Køge Landevej 40, 5. 525",2500,Valby,,,1,35,9200,,9200,TRUE,Ledig,,FALSE,2026-10-19T19:51:50,,,
