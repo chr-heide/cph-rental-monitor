@@ -1,4 +1,5 @@
 id,source,url,title,address,postcode,city,lat,lon,rooms,m2,rent,aconto,rent_total,aconto_assumed,status,available_from,match,first_seen,alerted,detail_done,gone_at
+findbolig:288240,findbolig,https://findbolig.nu/da-dk/residence/288240,AXA - Borresøvej,"Borresøvej 43, 4 tv",8240,Risskov,56.20470132,10.23191089,4,103,12900,,12900,TRUE,Ledig,2026-10-15,FALSE,2026-10-20T13:31:47,,,
 juli_living:6106,juli_living,https://juliliving.dk/esplanaden-bolig/?boligID=6106,Eksklusiv 3-værelses lejebolig med historisk charme i hjertet af København,"Amaliegade 39, 3. tv.",1256,1256 København K,,,3,105,25600,,25600,TRUE,LEDIG,2027-01-01,FALSE,2026-10-20T12:32:02,,,
 norhjem:/ejendomme/skibsager/skibsager-66/,norhjem,https://norhjem.dk/ejendomme/skibsager/skibsager-66/,Lejlighed,Skibsager 66,2680,Solrød Strand,,,4,130,16600,,16600,TRUE,Ledig,2026-12-01,FALSE,2026-10-20T12:11:41,,,
 heimstaden:9-564-1,heimstaden,https://www.heimstaden.dk/lejebolig/rosmarinvej-1-8600-silkeborg/,,Rosmarinvej 1 8600 Silkeborg,8600,,,,4,111,12295,,12295,TRUE,Ledig,12.295 kr./md.,FALSE,2026-10-20T12:02:20,,,
