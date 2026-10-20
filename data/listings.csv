@@ -1,4 +1,5 @@
 id,source,url,title,address,postcode,city,lat,lon,rooms,m2,rent,aconto,rent_total,aconto_assumed,status,available_from,match,first_seen,alerted,detail_done,gone_at
+heimstaden:9-484-34,heimstaden,https://www.heimstaden.dk/lejebolig/noerrebjerg-runddel-43-b-5220-odense-soe/,,Nørrebjerg Runddel 43 B 5220 Odense SØ,5220,,,,3,89,8895,,8895,TRUE,Ledig,Ledig nu,FALSE,2026-10-20T17:32:00,,,
 edc:11810217,edc,https://www.edc.dk/leje/lejlighed/2400-koebenhavn-nv/peter-roerdams-vej-4-2-6/11810217/,Lejlighed fra EDC,"Peter Rørdams Vej 4, 2. 6",2400,København NV,,,2,40,11000,,11000,TRUE,Ledig,,FALSE,2026-10-20T17:11:44,,,
 dab_lejerbo:731-2-59,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,"Rindsvej 22, 2. tv.",8920,Randers Nv,,,3,67.82,4989,,4989,TRUE,Ledig,2027-01-01T00:00:00,FALSE,2026-10-20T15:41:47,,,
 dab_lejerbo:731-3-82,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,"Husarvej 43, 1. tv.",8930,Randers Nø,,,4,99,5700,,5700,TRUE,Ledig,2027-01-01T00:00:00,FALSE,2026-10-20T15:41:47,,,
