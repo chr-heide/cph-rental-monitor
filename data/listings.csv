@@ -1,4 +1,14 @@
 id,source,url,title,address,postcode,city,lat,lon,rooms,m2,rent,aconto,rent_total,aconto_assumed,status,available_from,match,first_seen,alerted,detail_done,gone_at
+dab_lejerbo:731-2-59,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,"Rindsvej 22, 2. tv.",8920,Randers Nv,,,3,67.82,4989,,4989,TRUE,Ledig,2027-01-01T00:00:00,FALSE,2026-10-20T15:41:47,,,
+dab_lejerbo:731-3-82,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,"Husarvej 43, 1. tv.",8930,Randers Nø,,,4,99,5700,,5700,TRUE,Ledig,2027-01-01T00:00:00,FALSE,2026-10-20T15:41:47,,,
+dab_lejerbo:731-6-5271,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,Nordentoften 39C,8832,Skals,,,1,32.2,2064,,2064,TRUE,Ledig,2026-12-01T00:00:00,FALSE,2026-10-20T15:41:47,,,
+dab_lejerbo:787-3-10,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,Carl Drechslers Vej 22,7752,Snedsted,,,2,68.1,5882,,5882,TRUE,Ledig,2026-12-01T00:00:00,FALSE,2026-10-20T15:41:47,,,
+dab_lejerbo:93-1-33,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,"Nørvang 15, 1.v.",6700,Esbjerg,,,2,61,4807,,4807,TRUE,Ledig,2026-12-10T00:00:00,FALSE,2026-10-20T15:41:47,,,
+dab_lejerbo:93-14-2341,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,"Storegade 27 A, 1.v.",6700,Esbjerg,,,3,87,7052,,7052,TRUE,Ledig,2026-12-10T00:00:00,FALSE,2026-10-20T15:41:47,,,
+dab_lejerbo:93-24-2550,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,"Stormgade 45, 2. nr. 12",6700,Esbjerg,,,2,110,8764,,8764,TRUE,Ledig,2026-12-10T00:00:00,FALSE,2026-10-20T15:41:47,,,
+dab_lejerbo:93-3-258,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,"N J Poulsens Vej 2, 1.",6700,Esbjerg,,,4,103,6652,,6652,TRUE,Ledig,2026-12-10T00:00:00,FALSE,2026-10-20T15:41:47,,,
+dab_lejerbo:93-3-322,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,"Th Dahls Vej 3, 2.h.",6700,Esbjerg,,,3,77,6024,,6024,TRUE,Ledig,2026-12-10T00:00:00,FALSE,2026-10-20T15:41:47,,,
+dab_lejerbo:93-3-524,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,"Th Dahls Vej 2, 2.h.",6700,Esbjerg,,,2,69,6179,,6179,TRUE,Ledig,2026-12-10T00:00:00,FALSE,2026-10-20T15:41:47,,,
 norhjem:/ejendomme/gammel-jernbanevej/gammel-jernbanevej-29-1-doer-27/,norhjem,https://norhjem.dk/ejendomme/gammel-jernbanevej/gammel-jernbanevej-29-1-doer-27/,Lejlighed,"Gammel Jernbanevej 29, 1. Dør 27",2500,Valby,,,1,32,8400,,8400,TRUE,Ledig,2026-11-15,FALSE,2026-10-20T15:21:42,,,
 home:/spaniensgade/leje/condo/spaniensgade-11-1-2300-koebenhavn-s/sag-177P010851,home,https://home.dk/spaniensgade/leje/condo/spaniensgade-11-1-2300-koebenhavn-s/sag-177P010851,Lejlighed,"Spaniensgade 11, 1. 1, 2300 København S",2300,,,,,31,10600,,10600,TRUE,Ledig,,FALSE,2026-10-20T15:11:54,,,
 norhjem:/ejendomme/viften/viften-12-2-1/,norhjem,https://norhjem.dk/ejendomme/viften/viften-12-2-1/,Lejlighed,"Viften 12, 2., 1",2670,Greve,,,3,78,12200,,12200,TRUE,Ledig,2026-11-15,FALSE,2026-10-20T15:02:21,,,
@@ -288,7 +298,7 @@ juli_living:4212,juli_living,https://juliliving.dk/munkemollestraede-20-bolig/?b
 juli_living:3667,juli_living,https://juliliving.dk/kragsbjergstraedet-2-18-bolig/?boligID=3667,Godt disponeret 3-værelses i Odense C<br><br>KUN 1 MÅNEDS DEPOSITUM,"Kragsbjergstrædet 2, st. 3",5000,5000 Odense,,,3,74,9525,,9525,TRUE,LEDIG,2027-02-01,FALSE,2026-10-12T16:11:54,,,
 heimstaden:9-256-104,heimstaden,https://www.heimstaden.dk/lejebolig/hoerparken-182-6000-kolding/,,Hørparken 182 6000 Kolding,6000,,,,2,58,7595,,7595,TRUE,Ledig,29-12-2026,FALSE,2026-10-12T16:02:57,,,2026-10-19T15:02:14
 heimstaden:9-332-45,heimstaden,https://www.heimstaden.dk/lejebolig/moelleparkvej-2-12-45-6715-esbjerg-n/,,"Mølleparkvej 2, 12. 45 6715 Esbjerg N",6715,,,,2,67,5695,,5695,TRUE,Ledig,01-12-2026,FALSE,2026-10-12T16:02:57,,,
-dab_lejerbo:4-18-149,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,Skoleparken 57 st tv,6705,Esbjerg Ø.,,,3,92.66,5925,,5925,TRUE,Ledig,2026-12-01T00:00:00,FALSE,2026-10-12T15:32:01,,,
+dab_lejerbo:4-18-149,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,Skoleparken 57 st tv,6705,Esbjerg Ø.,,,3,92.66,5925,,5925,TRUE,Ledig,2026-12-01T00:00:00,FALSE,2026-10-12T15:32:01,,,2026-10-20T15:41:47
 dab_lejerbo:663-4-6,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,"Sønderparken 28, 2. th.",7500,Holstebro,,,3,65,4767,,4767,TRUE,Ledig,2026-09-15T00:00:00,FALSE,2026-10-12T15:32:01,,,
 heimstaden:9-578-8,heimstaden,https://www.heimstaden.dk/lejebolig/cortex-park-24l-5230-odense-m/,,Cortex Park 24L 5230 Odense M,5230,,,,3,80,8895,,8895,TRUE,Ledig,16-12-2026,FALSE,2026-10-12T15:32:01,,,
 heimstaden:9-666-1,heimstaden,https://www.heimstaden.dk/lejebolig/haverne-2-7300-jelling/,,Haverne 2 7300 Jelling,7300,,,,3,95,9595,,9595,TRUE,Ledig,26-10-2026,FALSE,2026-10-12T15:32:01,,,
@@ -338,7 +348,7 @@ heimstaden:9-614-105,heimstaden,https://www.heimstaden.dk/lejebolig/skejbyvej-27
 heimstaden:9-614-122,heimstaden,https://www.heimstaden.dk/lejebolig/skejbyvej-319-8240-risskov-aarhus/,,"Skejbyvej 319 8240 Risskov, Aarhus",8240,,,,2,64,8340,,8340,TRUE,Ledig,27-10-2026,FALSE,2026-10-11T19:02:08,,,2026-10-15T10:31:52
 heimstaden:9-614-20,heimstaden,https://www.heimstaden.dk/lejebolig/skejbyvej-87-8240-risskov-aarhus/,,"Skejbyvej 87 8240 Risskov, Aarhus",8240,,,,3,85,11080,,11080,TRUE,Ledig,11.080 kr./md.,FALSE,2026-10-11T19:02:08,,,2026-10-15T10:31:52
 lejemaegleren:https://lejemaegleren.dk/property/eksklusiv-og-nyopfoert-firevaerelses-lejlighed-i-hjertet-af-carlsbergbyen-koebenhavn-v/,lejemaegleren,https://lejemaegleren.dk/property/eksklusiv-og-nyopfoert-firevaerelses-lejlighed-i-hjertet-af-carlsbergbyen-koebenhavn-v/,"Eksklusiv og nyopført fireværelses lejlighed i hjertet af Carlsbergbyen | København V. | 54, Lagergade, Humleby, Den ...",,1600,,,,4,101,26000,,26000,TRUE,Ledig,,FALSE,2026-10-11T15:53:22,,2026-10-11T15:53:22,
-dab_lejerbo:19-8-16,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,Parkvænget 8B 1,4941,Bandholm,,,1,39.24,3592,,3592,TRUE,Ledig,2026-10-30T00:00:00,FALSE,2026-10-10T23:19:48,,,
+dab_lejerbo:19-8-16,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,Parkvænget 8B 1,4941,Bandholm,,,1,39.24,3592,,3592,TRUE,Ledig,2026-10-30T00:00:00,FALSE,2026-10-10T23:19:48,,,2026-10-20T15:41:47
 dab_lejerbo:20-12-59,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,Parkvej 16A. 2. Tv.,4230,Skælskør,,,4,121,8677,,8677,TRUE,Ledig,2026-10-13T00:00:00,FALSE,2026-10-10T23:19:48,,,2026-10-12T15:32:01
 dab_lejerbo:37-2-330,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,Clematisvej 4B,4840,Nørre Alslev,,,1,30.25,2328,,2328,TRUE,Ledig,2026-10-19T00:00:00,FALSE,2026-10-10T23:19:48,,,
 dab_lejerbo:4-18-123,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,Skoleparken 55 2 tv,6705,Esbjerg Ø.,,,3,93.62,6286,,6286,TRUE,Ledig,2026-12-01T00:00:00,FALSE,2026-10-10T23:19:48,,,
@@ -362,7 +372,7 @@ dab_lejerbo:631-8-29,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-bol
 dab_lejerbo:631-9-73,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,"Vesterbrogade 8A, st.",7100,Vejle,,,2,83.85,7309,,7309,TRUE,Ledig,2026-11-01T00:00:00,FALSE,2026-10-10T23:19:48,,,
 dab_lejerbo:631-9-88,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,"Enggade 13A, st. 2",7100,Vejle,,,2,83.16,7236,,7236,TRUE,Ledig,2026-11-01T00:00:00,FALSE,2026-10-10T23:19:48,,,
 dab_lejerbo:653-3-119,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,Bøgevænget 79,7330,Brande,,,2,43.51,4218,,4218,TRUE,Ledig,2026-10-15T00:00:00,FALSE,2026-10-10T23:19:48,,,
-dab_lejerbo:657-10-3,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,Munkgårds Alle 7,7400,Herning,,,3,80.8,6550,,6550,TRUE,Ledig,2026-11-01T00:00:00,FALSE,2026-10-10T23:19:48,,,
+dab_lejerbo:657-10-3,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,Munkgårds Alle 7,7400,Herning,,,3,80.8,6550,,6550,TRUE,Ledig,2026-11-01T00:00:00,FALSE,2026-10-10T23:19:48,,,2026-10-20T15:41:47
 dab_lejerbo:657-13-15,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,Munkgårdkvarteret 237B,7400,Herning,,,2,46.05,4600,,4600,TRUE,Ledig,2026-11-01T00:00:00,FALSE,2026-10-10T23:19:48,,,
 dab_lejerbo:657-13-17,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,Munkgårdkvarteret 237D,7400,Herning,,,2,46.05,4675,,4675,TRUE,Ledig,2026-04-01T00:00:00,FALSE,2026-10-10T23:19:48,,,
 dab_lejerbo:657-13-22,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,"Munkgårdkvarteret 237A, 1. 4",7400,Herning,,,2,46.05,4675,,4675,TRUE,Ledig,2026-06-01T00:00:00,FALSE,2026-10-10T23:19:48,,,
@@ -489,7 +499,7 @@ dab_lejerbo:663-9-83,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-bol
 dab_lejerbo:663-9-96,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,"Asagården 38, 1. tv.",7500,Holstebro,,,5,105,6360,,6360,TRUE,Ledig,2026-05-16T00:00:00,FALSE,2026-10-10T23:19:48,,,
 dab_lejerbo:669-10-16,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,"Udsigten 8, st. th.",6880,Tarm,,,4,100.1,7743,,7743,TRUE,Ledig,2026-07-01T00:00:00,FALSE,2026-10-10T23:19:48,,,
 dab_lejerbo:669-10-18,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,"Udsigten 8, 1. th.",6880,Tarm,,,4,100.1,7743,,7743,TRUE,Ledig,2026-09-15T00:00:00,FALSE,2026-10-10T23:19:48,,,
-dab_lejerbo:669-6-2,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,"Skolegade 5, 1.",6900,Skjern,,,3,76.3,5681,,5681,TRUE,Ledig,2026-11-01T00:00:00,FALSE,2026-10-10T23:19:48,,,
+dab_lejerbo:669-6-2,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,"Skolegade 5, 1.",6900,Skjern,,,3,76.3,5681,,5681,TRUE,Ledig,2026-11-01T00:00:00,FALSE,2026-10-10T23:19:48,,,2026-10-20T15:41:47
 dab_lejerbo:669-6-5,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,"Skolegade 7, 1.",6900,Skjern,,,3,104.5,7384,,7384,TRUE,Ledig,2026-11-15T00:00:00,FALSE,2026-10-10T23:19:48,,,
 dab_lejerbo:671-1-4,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,Holstebrovej 55D,7600,Struer,,,2,61,5464,,5464,TRUE,Ledig,2026-04-01T00:00:00,FALSE,2026-10-10T23:19:48,,,
 dab_lejerbo:671-1-6,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,Holstebrovej 55F,7600,Struer,,,2,61,5464,,5464,TRUE,Ledig,2026-07-01T00:00:00,FALSE,2026-10-10T23:19:48,,,
@@ -507,9 +517,9 @@ dab_lejerbo:727-1-4,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boli
 dab_lejerbo:727-4-3,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,"Banegårdsparken 1, 1. 3",8300,Odder,,,2,49.3,5070,,5070,TRUE,Ledig,2026-11-01T00:00:00,FALSE,2026-10-10T23:19:48,,,2026-10-15T22:41:46
 dab_lejerbo:731-1-17,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,"Jyllandsgade 2B, 3. tv.",8900,Randers C,,,3,71.87,5794,,5794,TRUE,Ledig,2026-11-01T00:00:00,FALSE,2026-10-10T23:19:48,,,
 dab_lejerbo:731-1-18,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,"Jyllandsgade 2B, 3. th.",8900,Randers C,,,3,71.87,5794,,5794,TRUE,Ledig,2026-11-15T00:00:00,FALSE,2026-10-10T23:19:48,,,
-dab_lejerbo:731-1-30,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,"Jyllandsgade 2C, 4. th.",8900,Randers C,,,4,75.45,6082,,6082,TRUE,Ledig,2026-11-01T00:00:00,FALSE,2026-10-10T23:19:48,,,
+dab_lejerbo:731-1-30,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,"Jyllandsgade 2C, 4. th.",8900,Randers C,,,4,75.45,6082,,6082,TRUE,Ledig,2026-11-15T00:00:00,FALSE,2026-10-10T23:19:48,,,
 dab_lejerbo:731-1-6,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,"Jyllandsgade 2A, 2. th.",8900,Randers C,,,3,71.87,6242,,6242,TRUE,Ledig,2026-11-01T00:00:00,FALSE,2026-10-10T23:19:48,,,
-dab_lejerbo:731-1-61,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,"Jyllandsgade 10, st. tv.",8900,Randers C,,,3,74.2,6876,,6876,TRUE,Ledig,2026-11-01T00:00:00,FALSE,2026-10-10T23:19:48,,,
+dab_lejerbo:731-1-61,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,"Jyllandsgade 10, st. tv.",8900,Randers C,,,3,74.2,6876,,6876,TRUE,Ledig,2026-11-15T00:00:00,FALSE,2026-10-10T23:19:48,,,
 dab_lejerbo:731-12-273,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,"Tøjhushavevej 4, st. th.",8900,Randers C,,,3,90,7772,,7772,TRUE,Ledig,2026-12-01T00:00:00,FALSE,2026-10-10T23:19:48,,,2026-10-15T15:02:02
 dab_lejerbo:731-12-278,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,"Tøjhushavevej 4, 2. tv.",8900,Randers C,,,3,91.5,7901,,7901,TRUE,Ledig,2026-11-15T00:00:00,FALSE,2026-10-10T23:19:48,,,
 dab_lejerbo:731-12-6,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,"Tøjhushavevej 10, 1. th.",8900,Randers C,,,3,92.45,7984,,7984,TRUE,Ledig,2026-11-15T00:00:00,FALSE,2026-10-10T23:19:48,,,
@@ -554,7 +564,7 @@ dab_lejerbo:77-6-2810,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-bo
 dab_lejerbo:77-6-3106,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,Egernvej 1 2 TH,6800,Varde,,,3,96,6046,,6046,TRUE,Ledig,2026-12-01T00:00:00,FALSE,2026-10-10T23:19:48,,,
 dab_lejerbo:787-4-1523,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,Frydenshøj 51,7700,Thisted,,,2,42,3839,,3839,TRUE,Ledig,2026-12-15T00:00:00,FALSE,2026-10-10T23:19:48,,,
 dab_lejerbo:787-4-3773,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,Norgesvej 34,7700,Thisted,,,3,94,7777,,7777,TRUE,Ledig,2026-11-01T00:00:00,FALSE,2026-10-10T23:19:48,,,
-dab_lejerbo:787-4-3777,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,Norgesvej 42,7700,Thisted,,,3,94,7777,,7777,TRUE,Ledig,2026-11-01T00:00:00,FALSE,2026-10-10T23:19:48,,,
+dab_lejerbo:787-4-3777,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,Norgesvej 42,7700,Thisted,,,3,94,7777,,7777,TRUE,Ledig,2026-11-15T00:00:00,FALSE,2026-10-10T23:19:48,,,
 dab_lejerbo:787-4-3780,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,Norgesvej 48,7700,Thisted,,,3,94,7777,,7777,TRUE,Ledig,,FALSE,2026-10-10T23:19:48,,,
 dab_lejerbo:787-4-3781,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,Norgesvej 50,7700,Thisted,,,3,94,7777,,7777,TRUE,Ledig,,FALSE,2026-10-10T23:19:48,,,
 dab_lejerbo:787-4-4034,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,Norgesvej 56,7700,Thisted,,,3,94,7777,,7777,TRUE,Ledig,,FALSE,2026-10-10T23:19:48,,,
@@ -605,7 +615,7 @@ dab_lejerbo:851-29-128,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-b
 dab_lejerbo:851-29-133,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,"Teglvænget 21, 1.",9460,Brovst,,,3,91.9,6053,,6053,TRUE,Ledig,2027-01-01T00:00:00,FALSE,2026-10-10T23:19:48,,,
 dab_lejerbo:851-29-149,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,"Teglvænget 43, 1.",9460,Brovst,,,3,92,6059,,6059,TRUE,Ledig,,FALSE,2026-10-10T23:19:48,,,
 dab_lejerbo:851-3-55,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,"Revlingbakken 129, st. th.",9000,Aalborg,,,3,83.5,6291,,6291,TRUE,Ledig,2026-11-15T00:00:00,FALSE,2026-10-10T23:19:48,,,
-dab_lejerbo:851-3-7,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,"Revlingbakken 109, st. th.",9000,Aalborg,,,3,83.5,5681,,5681,TRUE,Ledig,2026-11-01T00:00:00,FALSE,2026-10-10T23:19:48,,,
+dab_lejerbo:851-3-7,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,"Revlingbakken 109, st. th.",9000,Aalborg,,,3,83.5,5681,,5681,TRUE,Ledig,2026-11-15T00:00:00,FALSE,2026-10-10T23:19:48,,,
 dab_lejerbo:851-30-14,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,"Carit Etlars Gade 4, 3. 4",9000,Aalborg,,,2,70.85,6642,,6642,TRUE,Ledig,2026-10-16T00:00:00,FALSE,2026-10-10T23:19:48,,,
 dab_lejerbo:851-30-5,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,"Carit Etlars Gade 4, 1. 3",9000,Aalborg,,,2,68.31,6399,,6399,TRUE,Ledig,2026-11-15T00:00:00,FALSE,2026-10-10T23:19:48,,,
 dab_lejerbo:851-4-110,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,"Thulevej 46, 4. th.",9210,Aalborg Sø.,,,4,99.8,6896,,6896,TRUE,Ledig,,FALSE,2026-10-10T23:19:48,,,
@@ -625,8 +635,8 @@ dab_lejerbo:851-46-16,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-bo
 dab_lejerbo:851-46-17,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,Nygårds Have 19,9280,Storvorde,,,3,87,8946,,8946,TRUE,Ledig,,FALSE,2026-10-10T23:19:48,,,
 dab_lejerbo:851-46-18,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,Nygårds Have 21,9280,Storvorde,,,3,87,8946,,8946,TRUE,Ledig,,FALSE,2026-10-10T23:19:48,,,
 dab_lejerbo:93-13-2109,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,"Teglværksgade 7, 2",6700,Esbjerg,,,2,84,7166,,7166,TRUE,Ledig,2026-11-26T00:00:00,FALSE,2026-10-10T23:19:48,,,
-dab_lejerbo:93-14-2297,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,"Exnersgade 77, 1.h.",6700,Esbjerg,,,2,89,6513,,6513,TRUE,Ledig,2026-12-01T00:00:00,FALSE,2026-10-10T23:19:48,,,
-dab_lejerbo:93-14-2305,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,"Exnersgade 81, 2.v.",6700,Esbjerg,,,2,85,6415,,6415,TRUE,Ledig,2026-11-25T00:00:00,FALSE,2026-10-10T23:19:48,,,
+dab_lejerbo:93-14-2297,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,"Exnersgade 77, 1.h.",6700,Esbjerg,,,2,89,6513,,6513,TRUE,Ledig,2026-12-10T00:00:00,FALSE,2026-10-10T23:19:48,,,
+dab_lejerbo:93-14-2305,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,"Exnersgade 81, 2.v.",6700,Esbjerg,,,2,85,6415,,6415,TRUE,Ledig,2026-12-04T00:00:00,FALSE,2026-10-10T23:19:48,,,
 dab_lejerbo:93-23-2489,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,"Haraldsgade 60 C, 3.h.",6700,Esbjerg,,,3,74,7119,,7119,TRUE,Ledig,2026-11-26T00:00:00,FALSE,2026-10-10T23:19:48,,,
 dab_lejerbo:93-3-259,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,"N J Poulsens Vej 2, 2.",6700,Esbjerg,,,4,103,6652,,6652,TRUE,Ledig,2026-11-25T00:00:00,FALSE,2026-10-10T23:19:48,,,
 dab_lejerbo:93-3-320,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,"Th Dahls Vej 3, 1.h.",6700,Esbjerg,,,3,77,6500,,6500,TRUE,Ledig,2026-11-26T00:00:00,FALSE,2026-10-10T23:19:48,,,
