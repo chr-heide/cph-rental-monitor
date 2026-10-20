@@ -1,4 +1,5 @@
 id,source,url,title,address,postcode,city,lat,lon,rooms,m2,rent,aconto,rent_total,aconto_assumed,status,available_from,match,first_seen,alerted,detail_done,gone_at
+norhjem:/ejendomme/skibsager/skibsager-66/,norhjem,https://norhjem.dk/ejendomme/skibsager/skibsager-66/,Lejlighed,Skibsager 66,2680,Solrød Strand,,,4,130,16600,,16600,TRUE,Ledig,2026-12-01,FALSE,2026-10-20T12:11:41,,,
 heimstaden:9-564-1,heimstaden,https://www.heimstaden.dk/lejebolig/rosmarinvej-1-8600-silkeborg/,,Rosmarinvej 1 8600 Silkeborg,8600,,,,4,111,12295,,12295,TRUE,Ledig,12.295 kr./md.,FALSE,2026-10-20T12:02:20,,,
 heimstaden:9-648-123,heimstaden,https://www.heimstaden.dk/lejebolig/kollegievaenget-26-2-1-8700-horsens/,,"Kollegievænget 26, 2. 1. 8700 Horsens",8700,,,,3,71,6795,,6795,TRUE,Ledig,24-11-2026,FALSE,2026-10-20T12:02:20,,,
 heimstaden:9-334-81,heimstaden,https://www.heimstaden.dk/lejebolig/thorshammer-85-7500-holstebro/,,Thorshammer 85 7500 Holstebro,7500,,,,4,88,7495,,7495,TRUE,Ledig,Ledig nu,FALSE,2026-10-20T11:31:59,,,
