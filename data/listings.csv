@@ -1,4 +1,5 @@
 id,source,url,title,address,postcode,city,lat,lon,rooms,m2,rent,aconto,rent_total,aconto_assumed,status,available_from,match,first_seen,alerted,detail_done,gone_at
+edc:11810223,edc,https://www.edc.dk/leje/lejlighed/2400-koebenhavn-nv/peter-roerdams-vej-4-2-16/11810223/,Lejlighed fra EDC,"Peter Rørdams Vej 4, 2. 16",2400,København NV,,,2,39,10950,,10950,TRUE,Ledig,,FALSE,2026-10-21T15:21:41,,,
 balder:a055p00001REHd1AAH,balder,https://www.balder.dk/lejeboliger/triumphbuen-19-st-tv-3060-espergaerde-danmark,3 værelses lejlighed med stort køkken og udgang til vestvendt terrasse,"Triumphbuen 19, st. tv.",3060,Espergærde,55.997182,12.532333,3,81,13100,950,14050,FALSE,Ledig,2026-12-01,FALSE,2026-10-21T15:11:58,,,
 dab_lejerbo:615-9-3,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,Ryesgade 2D,8700,Horsens,,,3,92.8,7995,,7995,TRUE,Ledig,2026-11-15T00:00:00,FALSE,2026-10-21T15:02:07,,,
 dab_lejerbo:631-4-1,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,"Kalkbrænderivej 4, st.",7100,Vejle,,,1,25.05,2915,,2915,TRUE,Ledig,2026-11-15T00:00:00,FALSE,2026-10-21T15:02:07,,,
