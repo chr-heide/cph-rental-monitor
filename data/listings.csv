@@ -1,4 +1,5 @@
 id,source,url,title,address,postcode,city,lat,lon,rooms,m2,rent,aconto,rent_total,aconto_assumed,status,available_from,match,first_seen,alerted,detail_done,gone_at
+"capital_investment:Frederiksberg Allé 32, 3 th., 1820 Frederiksberg",capital_investment,https://capitalbolig.dk/ledige-lejemaal/,,"Frederiksberg Allé 32, 3 th., 1820 Frederiksberg",1820,,,,6,228,,,,FALSE,Ledig,,FALSE,2026-10-21T11:41:56,,,
 home:/blox/leje/condo/bryghuspladsen-8-405-1473-koebenhavn-k/sag-177P010852,home,https://home.dk/blox/leje/condo/bryghuspladsen-8-405-1473-koebenhavn-k/sag-177P010852,Lejlighed,"Bryghuspladsen 8, 4. 405, 1473 København K",1473,,,,,130,29900,,29900,TRUE,Ledig,,FALSE,2026-10-21T11:17:30,,,
 norhjem:/ejendomme/siloen/maglehoejen-10-st-lejl-32/,norhjem,https://norhjem.dk/ejendomme/siloen/maglehoejen-10-st-lejl-32/,Lejlighed,"Maglehøjen 10, st. lejl. 32",4000,Roskilde,,,1,40,4904,,4904,TRUE,Ledig,2026-11-01,FALSE,2026-10-21T10:31:56,,,
 taurus:28570,taurus,https://www.taurus.dk/boligudlejning/lejebolig/?id=28570,"Gode værelser, skøn altan","Gerda Louw Larsens Plads, København SV",2450,koebenhavn sv,,,2,52,14054,,14054,TRUE,Ledig,,FALSE,2026-10-21T10:11:58,,,
