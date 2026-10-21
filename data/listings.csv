@@ -1,4 +1,5 @@
 id,source,url,title,address,postcode,city,lat,lon,rooms,m2,rent,aconto,rent_total,aconto_assumed,status,available_from,match,first_seen,alerted,detail_done,gone_at
+balder:a055p00001REHd1AAH,balder,https://www.balder.dk/lejeboliger/triumphbuen-19-st-tv-3060-espergaerde-danmark,3 værelses lejlighed med stort køkken og udgang til vestvendt terrasse,"Triumphbuen 19, st. tv.",3060,Espergærde,55.997182,12.532333,3,81,13100,950,14050,FALSE,Ledig,2026-12-01,FALSE,2026-10-21T15:11:58,,,
 dab_lejerbo:615-9-3,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,Ryesgade 2D,8700,Horsens,,,3,92.8,7995,,7995,TRUE,Ledig,2026-11-15T00:00:00,FALSE,2026-10-21T15:02:07,,,
 dab_lejerbo:631-4-1,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,"Kalkbrænderivej 4, st.",7100,Vejle,,,1,25.05,2915,,2915,TRUE,Ledig,2026-11-15T00:00:00,FALSE,2026-10-21T15:02:07,,,
 nybolig:N2300290001255,nybolig,https://www.nybolig.dk/ejerlejlighed/7900/klosterparken/n230029/n2300290001255,,"Klosterparken 26, 1. mf., 7900 Nykøbing M",7900,Nykøbing M,56.7923816286084,8.85352361243106,3,114,11670,,11670,TRUE,Ledig,,FALSE,2026-10-21T15:02:07,,,
