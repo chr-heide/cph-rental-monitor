@@ -1,4 +1,5 @@
 id,source,url,title,address,postcode,city,lat,lon,rooms,m2,rent,aconto,rent_total,aconto_assumed,status,available_from,match,first_seen,alerted,detail_done,gone_at
+juli_living:5925,juli_living,https://juliliving.dk/slotsengen-bolig/?boligID=5925,Slotsengen – Attraktiv 2 vær. bolig med grønt kig på 64 veludnyttede kvm,"Klostervej 25, 2. 2",3400,3400 Hillerød,,,2,64,11500,,11500,TRUE,LEDIG,2027-01-01,FALSE,2026-10-23T15:02:12,,,
 norhjem:/ejendomme/markedsgade/markedsgade-17-1-4/,norhjem,https://norhjem.dk/ejendomme/markedsgade/markedsgade-17-1-4/,Lejlighed,"Markedsgade 17, 1. 4.",9800,Hjørring,,,4,99,8795,,8795,TRUE,Ledig,2027-02-01,FALSE,2026-10-23T14:13:17,,,
 norhjem:/ejendomme/siloen/maglehoejen-10-st-lejl-30/,norhjem,https://norhjem.dk/ejendomme/siloen/maglehoejen-10-st-lejl-30/,Lejlighed,"Maglehøjen 10, st. lejl. 30",4000,Roskilde,,,1,40,4904,,4904,TRUE,Ledig,2026-11-01,FALSE,2026-10-23T14:06:29,,,
 norhjem:/ejendomme/groenningen/groenningen-40/,norhjem,https://norhjem.dk/ejendomme/groenningen/groenningen-40/,Rækkehus,Grønningen 40,5500,Middelfart,,,4,97,10595,,10595,TRUE,Ledig,2027-01-01,FALSE,2026-10-23T13:31:53,,,
