@@ -1,4 +1,5 @@
 id,source,url,title,address,postcode,city,lat,lon,rooms,m2,rent,aconto,rent_total,aconto_assumed,status,available_from,match,first_seen,alerted,detail_done,gone_at
+norhjem:/ejendomme/markedsgade/markedsgade-17-1-4/,norhjem,https://norhjem.dk/ejendomme/markedsgade/markedsgade-17-1-4/,Lejlighed,"Markedsgade 17, 1. 4.",9800,Hjørring,,,4,99,8795,,8795,TRUE,Ledig,2027-02-01,FALSE,2026-10-23T14:13:17,,,
 norhjem:/ejendomme/siloen/maglehoejen-10-st-lejl-30/,norhjem,https://norhjem.dk/ejendomme/siloen/maglehoejen-10-st-lejl-30/,Lejlighed,"Maglehøjen 10, st. lejl. 30",4000,Roskilde,,,1,40,4904,,4904,TRUE,Ledig,2026-11-01,FALSE,2026-10-23T14:06:29,,,
 norhjem:/ejendomme/groenningen/groenningen-40/,norhjem,https://norhjem.dk/ejendomme/groenningen/groenningen-40/,Rækkehus,Grønningen 40,5500,Middelfart,,,4,97,10595,,10595,TRUE,Ledig,2027-01-01,FALSE,2026-10-23T13:31:53,,,
 balder:a050N00000zfG4IQAU,balder,https://www.balder.dk/lejeboliger/else-alfelts-vej-102-st-th-2300-koebenhavn-s-danmark,2 værelses lejlighed lige ved Amager Fælled,"Else Alfelts Vej 102, st. th.",2300,København S,55.617834,12.567138,2,78,14200,800,15000,FALSE,Ledig,2026-11-01,FALSE,2026-10-23T13:17:23,,,
