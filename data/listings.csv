@@ -1,4 +1,6 @@
 id,source,url,title,address,postcode,city,lat,lon,rooms,m2,rent,aconto,rent_total,aconto_assumed,status,available_from,match,first_seen,alerted,detail_done,gone_at
+edc:11810228,edc,https://www.edc.dk/leje/lejlighed/2500-valby/gammel-koege-landevej-40-4-405/11810228/,Lejlighed fra EDC,"Gammel Køge Landevej 40, 4. 405",2500,Valby,,,1,31,9050,,9050,TRUE,Ledig,,FALSE,2026-10-26T15:32:25,,,
+heimstaden:9-750-3924,heimstaden,https://www.heimstaden.dk/lejebolig/rantzausbakke-39-2-4-8700-horsens/,Lejlighed,"Rantzausbakke 39, 2. 4 8700 Horsens",8700,,,,2,50,6595,,6595,TRUE,Ledig,15-12-2026,FALSE,2026-10-26T15:32:25,,,
 dab_lejerbo:561-1-69,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,"Grådybet 71H, 1., 2",6700,Esbjerg,,,2,46.98,5132,,5132,TRUE,Ledig,2026-12-01T00:00:00,FALSE,2026-10-26T15:02:03,,,
 dab_lejerbo:615-9-5,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,Ryesgade 2F,8700,Horsens,,,4,105.9,8992,,8992,TRUE,Ledig,2026-11-15T00:00:00,FALSE,2026-10-26T15:02:03,,,
 dab_lejerbo:631-7-30,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,"Ny Grejsdalsvej 74G, 1.",7100,Vejle,,,2,55.71,3787,,3787,TRUE,Ledig,2026-11-15T00:00:00,FALSE,2026-10-26T15:02:03,,,
@@ -1616,7 +1618,7 @@ heimstaden:9-484-85,heimstaden,https://www.heimstaden.dk/lejebolig/noerrebjerg-r
 heimstaden:9-484-89,heimstaden,https://www.heimstaden.dk/lejebolig/noerrebjerg-runddel-53-k-5220-odense-soe/,Rækkehus,Nørrebjerg Runddel 53 K 5220 Odense SØ,5220,,,,4,89,9795,,9795,TRUE,Ledig,Ledig nu,FALSE,2026-10-10T20:45:45,,,
 heimstaden:9-488-35,heimstaden,https://www.heimstaden.dk/lejebolig/honningurten-35-5220-odense-soe/,Rækkehus,Honningurten 35 5220 Odense SØ,5220,,,,4,95,9395,,9395,TRUE,Ledig,01-11-2026,FALSE,2026-10-10T20:45:45,,,
 heimstaden:9-506-11,heimstaden,https://www.heimstaden.dk/lejebolig/kongelyset-21-5220-odense-soe/,Tvillingehus,Kongelyset 21 5220 Odense SØ,5220,,,,5,140,11800,,11800,TRUE,Ledig,11.800 kr./md.,FALSE,2026-10-10T20:45:45,,,
-heimstaden:9-506-13,heimstaden,https://www.heimstaden.dk/lejebolig/kongelyset-25-5220-odense-soe/,Tvillingehus,Kongelyset 25 5220 Odense SØ,5220,,,,5,120,11400,,11400,TRUE,Ledig,11.400 kr./md.,FALSE,2026-10-10T20:45:45,,,
+heimstaden:9-506-13,heimstaden,https://www.heimstaden.dk/lejebolig/kongelyset-25-5220-odense-soe/,Tvillingehus,Kongelyset 25 5220 Odense SØ,5220,,,,5,120,11400,,11400,TRUE,Ledig,11.400 kr./md.,FALSE,2026-10-10T20:45:45,,,2026-10-26T15:32:25
 heimstaden:9-506-75,heimstaden,https://www.heimstaden.dk/lejebolig/loevefoden-13-5220-odense-soe/,Tvillingehus,Løvefoden 13 5220 Odense SØ,5220,,,,5,120,11400,,11400,TRUE,Ledig,11.400 kr./md.,FALSE,2026-10-10T20:45:45,,,
 heimstaden:9-506-9,heimstaden,https://www.heimstaden.dk/lejebolig/kongelyset-17-5220-odense-soe/,Tvillingehus,Kongelyset 17 5220 Odense SØ,5220,,,,5,140,11800,,11800,TRUE,Ledig,11.800 kr./md.,FALSE,2026-10-10T20:45:45,,,
 heimstaden:9-517-6,heimstaden,https://www.heimstaden.dk/lejebolig/labofaparken-23-4230-skaelskoer/,Rækkehus,Labofaparken 23 4230 Skælskør,4230,,,,5,116,11950,,11950,TRUE,Ledig,11.950 kr./md.,FALSE,2026-10-10T20:45:45,,,
