@@ -1,4 +1,5 @@
 id,source,url,title,address,postcode,city,lat,lon,rooms,m2,rent,aconto,rent_total,aconto_assumed,status,available_from,match,first_seen,alerted,detail_done,gone_at
+juli_living:9231,juli_living,https://juliliving.dk/hoerkaer-have-bolig/?boligID=9231,Skøn lys 2 værelses med altan.,"Hørkær 7C, 3. 3",2730,2730 Herlev,,,2,59,12280,,12280,TRUE,LEDIG,2026-12-15,FALSE,2026-10-26T15:41:42,,,
 edc:11810228,edc,https://www.edc.dk/leje/lejlighed/2500-valby/gammel-koege-landevej-40-4-405/11810228/,Lejlighed fra EDC,"Gammel Køge Landevej 40, 4. 405",2500,Valby,,,1,31,9050,,9050,TRUE,Ledig,,FALSE,2026-10-26T15:32:25,,,
 heimstaden:9-750-3924,heimstaden,https://www.heimstaden.dk/lejebolig/rantzausbakke-39-2-4-8700-horsens/,Lejlighed,"Rantzausbakke 39, 2. 4 8700 Horsens",8700,,,,2,50,6595,,6595,TRUE,Ledig,15-12-2026,FALSE,2026-10-26T15:32:25,,,
 dab_lejerbo:561-1-69,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,"Grådybet 71H, 1., 2",6700,Esbjerg,,,2,46.98,5132,,5132,TRUE,Ledig,2026-12-01T00:00:00,FALSE,2026-10-26T15:02:03,,,
