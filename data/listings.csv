@@ -1,4 +1,5 @@
 id,source,url,title,address,postcode,city,lat,lon,rooms,m2,rent,aconto,rent_total,aconto_assumed,status,available_from,match,first_seen,alerted,detail_done,gone_at
+heimstaden:9-641-15,heimstaden,https://www.heimstaden.dk/lejebolig/h-c-monrads-vej-17-7100-vejle/,Rækkehus,H. C. Monrads Vej 17 7100 Vejle,7100,,,,4,113,10595,,10595,TRUE,Ledig,10.595 kr./md.,FALSE,2026-10-26T13:02:11,,,
 kereby:28307,kereby,https://kereby.dk/bolig/,4-værelses lejlighed på Nørrebro,"Heimdalsgade 12A, 5., 2200 København N",2200,,55.70022673,12.54175786,4,85,13968,,13968,TRUE,reserved,,FALSE,2026-10-26T12:56:47,,,
 heimstaden:9-273-11,heimstaden,https://www.heimstaden.dk/lejebolig/hoejen-22-4100-ringsted/,Rækkehus,Højen 22 4100 Ringsted,4100,,,,4,113,14700,,14700,TRUE,Ledig,14.700 kr./md.,FALSE,2026-10-26T12:32:06,,,
 heimstaden:9-502-18,heimstaden,https://www.heimstaden.dk/lejebolig/kildegaardsvej-66-4736-karrebaeksminde/,Rækkehus,Kildegårdsvej 66 4736 Karrebæksminde,4736,,,,4,89,12600,,12600,TRUE,Ledig,12.600 kr./md.,FALSE,2026-10-26T12:32:06,,,
