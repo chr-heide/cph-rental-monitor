@@ -1,4 +1,5 @@
 id,source,url,title,address,postcode,city,lat,lon,rooms,m2,rent,aconto,rent_total,aconto_assumed,status,available_from,match,first_seen,alerted,detail_done,gone_at
+norse:7ceae112-490b-4af9-9045-b0883cc31976,norse,"https://norsepm.dk/bolig/Danmarksgade2,st.th.+7ceae112490b4af99045b0883cc31976",Prisvenlig 2-værelses lejlighed i hjertet af Esbjerg,"Danmarksgade 2, st. th.",6700,Esbjerg,55.46701695,8.45705724,2,66,5095,830,5925,FALSE,Available,2026-10-01,FALSE,2026-10-27T09:21:29,,,
 dab_lejerbo:49-12-5,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,Vadgårdsvej 43F,6830,Nørre-Nebel,,,2,66,5621,,5621,TRUE,Ledig,2026-12-15T00:00:00,FALSE,2026-10-27T08:21:49,,,
 edc:11809788,edc,https://www.edc.dk/leje/lejlighed/2450-koebenhavn-sv/ved-stigbordene-17-st-tv/11809788/,Lejlighed fra EDC,"Ved Stigbordene 17, st. tv",2450,København SV,,,2,75,16250,,16250,TRUE,Ledig,,FALSE,2026-10-26T17:31:51,,,
 edc:11809782,edc,https://www.edc.dk/leje/lejlighed/2450-koebenhavn-sv/a-c-meyers-vaenge-136-2-th/11809782/,Lejlighed fra EDC,"A. C. Meyers Vænge 136, 2. th",2450,København SV,,,3,84,16450,,16450,TRUE,Ledig,,FALSE,2026-10-26T16:51:29,,,
