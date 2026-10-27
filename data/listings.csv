@@ -1,4 +1,5 @@
 id,source,url,title,address,postcode,city,lat,lon,rooms,m2,rent,aconto,rent_total,aconto_assumed,status,available_from,match,first_seen,alerted,detail_done,gone_at
+nybolig:N1055740001118,nybolig,https://www.nybolig.dk/raekkehus/2630/skolevej/n105574/n1055740001118,"Rækkehus på Skolevej 34A, 2630 Taastrup","Skolevej 34A, 2630 Taastrup",2630,Taastrup,55.644436494123,12.3053091450643,4,115,16000,,16000,TRUE,Ledig,,FALSE,2026-10-27T13:41:37,,,
 heimstaden:9-348-44,heimstaden,https://www.heimstaden.dk/lejebolig/blangstedgaards-alle-89a-5220-odense-soe/,Lejlighed,Blangstedgårds Allé 89A 5220 Odense SØ,5220,,,,3,118,7995,,7995,TRUE,Ledig,01-12-2026,FALSE,2026-10-27T13:31:50,,,
 heimstaden:9-489-11,heimstaden,https://www.heimstaden.dk/lejebolig/boegeskovparken-209-8260-viby-j/,Tvillingehus,Bøgeskovparken 209 8260 Viby J,8260,,,,4,100,12995,,12995,TRUE,Ledig,12.995 kr./md.,FALSE,2026-10-27T13:31:50,,,
 heimstaden:9-506-33,heimstaden,https://www.heimstaden.dk/lejebolig/kongepennen-5-5220-odense-soe/,Tvillingehus,Kongepennen 5 5220 Odense SØ,5220,,,,5,120,11400,,11400,TRUE,Ledig,11.400 kr./md.,FALSE,2026-10-27T13:31:50,,,
