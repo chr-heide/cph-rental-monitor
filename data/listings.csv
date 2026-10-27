@@ -1,4 +1,6 @@
 id,source,url,title,address,postcode,city,lat,lon,rooms,m2,rent,aconto,rent_total,aconto_assumed,status,available_from,match,first_seen,alerted,detail_done,gone_at
+heimstaden:9-269-2,heimstaden,https://www.heimstaden.dk/lejebolig/birkelunddalen-2b-5260-odense-s/,Rækkehus,Birkelunddalen 2B 5260 Odense S,5260,,,,5,136,11350,,11350,TRUE,Ledig,11.350 kr./md.,FALSE,2026-10-27T15:32:12,,,
+heimstaden:9-382-6,heimstaden,https://www.heimstaden.dk/lejebolig/kirkevej-6-f-5772-kvaerndrup/,Rækkehus,Kirkevej 6 F 5772 Kværndrup,5772,,,,4,98,10200,,10200,TRUE,Ledig,10.200 kr./md.,FALSE,2026-10-27T15:32:12,,,
 juli_living:10453,juli_living,https://juliliving.dk/hannemanns-hus-bolig/?boligID=10453,Stilren lejlighed i attraktive Ørestad Syd med altan,"Hannemanns Allé 67, 4. 2",2300,2300 København S,55.6267613,12.580253,2,53,13845,,13845,TRUE,LEDIG,2026-11-15,FALSE,2026-10-27T15:26:52,,,
 taurus:28643,taurus,https://www.taurus.dk/boligudlejning/lejebolig/?id=28643,2 værelses med terrasse,"Blegkilde Allé, Aalborg",,aalborg,,,2,61,6535,800,7335,FALSE,Ledig,,FALSE,2026-10-27T15:02:18,,2026-10-27T15:02:18,
 juli_living:10470,juli_living,https://juliliving.dk/hannemanns-hus-bolig/?boligID=10470,Stilren lejlighed i attraktive Ørestad Syd med altan,"Hannemanns Allé 75, 4. 3",2300,2300 København S,,,2,49,14095,,14095,TRUE,LEDIG,2026-11-15,FALSE,2026-10-27T14:44:50,,,
