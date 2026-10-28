@@ -1,4 +1,7 @@
 id,source,url,title,address,postcode,city,lat,lon,rooms,m2,rent,aconto,rent_total,aconto_assumed,status,available_from,match,first_seen,alerted,detail_done,gone_at
+norhjem:/ejendomme/roedovre-port/roedovre-port-21-3-doer-6/,norhjem,https://norhjem.dk/ejendomme/roedovre-port/roedovre-port-21-3-doer-6/,Lejlighed,"Rødovre Port 21, 3. dør 6.",2610,Rødovre,,,2,43,10500,,10500,TRUE,Ledig,2027-01-01,FALSE,2026-10-28T12:22:26,,,
+taurus:28657,taurus,https://www.taurus.dk/boligudlejning/lejebolig/?id=28657,Skøn stuelejlighed,"Elektronikvej, Brøndby",,broendby,,,2,61,10632,1150,11782,FALSE,Ledig,,FALSE,2026-10-28T12:22:26,,2026-10-28T12:22:26,
+taurus:28658,taurus,https://www.taurus.dk/boligudlejning/lejebolig/?id=28658,Stor 1'er med altan,"Møllehatten, Risskov",,risskov,,,1,43,7495,,7495,TRUE,Ledig,,FALSE,2026-10-28T12:22:26,,,
 taurus:20433,taurus,https://www.taurus.dk/boligudlejning/lejebolig/?id=20433,Velegnet til det unge par,"Møllehatten, Risskov",,risskov,,,2,68,9695,600,10295,FALSE,Ledig,,FALSE,2026-10-28T12:11:53,,2026-10-28T12:11:53,
 taurus:28655,taurus,https://www.taurus.dk/boligudlejning/lejebolig/?id=28655,Velindrettet delelejlighed med altan,"Møllehatten, Risskov",,risskov,,,3,71,11095,700,11795,FALSE,Ledig,,FALSE,2026-10-28T12:11:53,,2026-10-28T12:11:53,
 taurus:28647,taurus,https://www.taurus.dk/boligudlejning/lejebolig/?id=28647,Flot lejlighed med terrasse,"Møllehatten, Risskov",,risskov,,,2,62,9795,600,10395,FALSE,Ledig,,FALSE,2026-10-28T12:02:23,,2026-10-28T12:02:23,
