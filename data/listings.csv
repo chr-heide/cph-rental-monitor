@@ -1,4 +1,5 @@
 id,source,url,title,address,postcode,city,lat,lon,rooms,m2,rent,aconto,rent_total,aconto_assumed,status,available_from,match,first_seen,alerted,detail_done,gone_at
+findbolig:67221,findbolig,https://findbolig.nu/da-dk/residence/67221,PKAE - P/S PKAE Ejendom (Godsbanen),"Godsbanen 63, 1 lejl. 8",9000,Aalborg,57.04076,9.91991,3,74,7650,350,8000,FALSE,Ledig,2027-02-01,FALSE,2026-10-28T13:51:41,,,
 findbolig:291677,findbolig,https://findbolig.nu/da-dk/residence/291677,Jordan Advokatpartnerselskab - Fælledvej 19,Fælledvej 19A,2200,København N,55.68989713,12.55972006,3,186,27500,2100,29600,FALSE,Ledig,2026-12-31,FALSE,2026-10-28T13:31:57,,,
 findbolig:287418,findbolig,https://findbolig.nu/da-dk/residence/287418,DEAS - Brahesbakke,"Brahesbakke 17, 0 th",8700,Horsens,55.87282204,9.81117544,3,99,10660,,10660,TRUE,Ledig,2027-01-01,FALSE,2026-10-28T13:21:40,,,
 kereby:28351,kereby,https://kereby.dk/bolig/,2-værelses lejlighed på Frederiksberg,"Falkoner Alle 12A, 3. th, 2000 Frederiksberg",2000,,55.67935873,12.53384006,2,63,10773,,10773,TRUE,reserved,,FALSE,2026-10-28T13:02:10,,,
