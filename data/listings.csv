@@ -1,4 +1,5 @@
 id,source,url,title,address,postcode,city,lat,lon,rooms,m2,rent,aconto,rent_total,aconto_assumed,status,available_from,match,first_seen,alerted,detail_done,gone_at
+findbolig:287238,findbolig,https://findbolig.nu/da-dk/residence/287238,AXA - Den Grønne Fatning - Blok 2,"Hørkær 19B, 2 1",2730,Herlev,55.71804012,12.43838502,3,92,14350,1260,15610,FALSE,Ledig,2027-02-01,FALSE,2026-10-29T15:00:36,,,
 findbolig:95022,findbolig,https://findbolig.nu/da-dk/residence/95022,AXA - Nobelholmen,"Theodore Roosevelts Vej 17, 7 1",2450,København SV,55.65843,12.55972,4,117,21700,1000,22700,FALSE,Ledig,2027-03-01,FALSE,2026-10-29T14:11:51,,,
 juli_living:6275,juli_living,https://juliliving.dk/ved-oelbycenter-bolig/?boligID=6275,God stor 2 vær. lejebolig på 85 m2. oven på Ølby Centeret,"Ølbycenter 23, 2. I",4600,4600 Køge,,,2,85,11100,,11100,TRUE,LEDIG,2026-12-15,FALSE,2026-10-29T13:51:46,,,
 taurus:28685,taurus,https://www.taurus.dk/boligudlejning/lejebolig/?id=28685,Flot køkken og stor altan,"Danmarksgade, Fredericia",,fredericia,,,4,104,10095,900,10995,FALSE,Ledig,,FALSE,2026-10-29T13:51:46,,2026-10-29T13:51:46,
