@@ -1,4 +1,5 @@
 id,source,url,title,address,postcode,city,lat,lon,rooms,m2,rent,aconto,rent_total,aconto_assumed,status,available_from,match,first_seen,alerted,detail_done,gone_at
+kereby:28368,kereby,https://kereby.dk/bolig/drogdensgade-4-5-2300-kobenhavn-s/,4-værelses lejlighed på Amager,"Drogdensgade 4, 5., 2300 København S",2300,,55.65950481,12.60762426,4,98,22050,,22050,TRUE,available,,FALSE,2026-10-29T10:41:44,,,
 balder:a050N00000zfFs4QAE,balder,https://www.balder.dk/lejeboliger/lergravsvej-74-5-tv-2300-koebenhavn-s-danmark,Stor tagterrasse,"Lergravsvej 74, 5. tv.",2300,København S,55.663075,12.626133,3,97,19400,950,20350,FALSE,Ledig,2026-12-01,FALSE,2026-10-29T09:31:47,,,
 kereby:28354,kereby,https://kereby.dk/bolig/norrebrogade-174-5-tv-2200-kobenhavn-n/,Istandsat lejlighed på Nørrebro,"Nørrebrogade 174, 5. tv, 2200 København N",2200,,55.69657105,12.54578597,4,145,24010,,24010,TRUE,available,,FALSE,2026-10-29T09:21:44,,,
 dab_lejerbo:19-8-14,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,Parkvænget 6B 1,4941,Bandholm,,,1,39.24,3282,,3282,TRUE,Ledig,2026-11-16T00:00:00,FALSE,2026-10-28T22:51:42,,,
