@@ -1,4 +1,5 @@
 id,source,url,title,address,postcode,city,lat,lon,rooms,m2,rent,aconto,rent_total,aconto_assumed,status,available_from,match,first_seen,alerted,detail_done,gone_at
+edc:11810234,edc,https://www.edc.dk/leje/lejlighed/2450-koebenhavn-sv/alliancevej-7-3-tv/11810234/,Lejlighed fra EDC,"Alliancevej 7, 3. tv",2450,København SV,,,2,73,15800,,15800,TRUE,Ledig,,FALSE,2026-10-29T16:21:55,,,
 dab_lejerbo:615-3-4,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,"Houmannsgade 46B, 1.",8700,Horsens,,,2,65.9,6334,,6334,TRUE,Ledig,2026-12-15T00:00:00,FALSE,2026-10-29T15:05:03,,,
 dab_lejerbo:661-6-49,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,Mads Clausens Vej 25,7500,Holstebro,,,1,27.7,2641,,2641,TRUE,Ledig,2026-11-01T00:00:00,FALSE,2026-10-29T15:05:03,,,
 findbolig:287238,findbolig,https://findbolig.nu/da-dk/residence/287238,AXA - Den Grønne Fatning - Blok 2,"Hørkær 19B, 2 1",2730,Herlev,55.71804012,12.43838502,3,92,14350,1260,15610,FALSE,Ledig,2027-02-01,FALSE,2026-10-29T15:00:36,,,
