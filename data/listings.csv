@@ -1,4 +1,5 @@
 id,source,url,title,address,postcode,city,lat,lon,rooms,m2,rent,aconto,rent_total,aconto_assumed,status,available_from,match,first_seen,alerted,detail_done,gone_at
+heimstaden:9-605-10,heimstaden,https://www.heimstaden.dk/lejebolig/strandgaardsvaenget-19-5600-faaborg/,Rækkehus,Strandgårdsvænget 19 5600 Faaborg,5600,,,,4,106,9750,,9750,TRUE,Ledig,Ledig nu,FALSE,2026-10-30T16:02:20,,,
 heimstaden:9-484-35,heimstaden,https://www.heimstaden.dk/lejebolig/noerrebjerg-runddel-43-c-5220-odense-soe/,Rækkehus,Nørrebjerg Runddel 43 C 5220 Odense SØ,5220,,,,3,89,9595,,9595,TRUE,Ledig,12-11-2026,FALSE,2026-10-30T15:31:53,,,
 heimstaden:9-484-19,heimstaden,https://www.heimstaden.dk/lejebolig/noerrebjerg-runddel-39-c-5220-odense-soe/,Rækkehus,Nørrebjerg Runddel 39 C 5220 Odense SØ,5220,,,,3,89,9595,,9595,TRUE,Ledig,27-11-2026,FALSE,2026-10-30T15:02:14,,,
 heimstaden:9-569-3,heimstaden,https://www.heimstaden.dk/lejebolig/skaegkaertoften-6-8600-silkeborg/,Lejlighed,Skægkærtoften 6 8600 Silkeborg,8600,,,,4,101,10495,,10495,TRUE,Ledig,10.495 kr./md.,FALSE,2026-10-30T15:02:14,,,
