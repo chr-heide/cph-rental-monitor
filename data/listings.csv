@@ -1,4 +1,5 @@
 id,source,url,title,address,postcode,city,lat,lon,rooms,m2,rent,aconto,rent_total,aconto_assumed,status,available_from,match,first_seen,alerted,detail_done,gone_at
+dab_lejerbo:19-31-31,dab_lejerbo,½,,Syltholmsparken 50 1 tv,4970,Rødby,,,2,64.9,3902,,3902,TRUE,Ledig,2026-11-23T00:00:00,FALSE,2026-11-02T22:41:28,,,
 heimstaden:9-735-2,heimstaden,https://www.heimstaden.dk/lejebolig/kirkeloekken-19-5792-aarslev/,Dobbelthus,Kirkeløkken 19 5792 Årslev,5792,,,,3,101,9895,,9895,TRUE,Ledig,30-11-2026,FALSE,2026-11-02T17:41:59,,,
 heimstaden:9-735-4,heimstaden,https://www.heimstaden.dk/lejebolig/kirkeloekken-23-5792-aarslev/,Dobbelthus,Kirkeløkken 23 5792 Årslev,5792,,,,3,101,9895,,9895,TRUE,Ledig,01-12-2026,FALSE,2026-11-02T17:41:59,,,
 home:/englandshaven/leje/condo/englandsvej-51-56-2300-koebenhavn-s/sag-177P011252,home,https://home.dk/englandshaven/leje/condo/englandsvej-51-56-2300-koebenhavn-s/sag-177P011252,Lejlighed,"Englandsvej 51, 1. 56, 2300 København S",2300,,,,1,50,13450,1050,14500,FALSE,Ledig,,FALSE,2026-11-02T16:51:54,,2026-11-02T16:51:54,
@@ -1098,7 +1099,7 @@ dab_lejerbo:93-8-1477,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-bo
 dab_lejerbo:93-8-1492,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,"Birkelunden 12, 1.h.",6705,Esbjerg Ø.,,,4,115,8510,,8510,TRUE,Ledig,2026-12-01T00:00:00,FALSE,2026-10-10T23:19:48,,,2026-10-19T15:11:51
 dab_lejerbo:93-8-1529,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,"Cederlunden 5, 2.h.",6705,Esbjerg Ø.,,,2,73,5931,,5931,TRUE,Ledig,2026-12-16T00:00:00,FALSE,2026-10-10T23:19:48,,,
 dab_lejerbo:93-8-1544,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,"Cederlunden 9, 3.v.",6705,Esbjerg Ø.,,,4,100,7306,,7306,TRUE,Ledig,2026-12-16T00:00:00,FALSE,2026-10-10T23:19:48,,,
-dab_lejerbo:93-8-1557,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,"Cederlunden 13, 2.h.",6705,Esbjerg Ø.,,,4,115,8495,,8495,TRUE,Ledig,2026-12-16T00:00:00,FALSE,2026-10-10T23:19:48,,,
+dab_lejerbo:93-8-1557,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,"Cederlunden 13, 2.h.",6705,Esbjerg Ø.,,,4,115,8495,,8495,TRUE,Ledig,2026-12-16T00:00:00,FALSE,2026-10-10T23:19:48,,,2026-11-02T22:41:28
 dab_lejerbo:93-8-1558,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,"Cederlunden 13, 3.v.",6705,Esbjerg Ø.,,,3,102,7410,,7410,TRUE,Ledig,2026-12-16T00:00:00,FALSE,2026-10-10T23:19:48,,,
 dab_lejerbo:93-8-1565,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,"Cederlunden 15, 3.v.",6705,Esbjerg Ø.,,,2,86,6970,,6970,TRUE,Ledig,2026-12-16T00:00:00,FALSE,2026-10-10T23:19:48,,,
 dab_lejerbo:93-8-1608,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,"Cederlunden 12, 3.h.",6705,Esbjerg Ø.,,,4,115,8080,,8080,TRUE,Ledig,2026-12-16T00:00:00,FALSE,2026-10-10T23:19:48,,,2026-10-27T15:26:52
