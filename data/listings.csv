@@ -1,4 +1,5 @@
 id,source,url,title,address,postcode,city,lat,lon,rooms,m2,rent,aconto,rent_total,aconto_assumed,status,available_from,match,first_seen,alerted,detail_done,gone_at
+edc:11810242,edc,https://www.edc.dk/leje/lejlighed/2500-valby/gammel-koege-landevej-40-2-225/11810242/,Lejlighed fra EDC,"Gammel Køge Landevej 40, 2. 225",2500,Valby,,,1,34,9100,,9100,TRUE,Ledig,,FALSE,2026-11-03T12:41:35,,,
 heimstaden:9-287-4,heimstaden,https://www.heimstaden.dk/lejebolig/faste-batteri-vej-90-2-tv-2300-koebenhavn-s/,Lejlighed,"Faste Batteri Vej 90, 2. tv. 2300 København S",2300,,,,5,157,26000,,26000,TRUE,Ledig,26.000 kr./md.,FALSE,2026-11-03T12:31:52,,,
 heimstaden:9-288-1,heimstaden,https://www.heimstaden.dk/lejebolig/amagerfaelledvej-42-4-tv-2300-koebenhavn-s/,Lejlighed,"Amagerfælledvej 42, 4. tv. 2300 København S",2300,,,,2,74,16400,800,17200,FALSE,Ledig,16.400 kr./md.,FALSE,2026-11-03T12:31:52,,2026-11-03T12:31:52,
 heimstaden:9-323-66,heimstaden,https://www.heimstaden.dk/lejebolig/cf-richs-vej-105c-3-307-2000-frederiksberg/,Lejlighed,"C.F. Richs Vej 105C, 3. 307 2000 Frederiksberg",2000,,,,1,23,8300,,8300,TRUE,Ledig,20-01-2027,FALSE,2026-11-03T12:31:52,,,
