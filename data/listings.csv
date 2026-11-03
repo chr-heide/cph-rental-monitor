@@ -1,4 +1,5 @@
 id,source,url,title,address,postcode,city,lat,lon,rooms,m2,rent,aconto,rent_total,aconto_assumed,status,available_from,match,first_seen,alerted,detail_done,gone_at
+taurus:28731,taurus,https://www.taurus.dk/boligudlejning/lejebolig/?id=28731,Lejlighed i hjertet af Århus,"Østergade, Aarhus C",,aarhus c,,,3,56,10395,700,11095,FALSE,Ledig,,FALSE,2026-11-03T15:51:53,,2026-11-03T15:51:53,
 dab_lejerbo:631-3-15,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,"Finlandsvej 86, 4. th.",7100,Vejle,,,3,105,7319,,7319,TRUE,Ledig,2026-12-01T00:00:00,FALSE,2026-11-03T15:41:47,,,
 dab_lejerbo:731-15-23,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,"Heraklesvej 6, 1. tv.",8960,Randers Sø,,,2,49.98,4082,,4082,TRUE,Ledig,2027-02-01T00:00:00,FALSE,2026-11-03T15:41:47,,,
 dab_lejerbo:731-5-8,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,Ruholmsvej 3,8382,Hinnerup,,,3,79,7151,,7151,TRUE,Ledig,2027-02-01T00:00:00,FALSE,2026-11-03T15:41:47,,,
