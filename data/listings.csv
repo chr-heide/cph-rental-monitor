@@ -1,5 +1,5 @@
 id,source,url,title,address,postcode,city,lat,lon,rooms,m2,rent,aconto,rent_total,aconto_assumed,status,available_from,match,first_seen,alerted,detail_done,gone_at
-juli_living:4297,juli_living,https://juliliving.dk/ostergade-51-bolig/?boligID=4297,Moderne og lys lejlighed<br><br>KUN 1 MÅNEDS DEPOSITUM,"Østergade 51 K, 1. tv.",5000,5000 Odense,,,3,91,9395,,9395,TRUE,LEDIG,2026-12-01,FALSE,2026-11-03T09:02:04,,,
+juli_living:4297,juli_living,https://juliliving.dk/ostergade-51-bolig/?boligID=4297,Moderne og lys lejlighed<br><br>KUN 1 MÅNEDS DEPOSITUM,"Østergade 51 K, 1. tv.",5000,5000 Odense,,,3,91,10695,,10695,TRUE,LEDIG,2026-12-01,FALSE,2026-11-03T09:02:04,,,
 norse:4b3f97fa-21f3-4945-b466-30d4be1f9dc1,norse,"https://norsepm.dk/bolig/Skråningen11,1.+4b3f97fa21f34945b46630d4be1f9dc1",Moderne lejlighed i rolige omgivelser,"Skråningen 11, 1.",6000,Kolding,55.48398756,9.46160381,2,56,5995,920,6915,FALSE,Available,2027-01-01,FALSE,2026-11-03T08:41:58,,,
 norse:de8f1c03-7b25-4e87-a4b0-b4f3d9c504f1,norse,"https://norsepm.dk/bolig/Odinsgade71,1.lejl.1+de8f1c037b254e87a4b0b4f3d9c504f1",,"Odinsgade 71, 1. lejl. 1",7100,Vejle,55.71328524,9.53234953,2,61,5445,400,5845,FALSE,Available,2026-12-01,FALSE,2026-11-03T08:32:00,,,
 dab_lejerbo:19-31-31,dab_lejerbo,½,,Syltholmsparken 50 1 tv,4970,Rødby,,,2,64.9,3902,,3902,TRUE,Ledig,2026-11-23T00:00:00,FALSE,2026-11-02T22:41:28,,,
