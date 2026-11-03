@@ -1,4 +1,5 @@
 id,source,url,title,address,postcode,city,lat,lon,rooms,m2,rent,aconto,rent_total,aconto_assumed,status,available_from,match,first_seen,alerted,detail_done,gone_at
+heimstaden:9-481-65,heimstaden,https://www.heimstaden.dk/lejebolig/koglevaenget-39-st-5700-svendborg/,Lejlighed,"Koglevænget 39, st. 5700 Svendborg",5700,,,,2,55,7350,,7350,TRUE,Ledig,15-01-2027,FALSE,2026-11-03T15:02:06,,,
 heimstaden:9-481-55,heimstaden,https://www.heimstaden.dk/lejebolig/koglevaenget-31-st-5700-svendborg/,Lejlighed,"Koglevænget 31, st. 5700 Svendborg",5700,,,,2,55,7750,,7750,TRUE,Ledig,15-12-2026,FALSE,2026-11-03T14:31:47,,,
 taurus:27826,taurus,https://www.taurus.dk/boligudlejning/lejebolig/?id=27826,PERFEKT 1-VÆRELSES PÅ 1. SAL I AARHUS C,"Åparken, Aarhus C",,aarhus c,,,1,31,6500,,6500,TRUE,Ledig,,FALSE,2026-11-03T14:11:52,,,
 taurus:28787,taurus,https://www.taurus.dk/boligudlejning/lejebolig/?id=28787,PERFEKT 1-VÆRELSES PÅ 3 SAL I AARHUS C,"Åparken, Aarhus C",,aarhus c,,,1,31,6500,,6500,TRUE,Ledig,,FALSE,2026-11-03T14:11:52,,,
