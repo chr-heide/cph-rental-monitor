@@ -1,4 +1,6 @@
 id,source,url,title,address,postcode,city,lat,lon,rooms,m2,rent,aconto,rent_total,aconto_assumed,status,available_from,match,first_seen,alerted,detail_done,gone_at
+heimstaden:9-568-13,heimstaden,https://www.heimstaden.dk/lejebolig/mustangvej-25-8960-randers-soe/,Rækkehus,Mustangvej 25 8960 Randers SØ,8960,,,,4,101,10995,,10995,TRUE,Ledig,10.995 kr./md.,FALSE,2026-11-03T14:02:05,,,
+taurus:22542,taurus,https://www.taurus.dk/boligudlejning/lejebolig/?id=22542,BO TÆT PÅ DET HELE,"Søren Frichs Vej, Aarhus C",,aarhus c,,,3,89,13395,800,14195,FALSE,Ledig,,FALSE,2026-11-03T14:02:05,,2026-11-03T14:02:05,
 taurus:28761,taurus,https://www.taurus.dk/boligudlejning/lejebolig/?id=28761,Renoveret lejlighed,"Holme Møllevej, Viby J",,viby j,,,2,72,9800,500,10300,FALSE,Ledig,,FALSE,2026-11-03T13:51:32,,2026-11-03T13:51:32,
 taurus:13349,taurus,https://www.taurus.dk/boligudlejning/lejebolig/?id=13349,Nyrenoveret lejlighed,"Holme Møllevej, Viby J",,viby j,,,3,83,11000,600,11600,FALSE,Ledig,,FALSE,2026-11-03T13:41:38,,2026-11-03T13:41:38,
 heimstaden:9-587-14,heimstaden,https://www.heimstaden.dk/lejebolig/gl-jennumvej-13-2-th-8930-randers-noe/,Lejlighed,"Gl. Jennumvej 13, 2. th. 8930 Randers NØ",8930,,,,4,129,10795,,10795,TRUE,Ledig,10.795 kr./md.,FALSE,2026-11-03T13:31:45,,,
