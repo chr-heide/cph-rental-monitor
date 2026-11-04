@@ -1,4 +1,6 @@
 id,source,url,title,address,postcode,city,lat,lon,rooms,m2,rent,aconto,rent_total,aconto_assumed,status,available_from,match,first_seen,alerted,detail_done,gone_at
+balder:a055p00001REHbjAAH,balder,https://www.balder.dk/lejeboliger/triumphbuen-3-2-tv-3060-espergaerde-danmark,4-værelses lejlighed med altan,"Triumphbuen 3, 2. tv.",3060,Espergærde,55.997182,12.532333,4,94,14100,1250,15350,FALSE,Ledig,2027-03-01,FALSE,2026-11-04T08:41:49,,,
+balder:a055p00001REHcEAAX,balder,https://www.balder.dk/lejeboliger/triumphbuen-9-st-mf-3060-espergaerde-danmark,2 værelses lejlighed med vestvendt terrasse,"Triumphbuen 9, st. mf.",3060,Espergærde,55.997182,12.532333,2,57,10200,800,11000,FALSE,Ledig,2027-02-01,FALSE,2026-11-04T08:41:49,,,
 dab_lejerbo:19-31-7,dab_lejerbo,½,,Syltholmsparken 62 1 tv,4970,Rødby,,,2,64.9,3902,,3902,TRUE,Ledig,2026-11-20T00:00:00,FALSE,2026-11-04T00:41:34,,,
 dab_lejerbo:19-31-83,dab_lejerbo,½,,Syltholmsparken 32 st tv,4970,Rødby,,,2,64.9,3902,,3902,TRUE,Ledig,2026-11-15T00:00:00,FALSE,2026-11-03T22:11:50,,,
 heimstaden:9-603-13,heimstaden,https://www.heimstaden.dk/lejebolig/fyrretoften-47-7100-vejle/,Rækkehus,Fyrretoften 47 7100 Vejle,7100,,,,4,109,11295,,11295,TRUE,Ledig,11.295 kr./md.,FALSE,2026-11-03T20:32:13,,,
