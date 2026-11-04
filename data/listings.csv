@@ -1,4 +1,6 @@
 id,source,url,title,address,postcode,city,lat,lon,rooms,m2,rent,aconto,rent_total,aconto_assumed,status,available_from,match,first_seen,alerted,detail_done,gone_at
+kereby:28403,kereby,https://kereby.dk/bolig/,3-værelses lejlighed på Amager,"Lillegrund 10A, st. th, 2300 København S",2300,,55.65788091,12.61319108,3,75,11888,,11888,TRUE,reserved,,FALSE,2026-11-04T11:21:31,,,
+norhjem:/ejendomme/roedovre-port/roedovre-port-21-18-tv/,norhjem,https://norhjem.dk/ejendomme/roedovre-port/roedovre-port-21-18-tv/,Lejlighed,"Rødovre Port 21, 18. tv",2610,Rødovre,,,2,88,15000,,15000,TRUE,Ledig,2026-12-15,FALSE,2026-11-04T11:21:31,,,
 edc:11810252,edc,https://www.edc.dk/leje/lejlighed/1264-koebenhavn-k/store-kongensgade-100-4-3/11810252/,Lejlighed fra EDC,"Store Kongensgade 100, 4. 3",1264,København K,,,1,33,11500,,11500,TRUE,Ledig,,FALSE,2026-11-04T11:02:38,,,
 edc:11810253,edc,https://www.edc.dk/leje/lejlighed/1264-koebenhavn-k/store-kongensgade-100-3-14/11810253/,Lejlighed fra EDC,"Store Kongensgade 100, 3. 14",1264,København K,,,1,40,12300,,12300,TRUE,Ledig,,FALSE,2026-11-04T11:02:38,,,
 edc:11810256,edc,https://www.edc.dk/leje/lejlighed/1264-koebenhavn-k/store-kongensgade-100-6-11/11810256/,Lejlighed fra EDC,"Store Kongensgade 100, 6. 11",1264,København K,,,1,35,11900,,11900,TRUE,Ledig,,FALSE,2026-11-04T11:02:38,,,
