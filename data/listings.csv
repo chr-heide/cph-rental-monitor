@@ -1,4 +1,5 @@
 id,source,url,title,address,postcode,city,lat,lon,rooms,m2,rent,aconto,rent_total,aconto_assumed,status,available_from,match,first_seen,alerted,detail_done,gone_at
+norhjem:/ejendomme/oestergade/oestergade-42-kld/,norhjem,https://norhjem.dk/ejendomme/oestergade/oestergade-42-kld/,Lejlighed,"Østergade 42, kld.",9400,Nørresundby,,,2,75,3995,,3995,TRUE,Ledig,2026-11-15,FALSE,2026-11-04T12:51:45,,,
 home:/smedetoften/leje/condo/smedetoften-8-18-2400-koebenhavn-nv/sag-177P011263,home,https://home.dk/smedetoften/leje/condo/smedetoften-8-18-2400-koebenhavn-nv/sag-177P011263,Lejlighed,"Smedetoften 8, 3. 18, 2400 København NV",2400,,,,,39,10600,,10600,TRUE,Ledig,,FALSE,2026-11-04T12:41:37,,,
 "kab:1 - 4 rums familiebolig i Valby Folehaven, 2500 Valby",kab,https://www.kab-bolig.dk/folehaven,1 - 4 rums familiebolig i Valby,"Folehaven, 2500 Valby",2500,,,,4,105.3,3884,,3884,TRUE,Ledig,Hurtigst muligt,FALSE,2026-11-04T12:41:37,,,
 heimstaden:9-750-3912,heimstaden,https://www.heimstaden.dk/lejebolig/rantzausbakke-39-1-2-8700-horsens/,Lejlighed,"Rantzausbakke 39, 1. 2 8700 Horsens",8700,,,,2,66,7795,,7795,TRUE,Ledig,01-12-2026,FALSE,2026-11-04T11:32:05,,,
