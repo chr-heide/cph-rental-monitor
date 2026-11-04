@@ -1,4 +1,5 @@
 id,source,url,title,address,postcode,city,lat,lon,rooms,m2,rent,aconto,rent_total,aconto_assumed,status,available_from,match,first_seen,alerted,detail_done,gone_at
+heimstaden:9-297-52,heimstaden,https://www.heimstaden.dk/lejebolig/kloeverbladsgade-75-1-th-2500-valby/,Lejlighed,Kløverbladsgade 75 1 th. 2500 Valby,2500,,,,3,104,16695,,16695,TRUE,Ledig,16.695 kr./md.,FALSE,2026-11-04T16:01:55,,,
 home:/kobbelvaenget/leje/condo/kobbelvaenget-72c-11-2700-broenshoej/sag-177P011293,home,https://home.dk/kobbelvaenget/leje/condo/kobbelvaenget-72c-11-2700-broenshoej/sag-177P011293,Lejlighed,"Kobbelvænget 72C, 4. 11, 2700 Brønshøj",2700,,,,,30,8900,,8900,TRUE,Ledig,,FALSE,2026-11-04T15:51:45,,,
 heimstaden:9-242-28,heimstaden,https://www.heimstaden.dk/lejebolig/ib-schoenbergs-alle-2-3-th-2500-valby/,Lejlighed,"Ib Schønbergs Allé 2, 3. th. 2500 Valby",2500,,,,2,98,15495,,15495,TRUE,Ledig,15.495 kr./md.,FALSE,2026-11-04T15:31:52,,,
 dab_lejerbo:661-2-10,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,"Skjoldgården 12, 1. th.",7500,Holstebro,,,3,79,5770,,5770,TRUE,Ledig,2026-11-01T00:00:00,FALSE,2026-11-04T15:21:54,,,
