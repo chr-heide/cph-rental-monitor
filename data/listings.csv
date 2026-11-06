@@ -1,4 +1,5 @@
 id,source,url,title,address,postcode,city,lat,lon,rooms,m2,rent,aconto,rent_total,aconto_assumed,status,available_from,match,first_seen,alerted,detail_done,gone_at
+balder:a055p00001OVhikAAD,balder,https://www.balder.dk/lejeboliger/draesinen-4-2-th-2640-hedehusene-danmark,4 værelses lejlighed med god møblerbar stue og solrig altan,"Dræsinen 4, 2. th.",2640,Hedehusene,55.647142,12.201153,4,93,13200,1250,14450,FALSE,Ledig,,FALSE,2026-11-06T09:42:05,,,
 norhjem:/ejendomme/roedovre-port/storekaer-1-5-4/,norhjem,https://norhjem.dk/ejendomme/roedovre-port/storekaer-1-5-4/,Lejlighed,"Storekær 1, 5. 4",2610,Rødovre,,,3,87,14300,,14300,TRUE,Ledig,2026-12-15,FALSE,2026-11-06T09:17:03,,,
 heimstaden:9-264-19,heimstaden,https://www.heimstaden.dk/lejebolig/gammelsoeparken-19-4760-vordingborg/,Rækkehus,Gammelsøparken 19 4760 Vordingborg,4760,,,,4,89,9500,,9500,TRUE,Ledig,Ledig nu,FALSE,2026-11-06T08:31:46,,,
 heimstaden:9-309-34,heimstaden,https://www.heimstaden.dk/lejebolig/tagensvej-129-1-56-2200-koebenhavn-n/,Lejlighed,"Tagensvej 129, 1. 56 2200 København N",2200,,,,2,48,13000,,13000,TRUE,Ledig,13.000 kr./md.,FALSE,2026-11-06T08:31:46,,,
