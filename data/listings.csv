@@ -1,4 +1,5 @@
 id,source,url,title,address,postcode,city,lat,lon,rooms,m2,rent,aconto,rent_total,aconto_assumed,status,available_from,match,first_seen,alerted,detail_done,gone_at
+heimstaden:9-406-2,heimstaden,https://www.heimstaden.dk/lejebolig/knastvaenget-4-b-5700-svendborg/,Dobbelthus,Knastvænget 4 B 5700 Svendborg,5700,,,,5,120,11800,,11800,TRUE,Ledig,11.800 kr./md.,FALSE,2026-11-09T15:01:53,,,
 "capital_investment:Bisiddervej 22, 5 sal, 2400 København NV",capital_investment,https://capitalbolig.dk/ledige-lejemaal/,,"Bisiddervej 22, 5 sal, 2400 København NV",2400,,,,3,95,,,,FALSE,Ledig,,TRUE,2026-11-09T14:21:39,2026-11-09T14:21:39,,
 heimstaden:9-396-12,heimstaden,https://www.heimstaden.dk/lejebolig/moellehaven-47-b-5853-oerbaek/,Rækkehus,Møllehaven 47 B 5853 Ørbæk,5853,,,,3,85,7900,,7900,TRUE,Ledig,19-01-2027,FALSE,2026-11-09T14:02:00,,,
 home:/englandshaven/leje/condo/ulrik-birchs-alle-53-49-2300-koebenhavn-s/sag-177P011288,home,https://home.dk/englandshaven/leje/condo/ulrik-birchs-alle-53-49-2300-koebenhavn-s/sag-177P011288,Lejlighed,"Ulrik Birchs Allé 53, 1. 49, 2300 København S",2300,,,,1,50,13450,1050,14500,FALSE,Ledig,,FALSE,2026-11-09T14:02:00,,2026-11-09T14:02:00,
