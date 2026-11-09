@@ -1,4 +1,5 @@
 id,source,url,title,address,postcode,city,lat,lon,rooms,m2,rent,aconto,rent_total,aconto_assumed,status,available_from,match,first_seen,alerted,detail_done,gone_at
+heimstaden:9-263-46,heimstaden,https://www.heimstaden.dk/lejebolig/smedebakken-92-4291-ruds-vedby/,Rækkehus,Smedebakken 92 4291 Ruds Vedby,4291,,,,4,120,11100,,11100,TRUE,Ledig,11.100 kr./md.,FALSE,2026-11-09T19:32:26,,,
 heimstaden:9-253-29,heimstaden,https://www.heimstaden.dk/lejebolig/mandelhaven-50-7080-boerkop/,Rækkehus,Mandelhaven 50 7080 Børkop,7080,,,,4,122,9995,,9995,TRUE,Ledig,Ledig nu,FALSE,2026-11-09T17:31:51,,,
 heimstaden:9-678-16,heimstaden,https://www.heimstaden.dk/lejebolig/nonnebakken-16-7080-boerkop/,Rækkehus,Nonnebakken 16 7080 Børkop,7080,,,,3,78,8795,,8795,TRUE,Ledig,Ledig nu,FALSE,2026-11-09T17:31:51,,,
 heimstaden:9-318-28,heimstaden,https://www.heimstaden.dk/lejebolig/lyngbyvej-172-1-5-2100-koebenhavn-oe/,Lejlighed,"Lyngbyvej 172, 1. 5. 2100 København Ø",2100,,,,1,37,8700,,8700,TRUE,Ledig,Ledig nu,FALSE,2026-11-09T16:32:27,,,
