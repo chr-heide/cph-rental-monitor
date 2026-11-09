@@ -1,4 +1,5 @@
 id,source,url,title,address,postcode,city,lat,lon,rooms,m2,rent,aconto,rent_total,aconto_assumed,status,available_from,match,first_seen,alerted,detail_done,gone_at
+juli_living:4972,juli_living,https://juliliving.dk/rolighedsvej-bolig/?boligID=4972,Lækker og stilfuld 4-værelses lejlighed med altan i smukke omgivelser i Ballerup,"Rolighedsvej 33, 3. th.",2750,2750 Ballerup,,,4,115,15700,,15700,TRUE,LEDIG,2027-02-01,FALSE,2026-11-09T15:21:26,,,
 heimstaden:9-406-2,heimstaden,https://www.heimstaden.dk/lejebolig/knastvaenget-4-b-5700-svendborg/,Dobbelthus,Knastvænget 4 B 5700 Svendborg,5700,,,,5,120,11800,,11800,TRUE,Ledig,11.800 kr./md.,FALSE,2026-11-09T15:01:53,,,
 "capital_investment:Bisiddervej 22, 5 sal, 2400 København NV",capital_investment,https://capitalbolig.dk/ledige-lejemaal/,,"Bisiddervej 22, 5 sal, 2400 København NV",2400,,,,3,95,,,,FALSE,Ledig,,TRUE,2026-11-09T14:21:39,2026-11-09T14:21:39,,
 heimstaden:9-396-12,heimstaden,https://www.heimstaden.dk/lejebolig/moellehaven-47-b-5853-oerbaek/,Rækkehus,Møllehaven 47 B 5853 Ørbæk,5853,,,,3,85,7900,,7900,TRUE,Ledig,19-01-2027,FALSE,2026-11-09T14:02:00,,,
