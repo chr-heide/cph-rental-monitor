@@ -1,4 +1,6 @@
 id,source,url,title,address,postcode,city,lat,lon,rooms,m2,rent,aconto,rent_total,aconto_assumed,status,available_from,match,first_seen,alerted,detail_done,gone_at
+balder:a050N0000133QvQQAU,balder,https://www.balder.dk/lejeboliger/strandlodsvej-63-b-4-4-2300-koebenhavn-s-danmark,Vestvendt altan,"Strandlodsvej 63 B, 4. 4",2300,København S,55.663075,12.626133,3,106,18100,950,19050,FALSE,Ledig,2027-02-01,FALSE,2026-11-10T09:08:47,,,
+balder:a05JV000000GFl5YAG,balder,https://www.balder.dk/lejeboliger/ingrid-marievej-95-5-tv-2500-valby-danmark,Vestvendt lejlighed med udgang til 2 altaner,"Ingrid Marievej 95, 5. tv.",2500,Valby,55.6546649,12.5076827,4,108,17900,1250,19150,FALSE,Ledig,2027-02-01,FALSE,2026-11-10T09:08:47,,,
 heimstaden:9-263-46,heimstaden,https://www.heimstaden.dk/lejebolig/smedebakken-92-4291-ruds-vedby/,Rækkehus,Smedebakken 92 4291 Ruds Vedby,4291,,,,4,120,11100,,11100,TRUE,Ledig,11.100 kr./md.,FALSE,2026-11-09T19:32:26,,,
 heimstaden:9-253-29,heimstaden,https://www.heimstaden.dk/lejebolig/mandelhaven-50-7080-boerkop/,Rækkehus,Mandelhaven 50 7080 Børkop,7080,,,,4,122,9995,,9995,TRUE,Ledig,Ledig nu,FALSE,2026-11-09T17:31:51,,,
 heimstaden:9-678-16,heimstaden,https://www.heimstaden.dk/lejebolig/nonnebakken-16-7080-boerkop/,Rækkehus,Nonnebakken 16 7080 Børkop,7080,,,,3,78,8795,,8795,TRUE,Ledig,Ledig nu,FALSE,2026-11-09T17:31:51,,,
