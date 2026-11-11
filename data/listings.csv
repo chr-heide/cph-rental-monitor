@@ -1,4 +1,5 @@
 id,source,url,title,address,postcode,city,lat,lon,rooms,m2,rent,aconto,rent_total,aconto_assumed,status,available_from,match,first_seen,alerted,detail_done,gone_at
+heimstaden:9-294-3,heimstaden,https://www.heimstaden.dk/lejebolig/jenny-kammersgaards-vej-7-st-th-8700-horsens/,Lejlighed,"Jenny Kammersgaards Vej 7, st. th. 8700 Horsens",8700,,,,3,91,10995,,10995,TRUE,Ledig,10.995 kr./md.,FALSE,2026-11-11T08:31:52,,,
 juli_living:2929,juli_living,https://juliliving.dk/moentmesterhus-bolig/?boligID=2929,Møntmesterhus - Lækker 4-værelses lejlighed med plads til familien og en hyggestun på altanen,"Tomsgårdsvej 22C, 3. th.",2400,2400 København NV,,,4,93,15800,,15800,TRUE,RESERVERET,2024-02-01,FALSE,2026-11-10T16:26:11,,,2026-11-10T16:32:17
 edc:11810282,edc,https://www.edc.dk/leje/lejlighed/2450-koebenhavn-sv/dieselvej-18-1-tv/11810282/,Lejlighed fra EDC,"Dieselvej 18, 1. tv",2450,København SV,,,4,94,19500,,19500,TRUE,Ledig,,FALSE,2026-11-10T15:41:40,,,
 edc:11810283,edc,https://www.edc.dk/leje/lejlighed/2450-koebenhavn-sv/dieselvej-18-3-th/11810283/,Lejlighed fra EDC,"Dieselvej 18, 3. th",2450,København SV,,,3,82,17200,,17200,TRUE,Ledig,,FALSE,2026-11-10T15:41:40,,,
