@@ -1,4 +1,6 @@
 id,source,url,title,address,postcode,city,lat,lon,rooms,m2,rent,aconto,rent_total,aconto_assumed,status,available_from,match,first_seen,alerted,detail_done,gone_at
+heimstaden:9-570-43,heimstaden,https://www.heimstaden.dk/lejebolig/soendermarksvej-43-1-1-8800-viborg/,Lejlighed,"Søndermarksvej 43, 1. 1 8800 Viborg",8800,,,,3,97,6296,,6296,TRUE,Ledig,01-02-2027,FALSE,2026-11-16T13:31:57,,,
+heimstaden:9-637-29,heimstaden,https://www.heimstaden.dk/lejebolig/haflingervej-57-8960-randers-soe/,Rækkehus,Haflingervej 57 8960 Randers SØ,8960,,,,5,127,13495,,13495,TRUE,Ledig,13.495 kr./md.,FALSE,2026-11-16T13:31:57,,,
 "capital_investment:Thorshavnsgade 28, st.th., 2300 København S",capital_investment,https://capitalbolig.dk/ledige-lejemaal/,,"Thorshavnsgade 28, st.th., 2300 København S",2300,,55.667011,12.57817,4,107,,,,FALSE,Ledig,,FALSE,2026-11-16T13:11:46,,,
 heimstaden:9-566-3,heimstaden,https://www.heimstaden.dk/lejebolig/podersvej-3-6622-baekke/,Rækkehus,Podersvej 3 6622 Bække,6622,,,,5,116,9250,,9250,TRUE,Ledig,Ledig nu,FALSE,2026-11-16T13:02:09,,,
 heimstaden:9-583-59,heimstaden,https://www.heimstaden.dk/lejebolig/moellevangen-45-1-7-8310-tranbjerg-j/,Lejlighed,"Møllevangen 45, 1. 7 8310 Tranbjerg J",8310,,,,2,47,6895,,6895,TRUE,Ledig,01-12-2026,FALSE,2026-11-16T13:02:09,,,
