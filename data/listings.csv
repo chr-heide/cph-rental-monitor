@@ -1,4 +1,5 @@
 id,source,url,title,address,postcode,city,lat,lon,rooms,m2,rent,aconto,rent_total,aconto_assumed,status,available_from,match,first_seen,alerted,detail_done,gone_at
+heimstaden:9-321-95,heimstaden,https://www.heimstaden.dk/lejebolig/rampelyset-34-15-4000-roskilde/,Studiebolig,Rampelyset 34 1.5. 4000 Roskilde,4000,,,,1,40,5814,,5814,TRUE,Ledig,01-02-2027,FALSE,2026-11-18T15:46:19,,,
 findbolig:288324,findbolig,https://findbolig.nu/da-dk/residence/288324,AXA - Kongelysvej / Urtehaven lll,"Urtehaven 43, 2 1",2640,Hedehusene,55.64559001,12.19954516,2,76,11700,950,12650,FALSE,Ledig,2027-02-01,FALSE,2026-11-18T15:10:47,,,
 kereby:28682,kereby,https://kereby.dk/bolig/drogdensgade-4-5-2300-kobenhavn-s/,4-værelses lejlighed på Amager,"Drogdensgade 4, 5., 2300 København S",2300,,55.65950481,12.60762426,4,98,22050,,22050,TRUE,available,,FALSE,2026-11-18T14:39:23,,,
 findbolig:92400,findbolig,https://findbolig.nu/da-dk/residence/92400,RJV 73 - Kromagrafen,"Robert Jacobsens Vej 73A, 5 th",2300,København S,55.61765,12.57401,2,73,15001.22,775,15776.22,FALSE,Ledig,2027-02-01,FALSE,2026-11-18T14:00:26,,,
