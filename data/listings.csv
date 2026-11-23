@@ -1,4 +1,8 @@
 id,source,url,title,address,postcode,city,lat,lon,rooms,m2,rent,aconto,rent_total,aconto_assumed,status,available_from,match,first_seen,alerted,detail_done,gone_at
+dab_lejerbo:653-3-39,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,Bøgevænget 119B,7330,Brande,,,1,28.5,2531,,2531,TRUE,Ledig,2027-01-01T00:00:00,FALSE,2026-11-23T22:32:01,,,
+dab_lejerbo:653-3-50,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,Bøgevænget 133,7330,Brande,,,2,39.11,3805,,3805,TRUE,Ledig,2027-02-01T00:00:00,FALSE,2026-11-23T22:32:01,,,
+dab_lejerbo:661-6-56,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,Mads Clausens Vej 43,7500,Holstebro,,,1,27.7,2646,,2646,TRUE,Ledig,2027-02-01T00:00:00,FALSE,2026-11-23T22:32:01,,,
+dab_lejerbo:671-4-30,dab_lejerbo,https://dab-lejerbo.dk/boligsoegende/ledige-boliger,,Ballegårdvænget 59,7620,Lemvig,,,3,76.3,6700,,6700,TRUE,Ledig,2027-02-01T00:00:00,FALSE,2026-11-23T22:32:01,,,
 juli_living:6109,juli_living,https://juliliving.dk/esplanaden-bolig/?boligID=6109,Skøn lejebolig med to altaner og to badeværelser - Centralt i indre by,"Amaliegade 39, 4. tv.",1256,1256 København K,,,4,136,30700,,30700,TRUE,LEDIG,2027-01-01,FALSE,2026-11-23T16:40:10,,,
 home:/campus-aviator/leje/condo/jorisvej-3-14-2300-koebenhavn-s/sag-177P011633,home,https://home.dk/campus-aviator/leje/condo/jorisvej-3-14-2300-koebenhavn-s/sag-177P011633,Lejlighed,"Jorisvej 3, 2. 14, 2300 København S",2300,,,,,28,9000,,9000,TRUE,Ledig,,FALSE,2026-11-23T16:22:36,,,
 heimstaden:9-418-115,heimstaden,https://www.heimstaden.dk/lejebolig/svalegangen-85-9380-vestbjerg/,Rækkehus,Svalegangen 85 9380 Vestbjerg,9380,,,,4,91,8495,,8495,TRUE,Ledig,27-02-2027,FALSE,2026-11-23T16:03:04,,,
