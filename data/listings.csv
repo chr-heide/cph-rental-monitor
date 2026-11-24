@@ -1,4 +1,5 @@
 id,source,url,title,address,postcode,city,lat,lon,rooms,m2,rent,aconto,rent_total,aconto_assumed,status,available_from,match,first_seen,alerted,detail_done,gone_at
+heimstaden:9-653-66,heimstaden,https://www.heimstaden.dk/lejebolig/braenderigaarden-27-2-203-7500-holstebro/,Lejlighed,"Brænderigården 27, 2. 203. 7500 Holstebro",7500,,,,2,55,6195,,6195,TRUE,Ledig,02-12-2026,FALSE,2026-11-24T20:31:59,,,
 heimstaden:9-653-50,heimstaden,https://www.heimstaden.dk/lejebolig/braenderigaarden-19-2-th-7500-holstebro/,Lejlighed,"Brænderigården 19, 2. th. 7500 Holstebro",7500,,,,3,77,6995,,6995,TRUE,Ledig,01-02-2027,FALSE,2026-11-24T20:02:19,,,
 heimstaden:9-674-5,heimstaden,https://www.heimstaden.dk/lejebolig/astersvej-5-7500-holstebro/,Rækkehus,Astersvej 5 7500 Holstebro,7500,,,,3,101,9995,,9995,TRUE,Ledig,01-12-2026,FALSE,2026-11-24T19:02:23,,,
 heimstaden:9-677-11,heimstaden,https://www.heimstaden.dk/lejebolig/lupinvej-11-7500-holstebro/,Rækkehus,Lupinvej 11 7500 Holstebro,7500,,,,3,101,9995,,9995,TRUE,Ledig,16-12-2026,FALSE,2026-11-24T19:02:23,,,
