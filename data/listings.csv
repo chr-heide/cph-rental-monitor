@@ -1,4 +1,5 @@
 id,source,url,title,address,postcode,city,lat,lon,rooms,m2,rent,aconto,rent_total,aconto_assumed,status,available_from,match,first_seen,alerted,detail_done,gone_at
+edc:11810323,edc,https://www.edc.dk/leje/lejlighed/2450-koebenhavn-sv/alliancevej-7-2-tv/11810323/,Lejlighed fra EDC,"Alliancevej 7, 2. tv",2450,København SV,,,2,73,15700,,15700,TRUE,Ledig,,FALSE,2026-11-25T12:51:50,,,
 heimstaden:9-573-14,heimstaden,https://www.heimstaden.dk/lejebolig/ridderhatten-127-5220-odense-soe/,Rækkehus,Ridderhatten 127 5220 Odense SØ,5220,,,,2,62,5507,,5507,TRUE,Ledig,Ledig nu,FALSE,2026-11-25T12:31:43,,,
 heimstaden:9-573-9,heimstaden,https://www.heimstaden.dk/lejebolig/ridderhatten-117-5220-odense-soe/,Lejlighed,Ridderhatten 117 5220 Odense SØ,5220,,,,2,65,6205,,6205,TRUE,Ledig,Ledig nu,FALSE,2026-11-25T12:31:43,,,
 juli_living:4559,juli_living,https://juliliving.dk/rundforbiparken-bolig/?boligID=4559,Rundforbiparken - Lys lejlighed med altan ved grøn natur i Nærum,"Rundforbiparken 8D, 1.",2850,2850 Nærum,,,3,92,16000,,16000,TRUE,RESERVERET,2027-02-01,FALSE,2026-11-25T11:51:46,,,
