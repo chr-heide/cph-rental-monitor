@@ -312,15 +312,45 @@ scrape_vibo <- function(url, param = NA, page = get_html(url)) {
     return(structure(tibble(id = character(), url = character(), address = character()), empty_ok = TRUE))
   }
   map_dfr(i, function(k) {
-    blk <- paste(L[k:min(length(L), k + 8)], collapse = " ¦ ")
-    nxt <- str_split(paste(L[(k + 1):min(length(L), k + 8)], collapse = " ¦ "), "(?i)bolig på ")[[1]][1]
-    tibble(id = L[k], url = url, title = L[k],
-           address = str_squish(str_match(L[k], "(?i)bolig på (.+?\\b\\d{4}\\s+[A-ZÆØÅ][a-zæøå]+(?:\\s[A-ZÆØÅ]{1,2}\\b)?)")[, 2]),
+    nxt <- str_split(paste(L[(k + 1):min(length(L), k + 15)], collapse = " ¦ "), "(?i)bolig på ")[[1]][1]
+    # Headings come as "2-værelses bolig på Sigynsgade 34,4. tv. 2200 N udlejes midlertidigt ... – Bolignummer: 106-879"
+    # or "2-værelses bolig på Thorsgade 8 C, 4. th. bolignr. 127-3451 ledig pr. 1/12-2026" (no postcode).
+    # The address ends where the lease text or the unit number starts; a unit number is never a postcode.
+    addr <- str_match(L[k], "(?i)bolig på (.+?)(?:\\s+(?:–|-)?\\s*bolignr|\\s+(?:–|-)\\s*bolignummer|\\s+udlejes|\\s+ledig pr|$)")[, 2]
+    addr <- str_squish(str_remove(addr, "[,.\\s]+$"))
+    pc <- str_extract(paste(L[k], nxt), "(?<![\\d-])\\b[1-4]\\d{3}(?=\\s+(?:[A-ZÆØ]{1,2}\\b|København|Kbh|Frederiksberg|Valby))")
+    tibble(id = addr, url = url, title = L[k], address = addr, postcode = pc,
+           city = str_extract(nxt, "København\\s+(?:K|V|N|NV|Ø|S|SV)\\b"),
            rooms = dk_num(str_match(L[k], "(\\d)[ -]*(værelses|rums)")[, 2]),
-           m2 = dk_num(str_match(nxt, "(\\d+[,.]?\\d*)\\s*(m²|m2|kvm)")[, 2]),
-           rent = dk_num(str_match(nxt, "(?i)husleje[^0-9]{0,15}([\\d.,]+)")[, 2]),
+           m2 = coalesce(dk_num(str_match(nxt, "(\\d+[,.]?\\d*)\\s*(m²|m2|kvm)")[, 2]),
+                         dk_num(str_match(nxt, "(?i)(?:bolig)?areal[^0-9]{0,15}(\\d+[,.]?\\d*)")[, 2])),
+           rent = dk_num(str_match(nxt, "(?i)(?:husleje|månedlig leje|leje pr\\.? md)[^0-9]{0,20}([\\d.,]+)")[, 2]),
            aconto = { a <- dk_num(str_match_all(nxt, "(?i)aconto[^0-9]{0,20}([\\d.,]+)")[[1]][, 2]); if (length(a)) sum(a) else NA_real_ },
            available_from = str_match(L[k], "(?i)ledig pr\\.?\\s*(.+)$")[, 2],
            status = "Ledig")
-  }) |> arrange(is.na(rent)) |> distinct(address, .keep_all = TRUE) |> mutate(id = address)
+  }) |> filter(!is.na(address)) |> arrange(is.na(rent)) |> distinct(address, .keep_all = TRUE) |>
+    vibo_postcodes()
+}
+
+# VIBO sometimes leaves the postcode out of a heading. Look such addresses up once (OpenStreetMap
+# Nominatim, max 1 request/second, identified) and keep the answer in data/postcodes.csv.
+vibo_postcodes <- function(df) {
+  path <- "data/postcodes.csv"
+  cache <- if (file.exists(path)) read_csv(path, col_types = "cc") else tibble(key = character(), postcode = character())
+  df <- df |> mutate(key = str_to_lower(str_squish(str_remove(address, ",.*$"))))
+  need <- setdiff(unique(df$key[is.na(df$postcode) & is.na(df$city)]), cache$key)
+  for (q in head(need, 5)) {
+    r <- tryCatch(request("https://nominatim.openstreetmap.org/search") |>
+                    req_url_query(q = paste0(q, ", København, Denmark"), format = "json", addressdetails = 1,
+                                  limit = 1, countrycodes = "dk") |>
+                    req_user_agent(GEO_UA) |> req_timeout(20) |> req_perform() |> resp_body_json(),
+                  error = function(e) NULL)
+    if (is.null(r)) next                       # network trouble: try again next run
+    pc <- if (length(r)) r[[1]]$address$postcode %||% NA_character_ else NA_character_
+    cache <- bind_rows(cache, tibble(key = q, postcode = as.character(pc)))
+    Sys.sleep(1.1)
+  }
+  if (length(need)) { dir.create("data", showWarnings = FALSE); write_csv(cache, path, na = "") }
+  df |> left_join(rename(distinct(cache, key, .keep_all = TRUE), pc_osm = postcode), by = "key") |>
+    mutate(postcode = coalesce(postcode, pc_osm)) |> select(-key, -pc_osm)
 }
