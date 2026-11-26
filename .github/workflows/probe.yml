@@ -2,33 +2,21 @@ name: probe
 on:
   push:
     branches: [probe]
-    paths: ["dev/**", ".github/workflows/probe.yml"]
-  workflow_dispatch:
+    paths: ["dev/probe_kereby.py", ".github/workflows/probe.yml"]
 permissions:
   contents: write
 jobs:
   probe:
     runs-on: ubuntu-latest
-    timeout-minutes: 40
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: { python-version: "3.12" }
-      - run: pip install playwright && python -m playwright install --with-deps chromium
-      - run: |
-          rm -rf probe_out probe_out.tgz; for k in 0 1 2 3; do timeout 22m python dev/probe.py dev/probe_sites.txt $k/4 $(cat dev/probe_only.txt 2>/dev/null) > probe_log_$k.txt 2>&1 & done; wait
-          python dev/probe_browser_api.py > probe_api_log.txt 2>&1 || true
-          python dev/probe_dab_headers.py >> probe_api_log.txt 2>&1 || true
-          mkdir -p probe_out; cat probe_log_*.txt probe_api_log.txt > probe_out/log.txt
+      - run: python dev/probe_kereby.py
         continue-on-error: true
       - name: Commit results
         run: |
-          echo "::notice::files=$(find probe_out -type f | wc -l) log=$(tail -c 600 probe_out/log.txt | tr '\n' ' ')"
           git config user.name "probe-bot"; git config user.email "probe-bot@users.noreply.github.com"
           tar czf probe_out.tgz probe_out && git add -f probe_out.tgz
           git commit -qm "probe results $(date -u +%FT%TZ)" || exit 0
-          for i in 1 2 3; do
-            git pull --rebase -q origin probe 2>err.txt && git push -q origin HEAD:probe 2>>err.txt && exit 0
-            echo "::warning::push attempt $i: $(tr '\n' ' ' < err.txt | tail -c 900)"; sleep 5
-          done
-          exit 1
+          for i in 1 2 3; do git pull --rebase -X theirs -q origin probe && git push -q origin HEAD:probe && exit 0; sleep 5; done
