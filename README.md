@@ -4,7 +4,7 @@ Watches Copenhagen landlords' own websites for vacant rental flats and pushes ne
 
 **Phone:** in the ntfy app, subscribe to your topic (server ntfy.sh). The topic is read from the `NTFY_TOPIC` repository secret (Settings → Secrets and variables → Actions). Anyone who knows the topic can read or post to it, so keep it in the secret.
 
-**What counts as a match:** `config/filters.yml` — size, rooms, max rent incl. aconto, postcodes (2300 is limited to an Amagerbro box), and keywords that never alert (rooms in shared flats, student/youth/senior housing). Edit it on GitHub; the next run uses it.
+**What counts as a match:** `config/filters.yml` — size, rooms, max rent incl. aconto, postcodes (2300 is limited to Amagerbro and Islands Brygge boxes), and keywords that never alert (rooms in shared flats, student/youth/senior housing). Edit it on GitHub; the next run uses it.
 
 **Which sites:** `config/sites.csv` — one row per site; set `enabled` to `FALSE` to switch one off. Parsers live in `R/sites/` (`api_sites.R` for JSON APIs, `html_sites.R` for HTML pages, incl. the generic `links` and `textblocks` parsers that most small sites can reuse with just a URL and a link pattern).
 

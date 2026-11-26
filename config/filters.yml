@@ -1,5 +1,5 @@
 # What triggers a phone alert. Every listing is still logged to data/listings.csv.
-min_m2: 50
+min_m2: 45
 min_rooms: 2
 max_rent_total: 16000      # monthly rent incl. aconto (heat/water/etc.)
 # When a site shows only base rent and the detail page has no aconto, assume this
@@ -12,15 +12,21 @@ postcodes:
   - "2400"        # København NV
   - "2100"        # København Ø
   - "2150"        # Nordhavn (Østerbro, own postcode)
-  - "2300"        # København S - only the Amagerbro part, see area_boxes below
-# Postcodes that are only wanted inside a box (lat/lon). 2300 also covers Islands Brygge,
-# Ørestad and Sundby; this box is Amagerbro: east of Amager Fælledvej (so not Islands Brygge
-# or the university area), north of roughly Lergravsparken, up to Christianshavn's moat.
-# Widen it if you want more of Amager.
+  - "2300"        # København S - only Amagerbro and Islands Brygge, see area_boxes below
+  - "1800-1999"   # Frederiksberg C
+  - "2000"        # Frederiksberg
+# Postcodes that are only wanted inside one of their boxes (lat/lon). 2300 also covers
+# Ørestad, Sundby and the university area, which are left out.
 area_boxes:
   "2300":
-    lat: [55.6545, 55.6735]
-    lon: [12.5965, 12.6400]
+    # Amagerbro: east of Amager Fælledvej, north of roughly Lergravsparken, up to Christianshavn's moat
+    - name: Amagerbro
+      lat: [55.6545, 55.6735]
+      lon: [12.5965, 12.6400]
+    # Islands Brygge: west of Amager Fælledvej, from the harbour down to about Artillerivej
+    - name: Islands Brygge
+      lat: [55.6550, 55.6750]
+      lon: [12.5600, 12.5965]
 # Alert even when a field is unknown (e.g. no m2 on the list page) rather than miss it.
 alert_on_unknown: true
 # Listings whose title or address matches any of these (case-insensitive regex) never alert:

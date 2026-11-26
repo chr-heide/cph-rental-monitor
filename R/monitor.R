@@ -82,8 +82,10 @@ unavailable_re <- "udlejet|reserveret|reserved|completed|unavailable|lukket|opta
 in_box <- function(pc, lat, lon) {   # TRUE unless the postcode has a box and the point is outside it
   out <- rep(TRUE, length(pc))
   for (p in names(filt$area_boxes)) {
-    b <- filt$area_boxes[[p]]; sel <- !is.na(pc) & pc == p
-    inside <- !is.na(lat) & lat >= b$lat[1] & lat <= b$lat[2] & lon >= b$lon[1] & lon <= b$lon[2]
+    boxes <- filt$area_boxes[[p]]; if (!is.null(boxes$lat)) boxes <- list(boxes)   # one box or a list of boxes
+    sel <- !is.na(pc) & pc == p
+    inside <- Reduce(`|`, lapply(boxes, function(b)
+      !is.na(lat) & lat >= b$lat[1] & lat <= b$lat[2] & lon >= b$lon[1] & lon <= b$lon[2]))
     out[sel] <- inside[sel] | (is.na(lat[sel]) & isTRUE(filt$alert_on_unknown))
   }
   out
