@@ -247,3 +247,43 @@ scrape_norhjem <- function(url, param = NA) {
   })
 }
 detail_norhjem <- function(url) detail_generic(url)
+
+# ---- CEJ (udlejning.cej.dk, Boligio/Remix). CEJ agreed to automated reading at most every
+# 10 minutes, so requests identify this monitor openly instead of posing as a browser. ----------
+CEJ_UA <- "cph-rental-monitor/1.0 (+https://github.com/chr-heide/cph-rental-monitor; private apartment alert, max every 10 min)"
+cej_page <- function(url) {
+  h <- resp_body_string(req_get(url, `User-Agent` = CEJ_UA))
+  key <- '__remixContext.r("routes/search/layout", "searchResponse", '
+  i <- regexpr(key, h, fixed = TRUE)
+  if (i < 0) stop("CEJ: search data not found on page")
+  # JSON object starts right after the key; find its end by matching braces outside strings
+  s <- substr(h, i + nchar(key), nchar(h)); ch <- strsplit(substr(s, 1, 2e6), "")[[1]]
+  depth <- 0; instr <- FALSE; esc <- FALSE; end <- NA
+  for (k in seq_along(ch)) {
+    c <- ch[k]
+    if (instr) { if (esc) esc <- FALSE else if (c == "\\") esc <- TRUE else if (c == '"') instr <- FALSE; next }
+    if (c == '"') instr <- TRUE else if (c == "{") depth <- depth + 1 else if (c == "}") { depth <- depth - 1; if (depth == 0) { end <- k; break } }
+  }
+  if (is.na(end)) stop("CEJ: could not parse search data")
+  fromJSON(paste(ch[1:end], collapse = ""), simplifyVector = FALSE)
+}
+scrape_cej <- function(url, param = NA) {
+  first <- cej_page(url)
+  items <- first$items
+  for (p in setdiff(unlist(first$pages), "")) {           # e.g. "?offset=32"
+    Sys.sleep(2)
+    items <- c(items, cej_page(paste0(url, p))$items)
+  }
+  api_rows(items, function(x) {
+    loc <- x$location %||% list()
+    tibble(id = x$id, url = paste0("https://udlejning.cej.dk/boliger/", x$id), title = str_squish(x$name %||% NA),
+           address = paste0(loc$address %||% "", ", ", loc$zipCode %||% "", " ", loc$city %||% ""),
+           postcode = as.character(loc$zipCode %||% NA), city = loc$city %||% NA,
+           rooms = x$numberOfRooms %||% NA, m2 = x$floorSize %||% NA,
+           rent = if (identical(x$priceType, "monthly")) x$price$amount %||% NA else NA,
+           status = switch(x$status %||% "", available = "Ledig", reserved = "Reserveret", x$status %||% NA),
+           available_from = x$availableFrom %||% NA,
+           lat = loc$geo$latitude %||% x$geo$latitude %||% NA, lon = loc$geo$longitude %||% x$geo$longitude %||% NA)
+  })
+}
+detail_cej <- function(url) detail_generic(url, page = read_html(resp_body_string(req_get(url, `User-Agent` = CEJ_UA))))
