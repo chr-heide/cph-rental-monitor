@@ -7,14 +7,20 @@ att <- function(node, css, a) node |> html_element(css) |> html_attr(a)
 # ---- Kereby (Jorato WordPress plugin; data-* attributes on each card) ------------------
 scrape_kereby <- function(url, param = NA, page = get_html(url)) {
   cards <- html_elements(page, "article.jorato-case-card")
+  # data-state: available / reserved / completed (= let). Only available cards link to a flat page.
+  state <- coalesce(html_attr(cards, "data-state"), "")
+  unavailable <- str_detect(coalesce(html_attr(cards, "class"), ""), "--unavailable") | state != "available"
+  href <- map_chr(cards, ~ att(.x, "a.jorato-case-card__link[href], a[href*='/bolig/']", "href"))
   tibble(id = html_attr(cards, "data-card-id"),
-         url = map_chr(cards, ~ att(.x, "a[href]", "href") %||% url),
+         url = if_else(is.na(href), url, url_absolute(coalesce(href, url), url)),
          title = map_chr(cards, txt, ".jorato-case-card__headline"),
          address = map_chr(cards, txt, ".jorato-case-card__location-text"),
          postcode = html_attr(cards, "data-zip"), rooms = html_attr(cards, "data-rooms"),
          m2 = html_attr(cards, "data-size"), rent = html_attr(cards, "data-rent"),
          lat = html_attr(cards, "data-lat"), lon = html_attr(cards, "data-lng"),
-         status = coalesce(html_attr(cards, "data-state"), "available"))
+         status = case_when(state == "available" & !unavailable ~ "Ledig",
+                            state == "completed" ~ "Udlejet",
+                            TRUE ~ "Reserveret"))
 }
 detail_kereby <- function(url) detail_generic(url)
 

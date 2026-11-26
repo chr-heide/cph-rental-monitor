@@ -78,7 +78,7 @@ in_ranges <- function(pc, specs) {
   hit
 }
 excl_re <- if (length(filt$exclude_keywords)) paste0("(", paste(filt$exclude_keywords, collapse = ")|("), ")") else "$^"
-unavailable_re <- "udlejet|reserveret|reserved|lukket|optaget|rented|solgt|venteliste"
+unavailable_re <- "udlejet|reserveret|reserved|completed|unavailable|lukket|optaget|rented|solgt|venteliste"
 in_box <- function(pc, lat, lon) {   # TRUE unless the postcode has a box and the point is outside it
   out <- rep(TRUE, length(pc))
   for (p in names(filt$area_boxes)) {
@@ -108,7 +108,8 @@ score <- function(df) {
 has_detail <- function(src) !is.null(get0(paste0("detail_", sites$parser[sites$name == src][1])))
 cand <- score(cur) |>
   filter(is.na(detail_done), ok_area | is.na(postcode), ok_m2, ok_rooms, ok_avail,
-         is.na(rent_check) | rent_check <= filt$max_rent_total + 3000, !is.na(url)) |>
+         is.na(rent_check) | rent_check <= filt$max_rent_total + 3000, !is.na(url),
+         !url %in% sites$url) |>   # no own page: the link is just the site's list page
   filter(map_lgl(source, has_detail)) |>
   arrange(desc(first_seen)) |> head(MAX_DETAIL)
 for (i in seq_len(nrow(cand))) {
@@ -135,7 +136,7 @@ scored <- score(cur)
 
 # ---- alerts -------------------------------------------------------------------------
 # wait for the detail page (aconto, rooms, exact postcode) when the site has one and it hasn't been read yet
-detail_pending <- map_lgl(scored$source, has_detail) & is.na(scored$detail_done)
+detail_pending <- map_lgl(scored$source, has_detail) & is.na(scored$detail_done) & !scored$url %in% sites$url
 to_alert <- scored |> filter(match, is.na(alerted), !detail_pending) |> arrange(rent_check)
 pushed <- head(to_alert, MAX_PUSH)
 if (!no_alerts && nrow(pushed)) {
